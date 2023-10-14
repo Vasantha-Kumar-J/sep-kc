@@ -1,3 +1,11 @@
+"""Task scheduling for employees.
+
+adding employees
+adding tasks
+scheduling the task to employees based on the attributes
+"""
+
+
 from ast import Dict
 import json
 
@@ -11,10 +19,13 @@ def get_employees() -> Dict:
     Returns:
         Dict: employee dictionary
     """
-    file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\employee.json"
-    with open(file=file_path, mode="r") as employee_file:
-        emp_details = json.load(employee_file)
-        return emp_details
+    try:
+        file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\employee.json"
+        with open(file=file_path, mode="r") as employee_file:
+            emp_details = json.load(employee_file)
+            return emp_details
+    except Exception as e:
+        print("Exception raised : ", e.__name__)
 
 
 def get_tasks() -> Dict:
@@ -23,10 +34,13 @@ def get_tasks() -> Dict:
     Returns:
         Dict: employee dictionary
     """
-    file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\task.json"
-    with open(file=file_path, mode="r") as employee_file:
-        task_details = json.load(employee_file)
-        return task_details
+    try:
+        file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\task.json"
+        with open(file=file_path, mode="r") as employee_file:
+            task_details = json.load(employee_file)
+            return task_details
+    except Exception as e:
+        print("Exception raised : ", e.__name__)
 
 
 def add_employee():
@@ -48,9 +62,12 @@ def add_employee():
         "task": task,
     }
     json_object = json.dump(employee_details)
-    file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\employee.json"
-    with open(file=file_path, mode="w") as employee_file:
-        employee_file.write(json_object)
+    try:
+        file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\employee.json"
+        with open(file=file_path, mode="w") as employee_file:
+            employee_file.write(json_object)
+    except Exception as e:
+        print("Exception raised : ", e.__name__)
     employee_count += 1
 
 
@@ -73,9 +90,12 @@ def add_task():
         "max_employees": max_employees,
     }
     json_object = json.dump(task_details)
-    file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\task.json"
-    with open(file=file_path, mode="w") as task_file:
-        task_file.write(json_object)
+    try:
+        file_path = "D:\\python\\hack_2024\\py_hack\\py_hack\\task.json"
+        with open(file=file_path, mode="w") as task_file:
+            task_file.write(json_object)
+    except Exception as e:
+        print("Exception raised : ", e.__name__)
     task_count += 1
 
 
@@ -110,21 +130,28 @@ def schedule_task():
                 else:
                     break
     print("\n\n")
-    print(emp_details)
+    print("Employee details : ", emp_details)
     print("\n\n")
-    print(task_details)
+    print("Task details : ", task_details)
     # not handled cases :
 
 
 def main():
-    print("1. Add employee\n2. Add task\n3. schedule tasks")
-    choice = int(input("Enter the choice : "))
-    if choice == 1:
-        add_employee()
-    elif choice == 2:
-        add_task()
-    elif choice == 3:
-        schedule_task()
+    while True:
+        print("1. Add employee\n2. Add task\n3. schedule tasks\n4.Quit")
+        choice = int(input("Enter the choice : "))
+        if choice == 1:
+            add_employee()
+            print("Employee added")
+        elif choice == 2:
+            add_task()
+            print("Task added")
+        elif choice == 3:
+            schedule_task()
+        elif choice == 4:
+            break
+        else:
+            print("Enter the valid choice")
 
 
 if __name__ == "__main__":
