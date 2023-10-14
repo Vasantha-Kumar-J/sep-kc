@@ -20,6 +20,7 @@ while True:
             "\n5.Schedue Tasks"
             "\n6.Get employees"
             "\n7.Get Tasks"
+            "\n8.Get Schedule"
             "\n Enter anything else to exit : "
         )
     )
@@ -75,5 +76,7 @@ while True:
                 f"deadline:{task.deadline} "
                 f"necessary_skills:{task.necessary_skills} "
             )
+    elif user_input == 8:
+        print(SCHEDULE)
     else:
         break

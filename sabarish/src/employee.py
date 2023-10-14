@@ -8,7 +8,7 @@ ALL_EMPLOYEES = []
 class Employee:
     def __init__(self, name, working_hours, skills, availability):
         self.name = name
-        self.working_hours = working_hours
+        self.working_hours = int(working_hours)
         self.skills = skills
         availability.sort()
         self.availability = availability

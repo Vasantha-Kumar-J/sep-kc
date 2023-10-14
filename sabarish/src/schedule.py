@@ -16,7 +16,7 @@ def sorting_tasks_by_deadlines():
                 UNSCHEDULED_TASKS[index2] = temp
 
 
-def schedule():
+def schedule(SCHEDULE=SCHEDULE):
     sorting_tasks_by_deadlines()
     for task in UNSCHEDULED_TASKS:
         time_for_each_skill = task.required_hours / len(task.necessary_skills)
@@ -41,8 +41,10 @@ def schedule():
                         * employee.working_hours
                     )
                     if available_time_before_deadline > time:
+                        number_of_days_used = int(
+                            time / employee.working_hours
+                        )
                         time = 0
-                        number_of_days_used = time / employee.working_hours
                         employee.availability = employee.availability[
                             number_of_days_used:
                         ]
@@ -65,10 +67,10 @@ def schedule():
                             }
                         )
                         time -= available_time_before_deadline
-                        employee_availability.clear()
                         temp_employee_availability.append(
                             (employee.name, employee_availability)
                         )
+                        employee_availability.clear()
             if time != 0:
                 break
             else:
@@ -83,7 +85,6 @@ def schedule():
         else:
             SCHEDULED_TASKS.append(task)
             UNSCHEDULED_TASKS.remove(task)
-    return SCHEDULE
 
 
 if __name__ == "__main__":
