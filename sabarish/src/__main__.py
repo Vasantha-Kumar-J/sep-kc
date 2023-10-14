@@ -1,3 +1,6 @@
+"""Console App for Task Scheduler."""
+
+
 from employee import add_employee
 from employee import import_employees
 from employee import export_list_of_employees

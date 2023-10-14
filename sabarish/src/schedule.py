@@ -1,10 +1,14 @@
+"""Task Scheduler Module."""
+
+
 from employee import ALL_EMPLOYEES
 from tasks import UNSCHEDULED_TASKS, SCHEDULED_TASKS
 
 SCHEDULE = []
 
 
-def sorting_tasks_by_deadlines():
+def sorting_tasks_by_deadlines() -> None:
+    """Sort the tasks by their deadline."""
     for index1 in range(len(UNSCHEDULED_TASKS)):
         for index2 in range(index1 + 1, len(UNSCHEDULED_TASKS)):
             if (
@@ -16,7 +20,14 @@ def sorting_tasks_by_deadlines():
                 UNSCHEDULED_TASKS[index2] = temp
 
 
-def schedule(SCHEDULE=SCHEDULE):
+def schedule(SCHEDULE: list = SCHEDULE) -> None:
+    """Schedule the tasks.
+
+    Schedule employees according to the availabily deadlines and skill set.
+
+    Args:
+        SCHEDULE (list, optional): Schedule if already exist. Defaults to SCHEDULE.
+    """
     sorting_tasks_by_deadlines()
     for task in UNSCHEDULED_TASKS:
         time_for_each_skill = task.required_hours / len(task.necessary_skills)
@@ -85,8 +96,3 @@ def schedule(SCHEDULE=SCHEDULE):
         else:
             SCHEDULED_TASKS.append(task)
             UNSCHEDULED_TASKS.remove(task)
-
-
-if __name__ == "__main__":
-    schedule()
-    print(SCHEDULE)
