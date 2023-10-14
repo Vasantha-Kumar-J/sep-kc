@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
+    <script src="./script.js" type="module" defer></script>
 
     <title>Coffee Vending Machine</title>
   </head>
@@ -13,9 +13,7 @@
     <div class="vending-machine-wrapper">
       <div class="modules input-area-wrapper">
         <div class="quantity-input-wrapper">
-          <button class="quantity-selector" id="cup-selector">
-            1 Cup
-          </button>
+          <button class="quantity-selector" id="cup-selector">1 Cup</button>
           <button class="quantity-selector" id="carafe-selector">
             1 Carafe
           </button>
@@ -24,18 +22,20 @@
         <div class="beverage-type-wrapper">
           <div class="beverage-button-wrapper">
             <p class="beverage-title">Coffee</p>
-            <div
-              class="beverage-selection-buttons selected-button"
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
               id="coffee-selector"
-            ></div>
+            >
           </div>
           <div class="beverage-button-wrapper">
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
+            id="hotwater-selector"
+            >
             <p class="beverage-title">Hot Water</p>
-            <div class="beverage-selection-buttons" id="hotwater-selector"></div>
           </div>
           <div class="beverage-button-wrapper">
             <p class="beverage-title">Latte</p>
-            <div class="beverage-selection-buttons" id="latte-selector"></div>
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
+            id="latte-selector">
           </div>
         </div>
       </div>
@@ -224,42 +224,92 @@
         </div>
         <div class="processing-area-wrapper">
           <div class="chamber-dispenser-unit">
-            
             <div class="champer process-meter-wrapper">
               <div><p class="processing-title">Chamber</p></div>
               <div class="process-meter-scale"></div>
               <div class="processing-meter-level">
-                <input type="range" name="chamber-level" id="chamber-level" min="0" max="60" value="0">
+                <input
+                  type="range"
+                  name="chamber-level"
+                  id="chamber-level"
+                  min="0"
+                  max="60"
+                  value="0"
+                  list="values"
+                />
+
+                <datalist id="values">
+                  <option value="0"></option>
+                  <option value="10"></option>
+                  <option value="20"></option>
+                  <option value="30"></option>
+                  <option value="40"></option>
+                  <option value="50"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
             <div class="dispenser process-meter-wrapper">
               <div><p class="processing-title">Dispenser</p></div>
               <div class="process-meter-scale"></div>
               <div class="processing-meter-level">
-                <input type="range" name="dispenser-level" id="dispenser-level" min="0" max="60" value="0">
+                <input
+                  type="range"
+                  name="dispenser-level"
+                  id="dispenser-level"
+                  min="0"
+                  max="60"
+                  value="0"
+                  list="values"
+                />
+
+                <datalist id="values">
+                  <option value="0"></option>
+                  <option value="10"></option>
+                  <option value="20"></option>
+                  <option value="30"></option>
+                  <option value="40"></option>
+                  <option value="50"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
           </div>
 
           <div class="process-stage-indicator">
             <div class="process-indicator-wrapper">
-              <div class="process-led-indicator indicator-led" id="purging-led"></div>
+              <div
+                class="process-led-indicator indicator-led"
+                id="purging-led"
+              ></div>
               <div class="process-title">Purging</div>
             </div>
             <div class="process-indicator-wrapper">
-              <div class="process-led-indicator indicator-led" id="heating-led"></div>
+              <div
+                class="process-led-indicator indicator-led"
+                id="heating-led"
+              ></div>
               <div class="process-title">Heating</div>
             </div>
             <div class="process-indicator-wrapper">
-              <div class="process-led-indicator indicator-led" id="grinding-led"></div>
+              <div
+                class="process-led-indicator indicator-led"
+                id="grinding-led"
+              ></div>
               <div class="process-title">Grinding</div>
             </div>
             <div class="process-indicator-wrapper">
-              <div class="process-led-indicator indicator-led" id="brewing-led"></div>
+              <div
+                class="process-led-indicator indicator-led"
+                id="brewing-led"
+              ></div>
               <div class="process-title">Brewing</div>
             </div>
             <div class="process-indicator-wrapper">
-              <div class="process-led-indicator indicator-led" id="dispensing-led"></div>
+              <div
+                class="process-led-indicator indicator-led"
+                id="dispensing-led"
+              ></div>
               <div class="process-title">Dispensing</div>
             </div>
           </div>
