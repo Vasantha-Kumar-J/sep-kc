@@ -1,0 +1,14 @@
+Coffee Machine Status Update
+
+Done
+
+1.Config file created for sequencing operations
+1.Ingredient data read from config file
+2.Updated in FP slider.
+3.Based on ingredient data low level indicator is updated in FP
+4.Elapsed Time is calculated.
+5.Shutdown status is read.
+
+To do
+1.Sequencing for normal shutdown and improper shutdown.
+2.Sequencing for other operations.
