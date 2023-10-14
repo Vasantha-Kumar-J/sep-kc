@@ -44,7 +44,7 @@ def get_tasks() -> Dict:
 
 
 def add_employee():
-    """Scheduling tasks to the employees based on the attributes."""
+    """add employees."""
     employee_details = get_employees()
     global employee_count
     name = input("Enter the employee name : ")
@@ -72,6 +72,7 @@ def add_employee():
 
 
 def add_task():
+    """add tasks."""
     task_details = get_tasks()
     global task_count
     task_name = input("Enter the task name : ")
@@ -100,6 +101,7 @@ def add_task():
 
 
 def schedule_task():
+    """Scheduling tasks to the employees based on the attributes."""
     emp_details: Dict = get_employees()
     task_details: Dict = get_tasks()
     for _, employee in emp_details.items():
@@ -137,6 +139,7 @@ def schedule_task():
 
 
 def main():
+    """main function."""
     while True:
         print("1. Add employee\n2. Add task\n3. schedule tasks\n4.Quit")
         choice = int(input("Enter the choice : "))
