@@ -1,0 +1,17 @@
+{
+  "name": "coffee_machine",
+  "version": "0.0.0",
+  "description": "UI resembling a coffee machine",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coffee",
+    "machine",
+    "UI",
+    "dispenser"
+  ],
+  "author": "DEV_VIC",
+  "license": "ISC"
+}

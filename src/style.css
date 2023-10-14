@@ -1,0 +1,242 @@
+* {
+  overscroll-behavior: none;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'roboto', monospace;
+  font-weight: 600;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(148, 159, 184);
+}
+
+.coffee-container {
+  margin: 3%;
+  display: flex;
+  height: 80%;
+  width: 94%;
+}
+
+.coffee-container-column {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.cup-count-container {
+  margin-bottom: 5%;
+  border-radius: 25px;
+  border: 2px solid black;
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-centered-container {
+  border-radius: 25px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coffee-unit-container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coffee-unit {
+  background-color: rgb(48, 50, 70);
+  color: white;
+  white-space: nowrap;
+  margin: 4%;
+  width: 50%;
+  height: 20%;
+}
+
+.ingredient-selection-container {
+  padding: 2% 0;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(139, 140, 161);
+  border: 2px solid black;
+}
+
+.ingredient-selection-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+#hot-water-radio-container {
+  justify-content: flex-end;
+}
+
+.ingredient-level-container {
+  margin-right: 2%;
+  height: 75%;
+  width: 100%;
+}
+
+.self-ingredient-level-container {
+  padding: 5% 0;
+  height: 30%;
+  width: 80%;
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.level-scale-strokes-container, .level-scale-values-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.level-scale-values-container {
+  padding-left: 1%;
+  width: 100%;
+}
+
+.level-scale-strokes-container {
+  justify-content: space-around;
+}
+
+.scale-larger-strokes {
+  font-size: 24px;
+  position: relative;
+  top: -3px;
+}
+
+.coffee-process-container {
+  width: 49%;
+}
+
+.insufficient-ingredient-indicators-container {
+  width: 100%;
+  height: 10%;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.insufficient-self-ingredient-container {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.insufficient-ingredient-indicator {
+  background-color: lightblue;
+  border: 2px solid blue;
+  height: 50%;
+}
+
+.ongoing-process-indicator-container {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+}
+
+.process-level-indicator-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 25%;
+}
+
+.process-level-scale-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.process-level-scale-container input[type=range] {
+  width: 33%;
+  appearance: slider-vertical;
+}
+
+.process-level-scale-stroke-container, .process-level-scale-value-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.process-level-scale-stroke-container {
+  justify-content: space-around;
+}
+
+.coffee-process-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.coffee-state-indicator { 
+  background-color: lightblue;
+  border: 2px solid blue;
+  width: 40%;
+  height: 30px;
+  margin-right: 10%;
+}
+
+.coffee-state-indicator-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coffee-machine-log-container {
+  display: flex;
+  width: 100%;
+  height: 10%;
+}
+
+.coffee-machine-unit-log-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 5%;
+  justify-content: center;
+  height: 80%;
+}
+
+.machine-log-display {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid blue;
+  height: 50%;
+  width: 80%;
+}
+
+.power-state-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+}
+
+.switch-on-indicator {
+  background-color: green;
+  border: red;
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
+  <title>Coffee Machine</title>
+</head>
+<body>
+  <div class="coffee-container">
+    <div class="coffee-container-column">
+      <div class="cup-count-container">
+        <div class="coffee-unit-container">
+          <button type="submit" id="coffee-cup-unit" class="coffee-unit" value="cup">1 Cup</button>
+          <button type="submit" id="coffee-carafe-unit" class="coffee-unit" value="carafe">1 Carafe</button>
+        </div>
+        <div class="ingredient-selection-container">
+          <div>
+            <label for="coffee-radio">Coffee</label>
+            <input type="radio" checked name="ingredient-radio" id="coffee-radio" class="input-ingredient-radio">
+          </div>
+          <div id="hot-water-radio-container">
+            <input type="radio" name="ingredient-radio" id="hot-water-radio" class="input-ingredient-radio">
+            <label for="hot-water-radio" class="label-for-ingredient-radio">Hot Water</label>
+          </div>
+          <div>
+            <label for="latte-radio">Latte</label>
+            <input type="radio" name="ingredient-radio" id="latte-radio" class="input-ingredient-radio">
+          </div>
+        </div>
+      </div>
+      <div class="ingredient-level-container row-centered-container">
+        <div class="self-ingredient-level-container">
+          <p class="self-ingredient-level-text">Water Level</p>
+          <input type="range" name="level-indicator-slider" id="water-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <div class="level-scale-strokes-container">
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+          </div>
+          <div class="level-scale-values-container">
+            <p class="level-scale-values">0</p>
+            <p class="level-scale-values">20</p>
+            <p class="level-scale-values">40</p>
+            <p class="level-scale-values">60</p>
+            <p class="level-scale-values">80</p>
+            <p class="level-scale-values">100</p>
+          </div>
+        </div>
+        <div class="self-ingredient-level-container">
+          <p class="self-ingredient-level-text">Bean Level</p>
+          <input type="range" name="level-indicator-slider" id="bean-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <div class="level-scale-strokes-container">
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+          </div>
+          <div class="level-scale-values-container">
+            <p class="level-scale-values">0</p>
+            <p class="level-scale-values">20</p>
+            <p class="level-scale-values">40</p>
+            <p class="level-scale-values">60</p>
+            <p class="level-scale-values">80</p>
+            <p class="level-scale-values">100</p>
+          </div>
+        </div>
+        <div class="self-ingredient-level-container">
+          <p class="self-ingredient-level-text">Milk Level</p>
+          <input type="range" name="level-indicator-slider" id="milk-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <div class="level-scale-strokes-container">
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes">|</p>
+            <p class="scale-strokes scale-larger-strokes">|</p>
+          </div>
+          <div class="level-scale-values-container">
+            <p class="level-scale-values">0</p>
+            <p class="level-scale-values">20</p>
+            <p class="level-scale-values">40</p>
+            <p class="level-scale-values">60</p>
+            <p class="level-scale-values">80</p>
+            <p class="level-scale-values">100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="coffee-process-container row-centered-container">
+      <div class="insufficient-ingredient-indicators-container">
+        <div class="insufficient-self-ingredient-container">
+          <p class="insufficient-self-ingredient-text">Low Water</p>
+          <div id="insufficient-water-indicator" class="insufficient-ingredient-indicator"></div>
+        </div>
+        <div class="insufficient-self-ingredient-container">
+          <p class="insufficient-self-ingredient-text">Low Bean</p>
+          <div id="insufficient-bean-indicator" class="insufficient-ingredient-indicator"></div>
+        </div>
+        <div class="insufficient-self-ingredient-container">
+          <p class="insufficient-self-ingredient-text">Low Milk</p>
+          <div id="insufficient-milk-indicator" class="insufficient-ingredient-indicator"></div>
+        </div>
+      </div>
+      <div class="ongoing-process-indicator-container">
+        <div class="process-level-indicator-container">
+          <p class="proess-level-indicator-text">Chamber</p>
+          <div class="process-level-scale-container">
+            <div class="process-level-scale-value-container">
+              <p class="process-level-scale-values">60</p>
+              <p class="process-level-scale-values">50</p>
+              <p class="process-level-scale-values">40</p>
+              <p class="process-level-scale-values">30</p>
+              <p class="process-level-scale-values">20</p>
+              <p class="process-level-scale-values">10</p>
+              <p class="process-level-scale-values">0</p>
+            </div>
+            <div class="process-level-scale-stroke-container">
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>                          
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>                                                        
+            </div>
+            <input type="range" name="chamber-level-indicator-scale" id="chamber-level-indicator-scale" min="0" max="60" step="2" value="0">
+          </div>
+        </div>
+        <div class="process-level-indicator-container">
+          <p class="proess-level-indicator-text">Dispenser</p>
+          <div class="process-level-scale-container">
+            <div class="process-level-scale-value-container">
+              <p class="process-level-scale-values">60</p>
+              <p class="process-level-scale-values">50</p>
+              <p class="process-level-scale-values">40</p>
+              <p class="process-level-scale-values">30</p>
+              <p class="process-level-scale-values">20</p>
+              <p class="process-level-scale-values">10</p>
+              <p class="process-level-scale-values">0</p>
+            </div>
+            <div class="process-level-scale-stroke-container">
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>                          
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>
+              <p class="process-level-scale-strokes">-</p>   
+            </div>
+            <input type="range" name="dispenser-level-indicator-scale" id="dispenser-level-indicator-scale" min="0" max="60" step="2" value="0">
+          </div>
+        </div>
+        <div class="coffee-process-container">
+          <div class="coffee-state-indicator-container">
+            <div class="coffee-state-indicator" id="purging-state"></div>
+            <p class="coffee-state-text">Purging</p>
+          </div>
+          <div class="coffee-state-indicator-container">
+            <div class="coffee-state-indicator" id="heating-state"></div>
+            <p class="coffee-state-text">Heating</p>
+          </div>
+          <div class="coffee-state-indicator-container">
+            <div class="coffee-state-indicator" id="grinding-state"></div>
+            <p class="coffee-state-text">Grinding</p>
+          </div>
+          <div class="coffee-state-indicator-container">
+            <div class="coffee-state-indicator" id="brewing-state"></div>
+            <p class="coffee-state-text">Brewing</p>
+          </div>
+          <div class="coffee-state-indicator-container">
+            <div class="coffee-state-indicator" id="dispensing-state"></div>
+            <p class="coffee-state-text">Dispensing</p>
+          </div>
+        </div>
+      </div>
+      <div class="coffee-machine-log-container">
+        <div class="coffee-machine-unit-log-container">
+          <p class="machine-log-text">Elapsed Time</p>
+          <div class="machine-log-display" id="elapsed-time-value">0</div>
+        </div>
+        <div class="coffee-machine-unit-log-container">
+          <p class="machine-log-text">Total Cups</p>
+          <div class="machine-log-display" id="total-cup-value">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="power-state-container">
+    <button type="submit" id="power-state">ON</button>
+    <p class="power-state-text">Power</p>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
