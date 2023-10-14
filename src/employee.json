@@ -1,0 +1,32 @@
+{
+    "24021": {
+        "Name": "Nithish Kumar S",
+        "Working Hours": "3",
+        "Skills": "Python",
+        "Availability": {
+            "Start": "20/11/23",
+            "End": "30/12/23"
+        },
+        "task": "1"
+    },
+    "24023": {
+        "Name": "Preethi",
+        "Working Hours": "2",
+        "Skills": "C#",
+        "Availability": {
+            "Start": "20/10/23",
+            "End": "10/12/23"
+        },
+        "task": "2"
+    },
+    "24016": {
+        "Name": "Lipika",
+        "Working Hours": "2",
+        "Skills": "LV",
+        "Availability": {
+            "Start": "25/10/23",
+            "End": "15/12/23"
+        },
+        "task": "4"
+    }
+}

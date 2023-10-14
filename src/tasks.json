@@ -1,0 +1,38 @@
+{
+    "1": {
+        "Name": "Task 1",
+        "Description": "Assignment 1",
+        "Required Hours": 100,
+        "Deadline": "30/11/2022",
+        "Skills": "Python",
+        "Status": "scheculded",
+        "assign": "24021"
+    },
+    "2": {
+        "Name": "Task 2",
+        "Description": "Assignment 2",
+        "Required Hours": 100,
+        "Deadline": "30/12/2022",
+        "Skills": "C#",
+        "Status": "scheculded",
+        "assign": "24023"
+    },
+    "3": {
+        "Name": "Task 3",
+        "Description": "Assignment 3",
+        "Required Hours": 80,
+        "Deadline": "30/10/2023",
+        "Skills": "WT",
+        "Status": "unscheculded",
+        "assign": ""
+    },
+    "4": {
+        "Name": "Task 1",
+        "Description": "Assignment 1",
+        "Required Hours": 100,
+        "Deadline": "20/02/2023",
+        "Skills": "LV",
+        "Status": "scheculded",
+        "assign": "24016"
+    }
+}
