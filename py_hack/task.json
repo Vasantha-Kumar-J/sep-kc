@@ -1,0 +1,29 @@
+{
+    "task1": {
+        "task_name" : "ML task",
+        "description" : "Ml task for face recognition",
+        "required_hours" : 2,
+        "necessary_skills" : "python",
+        "deadline" : 25,
+        "employees_working" :[],
+        "max_employees" : 1
+    },
+    "task2": {
+        "task_name" : "Web application task",
+        "description" : "Web application task for shopping website",
+        "required_hours" : 6,
+        "necessary_skills" : "frontend",
+        "deadline" : 26,
+        "employees_working" :[],
+        "max_employees" : 2
+    },
+    "task3": {
+        "task_name" : "Server application task",
+        "description" : "create a server for school",
+        "required_hours" : 5,
+        "necessary_skills" : "backend",
+        "deadline" : 27,
+        "employees_working" :[],
+        "max_employees" : 1
+    }
+}

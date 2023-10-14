@@ -1,0 +1,23 @@
+{
+    "employee1": {
+        "employee_name" : "sanjeev",
+        "working_hours" : 8,
+        "skills" : ["python","frontend"],
+        "availability" : "Available",
+        "task" : []
+    },
+    "employee2": {
+        "employee_name" : "sabarish",
+        "working_hours" : 8,
+        "skills" : ["python", "frontend"],
+        "availability" : "Available",
+        "task" : []
+    },
+    "employee3": {
+        "employee_name" : "rahul",
+        "working_hours" : 8,
+        "skills" : ["frontend"],
+        "availability" : "Available",
+        "task" : []
+    }
+}
