@@ -1,0 +1,186 @@
+/* Defining global variables */
+:root {
+    --backgroundColor-mainContainer : rgb(180, 180, 249);
+    --backgroundColor-darkBlue : rgb(54, 54, 69);
+
+    --borderColor-general : rgb(100, 100, 131);
+    --borderColor-innerContainers : rgb(3, 3, 117);
+
+    --variableSize : 200px;
+}
+
+.main-container {
+    font-size: calc(var(--variableSize)*0.1);
+    height: fit-content;
+    width: fit-content;
+
+    display: grid;
+    grid-template-areas: 
+    "selectPreference controlOptions"
+    "selectPreference controlOptions"
+    "levelControls controlOptions"
+    "levelControls controlOptions"
+    "levelControls controlOptions"
+    "powerSwitch powerSwitch";
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5%;
+    padding: 2.5%;
+
+    background-color: var(--backgroundColor-mainContainer);
+    border: solid var(--borderColor-general);
+}
+
+.select-preferences, .level-indicators, .control-options {
+    border: solid var(--borderColor-general);
+    border-radius: 6%;
+}
+
+/* Inner container 1 --> Selecting Preferences */
+.select-preferences {
+    grid-area : selectPreference;
+    display: flex;
+    padding: 10%;
+    gap: 5%;
+}
+
+.select-preference-quantities {
+    width: 40%;
+    display: grid;
+    grid-template-areas:
+    "." "." "."
+    "cups"
+    "."
+    "carafe"
+    "." "." "."
+    ;
+    gap : 3%;
+    padding: 2%;
+}
+
+.quantify-cups, .quantify-carafe {
+    text-align: center;
+    border: solid var(--borderColor-general);
+    background-color: var(--backgroundColor-darkBlue);
+    color: white;
+}
+
+.quantify-cups {
+    grid-area: cups;
+}
+
+.quantify-carafe {
+    grid-area: carafe;
+}
+
+.choose-preference {
+    width: 50%;
+    height: fit-content;
+    border: solid var(--borderColor-general);
+    align-self: center;
+    padding: 2%;
+}
+
+.choose-preference-latte, .choose-preference-coffee {
+    display: flex;
+    gap: 5%;
+}
+
+.preference-select-icon {
+    height: calc(var(--variableSize)*0.05);
+    width: calc(var(--variableSize)*0.05);
+    border: 3px solid var(--borderColor-innerContainers);
+    border-radius: 50%;
+}
+
+/* Inner container 2 --> Level Controls */
+.level-indicators {
+    grid-area: levelControls;
+    padding: 5%;
+}
+
+.water-level-slider, .beam-level-slider, .milk-level-slider {
+    width: 100%;
+}
+
+#water-level, #beam-level, #milk-level {
+    width : 100%;
+}
+
+/* Inner container 3 --> Control Options */
+.control-options {
+    grid-area : controlOptions;
+    padding: 5%;
+
+    display: grid;
+    grid-template-areas: "sliders currentState"
+    "sliders currentState"
+    "sliders currentState"
+    "sliders currentState"
+    "quantifiers currentState";
+}
+
+.control-options-sliders {
+    display: flex;
+    grid-area : sliders
+}
+
+.control-options [type="range"] {
+    appearance: slider-vertical;
+    height: 60%;
+}
+
+.show-measurements {
+    display: flex;
+    margin: 5%;
+    grid-area: quantifiers;
+}
+
+.current-status {
+    grid-area: currentState;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+}
+
+.configure-current-status {
+    font-size: calc(var(--variableSize)*0.1);
+    text-align: center;
+    height: 50%;
+    border: solid var(--borderColor-innerContainers);
+}
+
+.elapsed-time, .total-cups {
+    width: 50%;
+}
+
+.show-total-cups, .show-elapsed-time {
+    height: calc(var(--variableSize)*0.1);
+    width : calc(var(--variableSize)*0.4);
+    border: solid var(--borderColor-general);
+    text-align: center;
+}
+
+.run-heating-process {
+    background-color: rgb(168, 192, 192);
+}
+
+/* Inner Container 4 --> Power Switch */
+
+.power-switch {
+    grid-area: powerSwitch;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.power-status {
+    width: calc(var(--variableSize)*0.2);
+    border: solid var(--borderColor-general);
+    background-color: rgb(35, 35, 89);
+}
+
+.power-status:hover {
+    cursor: pointer;
+}

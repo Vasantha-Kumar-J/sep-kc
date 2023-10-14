@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- The main container with all the controlling units in it -->
+    <div class="main-container">
+
+        <!-- Selecting the preferences and mentioning the number of cups or carafe -->
+        <div class="select-preferences">
+            <div class="select-preference-quantities">
+                <div class="quantify-cups">
+                    <p class="quantify-cups-text">
+                        1 Cup
+                    </p>
+                </div>
+                <div class="quantify-carafe">
+                    <p class="quantify-carafe-text">
+                        1 Carafe
+                    </p>
+                </div>
+            </div>
+
+            <div class="choose-preference">
+                <fieldset>
+                    <div>
+                        <input type="radio" id="preference-coffee" name="preference" value="preference-coffee">
+                        <label for="preference-coffee">Coffee</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="preference-latte" name="preference" value="preference-latte">
+                        <label for="preference-latte">Latte</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="preference-hotwater" name="preference"
+                        value="preference-hotwater">
+                        <label for="preference-hotwater">Hot Water</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="level-indicators">
+            <div class="chamber-level-slider">
+                <label for="water-level">Water Level</label> <br>
+                <input
+                    type="range"
+                    id="water-level"
+                    name="water-level"
+                    min="0"
+                    max="100"
+                    step="20"
+                    value="60"
+                    list="water-level-markers"
+                />
+                <datalist id="water-level-markers">
+                    <option value="0"></option>
+                    <option value="20"></option>
+                    <option value="40"></option>
+                    <option value="60"></option>
+                    <option value="80"></option>
+                    <option value="100"></option>
+                </datalist>
+            </div>
+            <div class="beam-level-slider">
+                <label for="beam-level">Beam Level</label> <br>
+                <input
+                    type="range"
+                    id="beam-level"
+                    name="beam-level"
+                    min="0"
+                    max="100"
+                    step="20"
+                    value="60"
+                    list="beam-level-markers"
+                />
+                <datalist id="beam-level-markers">
+                    <option value="0"></option>
+                    <option value="20"></option>
+                    <option value="40"></option>
+                    <option value="60"></option>
+                    <option value="80"></option>
+                    <option value="100"></option>
+                </datalist>
+            </div>
+            <div class="milk-level-slider">
+                <label for="milk-level">Milk Level</label> <br>
+                <input
+                    type="range"
+                    id="milk-level"
+                    name="milk-level"
+                    min="0"
+                    max="100"
+                    step="20"
+                    value="60"
+                    list="milk-level-markers"
+                />
+                <datalist id="milk-level-markers">
+                    <option value="0"></option>
+                    <option value="20"></option>
+                    <option value="40"></option>
+                    <option value="60"></option>
+                    <option value="80"></option>
+                    <option value="100"></option>
+                </datalist>
+            </div>
+        </div>
+
+        <div class="control-options">
+
+            <div class="control-options-sliders">
+                <div class="chamber-slider">
+                    <label for="chamber-level">Chamber</label> <br>
+                    <input
+                        type="range"
+                        id="chamber-level"
+                        name="chamber-level"
+                        min="0"
+                        max="60"
+                        step="10"
+                        value="0"
+                        list="chamber-level-markers"
+                    />
+                    <datalist id="chamber-level-markers">
+                        <option value="0"></option>
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option>
+                        <option value="40"></option>
+                        <option value="50"></option>
+                        <option value="60"></option>
+                    </datalist>
+                </div>
+    
+                <div class="dispenser-slider">
+                    <label for="dispenser-level">Dispenser</label> <br>
+                    <input
+                        type="range"
+                        id="dispenser-level"
+                        name="dispenser-level"
+                        min="0"
+                        max="60"
+                        step="10"
+                        value="0"
+                        list="dispenser-level-markers"
+                    />
+                    <datalist id="dispenser-level-markers">
+                        <option value="0"></option>
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option>
+                        <option value="40"></option>
+                        <option value="50"></option>
+                        <option value="60"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="show-measurements">
+                <div class="elapsed-time">
+                    <div class="elapsed-time-text">
+                        Elapsed Time
+                    </div>
+                    <div class="show-elapsed-time">
+
+                    </div>
+                </div>
+                <div class="total-cups">
+                    <div class="total-cups-text">
+                        Total Cups
+                    </div>
+                    <div class="show-total-cups">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="current-status">
+                <div class="purging configure-current-status">Purging</div>
+                <div class="heating configure-current-status">Heating</div>
+                <div class="grinding configure-current-status">Grinding</div>
+                <div class="brewing configure-current-status">Brewing</div>
+                <div class="dispensing configure-current-status">Dispensing</div>
+            </div>
+
+        </div>
+
+        <div class="power-switch">
+            <div class="power-status">
+                Off
+            </div>
+            <div>
+                Power
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./JS Files/script.js"></script>
+</body>
+</html>
