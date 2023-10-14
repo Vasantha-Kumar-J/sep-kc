@@ -203,20 +203,46 @@
         /// <returns><see langword="true"/>, if the employee is successfully removed; otherwise, <see langword="false"/>.</returns>
         public static void RemoveEmployee(EmployeeOperations employeesObj)
         {
+            Console.Clear();
+            Console.WriteLine("Removing an employee...");
             PrintEmployees(employeesObj);
+            Console.WriteLine("Enter the employee id you want to remove or press n to go back to main menu");
             while (true)
             {
-                Console.WriteLine("Enter the employee id you want to remove");
+                string input = Console.ReadLine();
+                if (input.Equals("n", StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+
+                if (!int.TryParse(input, out int id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Please enter only numerics: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                if (!employeesObj.TryRemoveEmployee(id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("The ID you've entered is not present in the employees collection!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
+                break;
             }
 
+            ClearScreen();
         }
 
         /// <summary>
-        /// 
+        /// Prints the employees in the collection.
         /// </summary>
         /// <param name="employeesObj"></param>
         public static void PrintEmployees(EmployeeOperations employeesObj)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             IEnumerable<Employee> employees = employeesObj.GetEmployees();
             ConsoleTable table = new ConsoleTable("Id", "Name");
             foreach (Employee employee in employees)
@@ -225,6 +251,7 @@
             }
 
             table.Write();
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         // TODO: remaining UI flow

@@ -13,8 +13,9 @@
         private static void Main()
         {
             Console.WriteLine("Welcome to the Employee Management Application!");
-            EmployeeOperations employees = new EmployeeOperations();
-            TaskOperations tasks = new TaskOperations();
+            EmployeeOperations employeesObj = new EmployeeOperations();
+            TaskOperations tasksObj = new TaskOperations();
+            Scheduler scheduler = new Scheduler();
             while (true)
             {
                 PrintMenu();
@@ -23,7 +24,15 @@
                 switch (choice)
                 {
                     case UserChoice.AddEmployee:
-                        AddEmployee(employees);
+                        AddEmployee(employeesObj);
+                        break;
+
+                    case UserChoice.RemoveEmployee:
+                        RemoveEmployee(employeesObj);
+                        break;
+
+                    case UserChoice.PrintEmployees:
+                        PrintEmployees(employeesObj);
                         break;
 
                     case UserChoice.Exit:
