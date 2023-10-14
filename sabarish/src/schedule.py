@@ -3,6 +3,7 @@
 
 from employee import ALL_EMPLOYEES
 from tasks import UNSCHEDULED_TASKS, SCHEDULED_TASKS
+from file_operations import logging_operations
 
 SCHEDULE = []
 
@@ -29,7 +30,7 @@ def schedule(SCHEDULE: list = SCHEDULE) -> None:
         SCHEDULE (list, optional): Schedule if already exist. Defaults to SCHEDULE.
     """
     sorting_tasks_by_deadlines()
-    for task in UNSCHEDULED_TASKS:
+    for task in UNSCHEDULED_TASKS.copy():
         time_for_each_skill = task.required_hours / len(task.necessary_skills)
         skill_time_pairs = [
             (skill, time_for_each_skill) for skill in task.necessary_skills
@@ -56,10 +57,13 @@ def schedule(SCHEDULE: list = SCHEDULE) -> None:
                             time / employee.working_hours
                         )
                         time = 0
-                        employee.availability = employee.availability[
+                        employee_availability = employee_availability[
                             number_of_days_used:
                         ]
-                        SCHEDULE.append(
+                        temp_employee_availability.append(
+                            (employee.name, employee_availability)
+                        )
+                        temp_schedule.append(
                             {
                                 "task": task.name,
                                 "employee": employee.name,
@@ -82,17 +86,12 @@ def schedule(SCHEDULE: list = SCHEDULE) -> None:
                             (employee.name, employee_availability)
                         )
                         employee_availability.clear()
-            if time != 0:
-                break
-            else:
+            if time == 0:
                 SCHEDULE += temp_schedule
-                employees_to_be_updated = [
-                    employee[0] for employee in temp_employee_availability
-                ]
                 for employee in ALL_EMPLOYEES:
                     for updated_employee in temp_employee_availability:
                         if updated_employee[0] == employee.name:
                             employee.availability = updated_employee[1]
-        else:
-            SCHEDULED_TASKS.append(task)
-            UNSCHEDULED_TASKS.remove(task)
+                logging_operations(f"scheduled {task.name}")
+                SCHEDULED_TASKS.append(task)
+                UNSCHEDULED_TASKS.remove(task)
