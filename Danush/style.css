@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.coffee-machine{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(205, 205, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+.machine-working-area{
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+
+.non-processing-area{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.user-input-area{
+    display: flex;
+    justify-content: space-between;
+    padding: 10%;
+    border: 2px solid black;
+    /* border-radius: 5%; */
+    height: 35%;
+    width: 30vw;
+    margin: 5%;
+}
+
+.quantity-required-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.user-input-label{
+    background-color: rgb(0, 0, 77);
+    color: white;
+    margin: 10%;
+    width: 80px;
+    padding: 5%;
+    text-align: center;
+}
+
+.input-knob-area{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    /* height: max-content; */
+    border: 1px solid black;
+}
+
+.knob-item{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knob{
+    background-color: navy;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+.level-storage-monitor{
+    display: flex;
+    flex-direction: column;
+}
+
+.level-monitor-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    margin: 5%;
+    padding: 10%;
+    border: 2px solid black;
+}
+
+.indv-level-area{
+    display: flex;
+    flex-direction: column;
+}
+
+.level-scale-area{
+    display: flex;
+    flex-direction: column;
+}
+
+.level-meter input{
+    width: 100%;
+}
+
+.level-scale-sep{
+    display: flex;
+    justify-content: space-between;
+}
+
+.level-sep{
+    font-size: smaller;
+}
+
+.large-sep{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.level-scale-value-area{
+    display: flex;
+    justify-content: space-between;
+}
+
+.processing-area{
+    /* width: 40vw; */
+    margin: 5%;
+}
+
+.process-details{
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid black
+}
+
+.top-area{
+    padding:5%;
+    width: 55vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.low-level-alert-area{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.low-level-alert-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.low-level-alert-display{
+    width: 5vw;
+    height: 5vh;
+    margin-right: 10%;
+    border: 1px solid black;
+    /* background-color: red; */
+}
+
+.middle-area{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.current-intake-areas{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.current-intake-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.current-intake-level-area{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: end;
+}
+
+.current-intake-scale{
+    display: flex;
+    justify-content: space-between;
+}
+
+.intake-scale-sep{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.current-intake-meter{
+    background-color: white;
+    height: 300px;
+    width: 35px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.current-intake-value{
+    margin: 10%;
+    height: 0;
+    background-color: navy;
+}
+
+.process-state-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.process-state-item{
+    display: flex;
+}
+
+.process-state{
+    width: 5vw;
+    height: 5vh;
+    border: 1px solid black;
+}
+
+.bottom-area{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+
+.end-area{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.end-field{
+    text-align: center;
+    border: 1px solid;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.machine-power{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5%;
+}
+
+.power-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    width: 5vw;
+    border: 1px solid  black;
+}
+
+.input-names{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.process{
+    background-color: yellow;
+}
+
+.disable{
+    background-color: grey;
+}
+
+.alert{
+    background-color: red;
+}
+
+.on{
+    background-color: green;
+}
