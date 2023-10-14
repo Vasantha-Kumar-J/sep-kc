@@ -1,0 +1,14 @@
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\bin\Debug\net6.0\PracticalAssignment.exe
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\bin\Debug\net6.0\PracticalAssignment.deps.json
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\bin\Debug\net6.0\PracticalAssignment.runtimeconfig.json
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\bin\Debug\net6.0\PracticalAssignment.dll
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\bin\Debug\net6.0\PracticalAssignment.pdb
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.GeneratedMSBuildEditorConfig.editorconfig
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.AssemblyInfoInputs.cache
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.AssemblyInfo.cs
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.csproj.CoreCompileInputs.cache
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.dll
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\refint\PracticalAssignment.dll
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.pdb
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\PracticalAssignment.genruntimeconfig.cache
+D:\KnowledgeCheck\Sol-PracticalAssignment\PracticalAssignment\obj\Debug\net6.0\ref\PracticalAssignment.dll
