@@ -2,6 +2,9 @@ const beverageSelectionButtons = document.querySelectorAll('.beverage-selection-
 const quantitySelectors = document.querySelectorAll('.quantity-selector')
 let selectedBeverage, selectedQuantity
 
+/**
+ * Function to intialize the event for u=inputs
+ */
 function start () {
   beverageSelectionButtons.forEach((button) => {
     button.addEventListener('click', (e) => handleSelectedBeverage(e))
@@ -11,6 +14,10 @@ function start () {
   })
 }
 
+/**
+ * Function to handle the beverage selected
+ * @param {object} e 
+ */
 function handleSelectedBeverage (e) {
   beverageSelectionButtons.forEach((button) => {
     button.classList.remove('selected-button')
@@ -20,6 +27,10 @@ function handleSelectedBeverage (e) {
   startBeverageProcess()
 }
 
+/**
+ * Function to handle the quantity selected
+ * @param {object} e 
+ */
 function handleSelectedQuantity (e) {
   quantitySelectors.forEach((button) => {
     button.classList.remove('selected-quantity')
@@ -29,6 +40,9 @@ function handleSelectedQuantity (e) {
   startBeverageProcess()
 }
 
+/**
+ * Function to start the beverage making process
+ */
 function startBeverageProcess () {
   if (selectedBeverage && selectedQuantity){
     if(selectedBeverage === 'hotwater'){
@@ -64,6 +78,10 @@ const time = {
   purging:4
 }
 
+/**
+ * Function to make the coffee
+ * @param {string} selectedQuantity 
+ */
 function makeHotWater (selectedQuantity){
   const quantity = selectedQuantity === 'cup' ? 5 : 20
   dispenserElement.value = quantity
@@ -84,6 +102,10 @@ function makeHotWater (selectedQuantity){
   }, time.dispensing*1000)
 }
 
+/**
+ * function to make a coffee
+ * @param {string} selectedQuantity 
+ */
 function makeCoffee (selectedQuantity) {
   const quantity = selectedQuantity === 'cup' ? 5 : 20
   chamberElement.value = quantity

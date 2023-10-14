@@ -1,8 +1,9 @@
 ## Features Done
 * Added the HTML structure
 * Styled the elements
-* Added functionalities for hotwater and coffee making
+* Added functionalities for hotwater fully
+* Added functionalities for coffee making partially
 
 # Todo
-* meter line for chamber and dispenser
+* Modularize the script functions
 * Add remaining functionalities

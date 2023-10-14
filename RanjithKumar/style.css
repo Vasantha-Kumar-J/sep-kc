@@ -200,6 +200,10 @@ body {
   font-weight: 600;
 }
 
+.process-meter-wrapper{
+  display: flex;
+}
+
 
 .processing-meter-level{
   display: flex;
@@ -225,6 +229,10 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.process-meter-scale{
+  transform: rotate(270deg)
 }
 
 
