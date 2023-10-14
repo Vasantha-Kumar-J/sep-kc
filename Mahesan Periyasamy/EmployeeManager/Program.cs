@@ -28,11 +28,39 @@
                         break;
 
                     case UserChoice.RemoveEmployee:
-                        RemoveEmployee(employeesObj);
+                        TryRemoveEmployee(employeesObj);
+                        break;
+
+                    case UserChoice.AddTask:
+                        AddTask(tasksObj);
+                        break;
+
+                    case UserChoice.RemoveTask:
+                        TryRemoveTask(tasksObj);
+                        break;
+
+                    case UserChoice.ScheduleTasks:
+                        ScheduleTasks(employeesObj, tasksObj, scheduler);
                         break;
 
                     case UserChoice.PrintEmployees:
+                        Console.Clear();
                         PrintEmployees(employeesObj);
+                        ClearScreen();
+                        break;
+
+                    case UserChoice.PrintTasks:
+                        Console.Clear();
+                        PrintTasks(tasksObj);
+                        ClearScreen();
+                        break;
+
+                    case UserChoice.ImportEmployees:
+                        ImportEmployees();
+                        break;
+
+                    case UserChoice.ImportTasks:
+                        ImportTasks();
                         break;
 
                     case UserChoice.Exit:

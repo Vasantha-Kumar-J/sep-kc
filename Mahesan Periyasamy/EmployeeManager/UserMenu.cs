@@ -14,7 +14,8 @@
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Enter the operation you want to perform: ");
-            Console.WriteLine("1. Add Employee\n" +
+            Console.WriteLine(
+                "1. Add Employee\n" +
                 "2. Remove Employee\n" +
                 "3. Add Task\n" +
                 "4. Remove Task\n" +
@@ -44,7 +45,8 @@
         /// <returns>User choice.</returns>
         public static UserChoice GetUserChoice()
         {
-            while (true) {
+            while (true)
+            {
                 string userInput = Console.ReadLine();
                 if (userInput == "0" || userInput.Equals("exit", StringComparison.OrdinalIgnoreCase))
                 {
@@ -105,10 +107,10 @@
             Console.Clear();
             Console.WriteLine("Adding an employee...");
             int id;
-            Console.Write("Enter the employee id: ");
-            while (true) 
+            Console.Write("Enter the employee ID: ");
+            while (true)
             {
-                if (!int.TryParse(Console.ReadLine(), out id) )
+                if (!int.TryParse(Console.ReadLine(), out id))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Please enter only numerics: ");
@@ -201,7 +203,7 @@
         /// </summary>
         /// <param name="employeesObj">Employees object.</param>
         /// <returns><see langword="true"/>, if the employee is successfully removed; otherwise, <see langword="false"/>.</returns>
-        public static void RemoveEmployee(EmployeeOperations employeesObj)
+        public static void TryRemoveEmployee(EmployeeOperations employeesObj)
         {
             Console.Clear();
             Console.WriteLine("Removing an employee...");
@@ -237,11 +239,301 @@
         }
 
         /// <summary>
-        /// Prints the employees in the collection.
+        /// Adds a task to the collection.
+        /// </summary>
+        /// <param name="tasksObj"></param>
+        public static void AddTask(TaskOperations tasksObj)
+        {
+            Console.Clear();
+            Console.WriteLine("Adding a task...");
+            Console.WriteLine("Enter the task ID: ");
+            int id;
+            while (true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Please enter only numerics: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+                break;
+
+            }
+
+            string description;
+            while (true)
+            {
+                Console.WriteLine("Enter the description of the task: ");
+                description = Console.ReadLine();
+                if (string.IsNullOrEmpty(description))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Task description cannot be empty...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            int requiredHours;
+            while (true)
+            {
+                Console.Write("Enter the required hours for the task: ");
+                if (!int.TryParse(Console.ReadLine(), out requiredHours))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Please enter only numerics...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                if (requiredHours <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Required hours cannot be negative or zero...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            DateTime deadline;
+            while (true)
+            {
+                Console.WriteLine("Enter the deadline of the task (Format: yyyy/mm/dd): ");
+                if (!DateTime.TryParse(Console.ReadLine(), out deadline))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Please enter the deadline in correct format: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                if (deadline < DateTime.Now)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("The date entered is earlier than today...");
+                    Console.Write("Please enter a valid deadline: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            string skillNeeded;
+            while (true)
+            {
+                Console.Write("Enter the skill needed to complete task: ");
+                skillNeeded = Console.ReadLine();
+                if (string.IsNullOrEmpty(skillNeeded))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Skill needed cannot be empty...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("The task with following details have been added successfully: ");
+            Console.WriteLine($"ID: {id}");
+            Console.WriteLine($"Description: {description}");
+            Console.WriteLine($"Required Hours: {requiredHours}");
+            Console.WriteLine($"Deadline: {deadline.Date}");
+            Console.Write($"Skill needed: {skillNeeded}");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            tasksObj.AddTask(new Task(id, description, requiredHours, deadline, skillNeeded));
+        }
+
+        /// <summary>
+        /// Removes task from the collection, if present.
+        /// </summary>
+        /// <param name="tasksObj">Task object.</param>
+        public static void TryRemoveTask(TaskOperations tasksObj)
+        {
+            Console.Clear();
+            Console.WriteLine("Removing a task...");
+            PrintTasks(tasksObj);
+            Console.WriteLine("Enter the employee id you want to remove or press n to go back to main menu");
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.Equals("n", StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+
+                if (!int.TryParse(input, out int id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Please enter only numerics: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                if (!tasksObj.TryRemoveTask(id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("The ID you've entered is not present in the employees collection!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
+                break;
+            }
+
+            ClearScreen();
+        }
+
+        /// <summary>
+        /// Schedules tasks.
         /// </summary>
         /// <param name="employeesObj"></param>
+        /// <param name="tasksObj"></param>
+        /// <param name="scheduler"></param>
+        public static void ScheduleTasks(EmployeeOperations employeesObj, TaskOperations tasksObj, Scheduler scheduler)
+        {
+            List<Employee> employees = employeesObj.GetEmployees().ToList();
+            List<Task> tasks = tasksObj.GetTasks().ToList();
+            var tasksAssigned = scheduler.Schedule(employees, tasks);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Tasks Assigned: ");
+            ConsoleTable tasksAssignedTable = new ConsoleTable("Employee ID", "Employee", "Task ID", "Task", "Hours Assigned");
+            foreach (var task in tasksAssigned)
+            {
+                tasksAssignedTable.AddRow(task.Key.Key.Id, task.Key.Key.Name, task.Key.Value.Id, task.Key.Value.Description, task.Value);
+            }
+
+            tasksAssignedTable.Write();
+
+            var tasksNotAssigned = scheduler.NotAssignedTasks(tasks);
+            ConsoleTable tasksNotAssignedTable = new ConsoleTable("Task ID", "Task Description");
+            foreach (var task in tasksNotAssigned) 
+            {
+                tasksNotAssignedTable.AddRow(task.Id, task.Description);
+            }
+
+            tasksNotAssignedTable.Write();
+        }
+
+        /// <summary>
+        /// Imports the employees from the file.
+        /// </summary>
+        public static void ImportEmployees(EmployeeOperations employeesObj)
+        {
+            Console.Clear();
+            Console.WriteLine("Importing employees from a csv file...");
+            Console.WriteLine("Enter the file path to import employees");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("WARNING!! File must be in csv format\n" +
+                "Format -> (ID, Name, Working Hours, Skills (seperated by comma values))\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            string path;
+            while (true)
+            {
+                path = Console.ReadLine();
+                if (!File.Exists(path))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("The path you've entered is invalid.");
+                    Console.Write("Please enter a valid path: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            try
+            {
+                List<Employee> employees = FileOperations.ImportEmployees(path);
+                foreach (Employee employee in employees)
+                {
+                    employees.Add(employee);
+                }
+                Console.WriteLine("Employees has been added from the file...");
+                ClearScreen();
+            }
+            catch (InvalidTaskFileException exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(exception.Message);
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            catch (Exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("There was some problem with opening the file.");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
+        /// <summary>
+        /// Imports the tasks from the file.
+        /// </summary>
+        public static void ImportTasks(TaskOperations tasksObj)
+        {
+            Console.Clear();
+            Console.WriteLine("Importing tasks from a csv file...");
+            Console.WriteLine("Enter the file path to import tasks");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("WARNING!! File must be in csv format\n" +
+                "Format -> (ID, Description, Required Hours, Deadline (yyyy/mm/dd), Skill Needed)\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            string path;
+            while (true)
+            {
+                path = Console.ReadLine();
+                if (!File.Exists(path))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("The path you've entered is invalid.");
+                    Console.Write("Please enter a valid path: ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+
+                break;
+            }
+
+            try
+            {
+                List<Task> tasks = FileOperations.ImportTasks(path);
+                foreach (Task task in tasks)
+                {
+                    tasksObj.AddTask(task);
+                }
+                Console.WriteLine("Tasks has been added from the file...");
+                ClearScreen();
+            }
+            catch (InvalidEmployeeFileException exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(exception.Message);
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            catch (Exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("There was some problem with opening the file.");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
+        /// <summary>
+        /// Prints the employees in the collection.
+        /// </summary>
+        /// <param name="employeesObj">Employees object.</param>
         public static void PrintEmployees(EmployeeOperations employeesObj)
         {
+            Console.WriteLine("Printing the employees...");
             Console.ForegroundColor = ConsoleColor.Yellow;
             IEnumerable<Employee> employees = employeesObj.GetEmployees();
             ConsoleTable table = new ConsoleTable("Id", "Name");
@@ -254,6 +546,23 @@
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        // TODO: remaining UI flow
+        /// <summary>
+        /// Prints the tasks in the collection.
+        /// </summary>
+        /// <param name="tasksObj">Tasks object.</param>
+        public static void PrintTasks(TaskOperations tasksObj)
+        {
+            Console.WriteLine("Printing the tasks...");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            IEnumerable<Task> tasks = tasksObj.GetTasks();
+            ConsoleTable table = new ConsoleTable("Id", "Description");
+            foreach (Task task in tasks)
+            {
+                table.AddRow(task.Id, task.Description);
+            }
+
+            table.Write();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }

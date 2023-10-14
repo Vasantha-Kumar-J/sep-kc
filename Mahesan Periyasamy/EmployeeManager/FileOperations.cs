@@ -10,6 +10,7 @@
         /// </summary>
         /// <param name="path">Path.</param>
         /// <returns>Imported tasks.</returns>
+        /// <exception cref="InvalidTaskFileException">The exception that is thrown when the task file is in an invalid format.</exception>
         public static List<Task> ImportTasks(string path)
         {
             List<Task> tasks = new List<Task>();
@@ -56,7 +57,8 @@
         /// </summary>
         /// <param name="path"></param>
         /// <returns>Imported employees.</returns>
-        public static List<Employee> ImportEmployee(string path) 
+        /// <exception cref="InvalidEmployeeFileException">The exception that is thrown when the employee file is in an invalid format.</exception>
+        public static List<Employee> ImportEmployees(string path) 
         {
             List<Employee> employees = new List<Employee>();
             try
