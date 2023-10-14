@@ -51,10 +51,12 @@ if __name__ == "__main__":
     while True:
         print("Select your Choice")
         choice = input(
-            "1.Export Tasks\n2.Import Tasks"
+            "\n1.Export Tasks\n2.Import Tasks"
             "\n3.Export Employees\n4.Import Employees"
-            "\n5.Schedule Tasks\6.Get Report\7.quit"
+            "\n5.Schedule Tasks\n6.Get Report\n7.quit\n"
+            "Enter your Choice : "
             )
+        
         choice = int(choice)
         if choice == 1:
             file_path = input("Enter file path to export tasks: ")
