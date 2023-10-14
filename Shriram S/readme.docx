@@ -2,7 +2,7 @@ Completion Status :
     >> Partially completed with the UI part.
     >> Started with adding the funcionalities as per the requirements.
         >> Power button functionality added with configuring the Coffee.JSON file as per the requirement
-        >> After power on the displaying of the number of cups and the time elapsed calculation also included
+        >> After power on, the number of cups would be displayed and the time elapsed calculation also included
 
 General Comments:
     >> Elapsed more time in the UI part for getting precise look up over the given mockup.
