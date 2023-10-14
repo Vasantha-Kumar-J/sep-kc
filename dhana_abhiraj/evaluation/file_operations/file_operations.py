@@ -40,7 +40,7 @@ class FileOperation:
                 rows.append(row)
             return rows
 
-    def write_rows(self, file_path: str, rows: list[list]):
+    def write_rows(self, file_path: str, rows: list[list], mode="a"):
         """Write the Data from the file path
 
         Parameters
@@ -50,7 +50,7 @@ class FileOperation:
         rows: list[str]
             The list of rows
         """
-        with open(file_path, mode="a", encoding="utf-8", newline="") as csv_file:
+        with open(file_path, mode=mode, encoding="utf-8", newline="") as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerows(rows)
 
@@ -76,9 +76,9 @@ class FileOperation:
         data = self.read_rows(self.file_path)
         self.write_rows(external_file_path, data)
 
-    def add_rows(self, rows: list[list]):
+    def add_rows(self, rows: list[list], mode="a"):
         """Insert the rows to the File."""
-        self.write_rows(self.file_path, rows)
+        self.write_rows(self.file_path, rows, mode)
 
     def get_rows(self) -> list:
         """Get all the rows from the file."""

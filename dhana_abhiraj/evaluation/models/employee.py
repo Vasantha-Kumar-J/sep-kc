@@ -10,7 +10,7 @@ class Employee:
         name: str,
         work_hours: int,
         skills: list[str],
-        availabilty: bool,
+        availability: bool,
     ):
         """Initialize the employee with attributes.
 
@@ -24,14 +24,14 @@ class Employee:
             The Working hours of an employee
         skills: list[str]
             The list of skills of the employee
-        availabilty: bool
-            The Availablity of the Employee
+        availability: bool
+            The Availability of the Employee
         """
         self.emp_id = emp_id
         self.name = name
         self.work_hours = work_hours
         self.skills = skills
-        self.availabilty = availabilty
+        self.availability = availability
 
     def to_csv_list(self) -> list:
         """Convert the employee attributes to csv."""
@@ -40,7 +40,7 @@ class Employee:
             self.name,
             self.work_hours,
             self.skills,
-            self.availabilty,
+            self.availability,
         ]
         return csv_format_list
 
@@ -58,8 +58,12 @@ class Employee:
         ValueError : Invalid Employee Format string
         """
         if len(csv_format_list) == 5:
+            emp_id = int(csv_format_list[0])
+            work_hours = int(csv_format_list[2])
             required_skills = csv_format_list[3].strip("'[]").split("', '")
 
+            csv_format_list[0] = emp_id
+            csv_format_list[2] = work_hours
             csv_format_list[3] = required_skills
             return cls(*csv_format_list)
         raise ValueError(f"Invalid Employee Format list: {csv_format_list}")

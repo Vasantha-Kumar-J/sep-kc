@@ -1,12 +1,15 @@
 """Starter Program."""
 
 
+import logging
+from evaluation.exceptions import TaskSchedulerError
 from evaluation.management.employee_manager import EmployeeManager
 from evaluation.management.task_employee_manager import TaskEmployeeManager
 from evaluation.management.task_manager import TaskManager
 from evaluation.models.employee import Employee
 from evaluation.models.task import Task
 from evaluation.models.task_employee import TaskEmployee
+from evaluation.scheduler import TaskScheduler
 
 
 def print_tasks(tasks: list[Task]):
@@ -33,7 +36,7 @@ def print_employees(employees: list[Employee]):
     for employee in employees:
         print(
             f"{employee.emp_id} {employee.name} {employee.work_hours}"
-            f"{employee.skills} {employee.availabilty}"
+            f"{employee.skills} {employee.availability}"
         )
 
 
@@ -59,8 +62,6 @@ if __name__ == "__main__":
     print_tasks(tasks)
     employees = employee_manager.get_employees()
     print_employees(employees)
-    task_employees = task_employee_manager.get_task_employees()
-    print_task_employees(task_employees)
     while True:
         print("Select your Choice")
         choice = input(
@@ -84,9 +85,17 @@ if __name__ == "__main__":
             file_path = input("Enter the File to import employees: ")
             employee_manager.import_employees(file_path)
         elif choice == 5:
-            print("Scheduling not Suppported for now.")
+            task_scheduler = TaskScheduler()
+            try:
+                task_scheduler.schedule()
+            except TaskSchedulerError as task_scheduler_exception:
+                print(task_scheduler_exception)
+                logging.info(task_scheduler_exception)
+            else:
+                print("Task Scheduled")
         elif choice == 6:
-            print("Report Generation not suppported")
+            task_employees = task_employee_manager.get_task_employees()
+            print_task_employees(task_employees)
         elif choice == 7:
             print("Good Bye")
             break

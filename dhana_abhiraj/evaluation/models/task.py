@@ -62,10 +62,12 @@ class Task:
         ValueError : Invalid Task Format string
         """
         if len(csv_format_list) == 5:
+            task_id = int(csv_format_list[0])
             deadline = datetime.fromisoformat(csv_format_list[3])
             required_skills = csv_format_list[4].strip("'[]").split("', '")
             required_time = timedelta(seconds=int(csv_format_list[2]))
 
+            csv_format_list[0] = task_id
             csv_format_list[2] = required_time
             csv_format_list[3] = deadline
             csv_format_list[4] = required_skills
