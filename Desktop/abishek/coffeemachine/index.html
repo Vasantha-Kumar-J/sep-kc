@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="./index.js" type="module"></script>
+</head>
+<body>
+    <div  class ="items-cointainer">
+       <div class="container-one">
+        <div class="select-menu">
+            <div class="select-cup">
+                <button id="cup">1 cup</button>
+                <button id="carafe"> 1 carafe</button>
+            </div>
+            <div class="select-type">
+                <input class="select-options" type="radio" value="coffee">Coffee</input>
+                <input  class="select-options"  type="radio" value="Hot water">Hot Water</input>
+                <input  class="select-options"  type="radio" value="Latte">Latte</input>
+            </div>
+        </div>
+       </div>
+       <div class="container-two">
+        <div class="container-two-top">
+           <div>
+            Low Water 
+            <div class="indicators a"></div>
+           </div>
+           <div>
+            Low bean 
+            <div class="indicators"></div>
+           </div>
+           <div>
+            Low milk 
+            <div class="indicators"></div>
+           </div>
+        </div>
+        <div class="container-two-middle">
+            <div class="container-two-middle-left">
+                 chamber
+                 <div class="level-indicator">
+        
+                 </div>
+            </div>
+            <div class="container-two-middle-middle">
+                dispenser
+                <div class="level-indicator">
+
+                </div>
+
+            </div>
+            <div class="container-two-middle-right">
+                <div class="indicator-light 1">
+                    <div class="box purning"></div>purging
+                </div>
+                <div class="indicator-light heating">
+                    <div class="box heat"></div>heating
+                </div>
+                <div class="indicator-light 3">
+                    <div class="box grinding"></div>grinding
+                    </div>
+                <div class="indicator-light 4">
+                    <div class="box brewing"></div>brewing
+                </div>
+                <div class="indicator-light 5">
+                    <div class="box dispensing"></div>dispensing
+                </div>
+    
+            </div>
+        </div>
+        <div class="container-two-bottom">
+               <div class="elapsed-time">
+                Elapsed-time
+                <div class="box-indicator"  id="elapsed-time-value">0</div>
+
+               </div>
+               <div class="Total-cups">
+                Total cups
+                <div class="box-indicator" id="total-cup-count">0</div>
+
+               </div>
+
+        </div>
+       </div>
+       <div class="container-three">
+        water level
+        <input class ="level" type="range" min="0" max="100" value="50" id="water-level">
+        <div class="value water">50</div>
+        bean level
+        <input class ="level" type="range" min="0" max="100" value="50" id="bean-level">
+        <div class="value bean">50</div>
+        milk level
+        <input class ="level" type="range" min="0" max="100" value="50" id="milk-level">
+        <div class="value milk">50</div>
+       </div>
+
+    </div>
+    <div class="power">
+    <button value="on"  id="power-on">on</button>
+    <H3>POWER </H3>
+     </div>
+    
+    
+</body>
+</html>
