@@ -1,0 +1,13 @@
+Incomplete things:
+-> Carafe is not implemented. 
+-> Disabling of buttons is not done yet. 
+-> Chamber and dispenser has not been done yet. 
+-> Interruptions during running has not done yet.
+
+
+Completed:
+-> Writing ini file during abort and safe close
+-> Running the machine sequence using the one cup button. 
+-> Once the operation is finished all the status in the front panel will be updated
+in ini file. Which will retrive at start of the VI. 
+-> Content of the levels will be in the ini file.
