@@ -1,12 +1,24 @@
+import * as processes from './processes.js'
+export const globalVariables = {
+    hold : false,
+    timerId: null,
+    timeRemaining:0,
+    timeBox: document.querySelector('.time-display .display-box'),
+    cupBox: document.querySelector('.cup-display .display-box'),
+    powerOn:false
+}
+
 let power = document.querySelector('.power-button')
-let powerOn=false
+
+
+
 power.addEventListener('click',actionOnPowerClick )
 
 let allElements = document.querySelectorAll('*')
 
 function actionOnPowerClick() {
     if (power.innerText==='on') {
-        powerOn= false
+        globalVariables.powerOn= false
         power.innerText='off'
         for(let i of allElements) {
             if(i.classList.contains('on')) {
@@ -14,7 +26,7 @@ function actionOnPowerClick() {
             }
         }
     } else if (power.innerText==='off') {
-        powerOn= true
+        globalVariables.powerOn= true
         power.innerText='on'
     }
 }
@@ -24,13 +36,19 @@ let knobs= document.querySelectorAll('.knob')
 let leds=document.querySelectorAll('.led')
 
 knobs.forEach((knob) => {
-    knob.addEventListener('click', (knob) => actionOnKnobClick(knob))
+    knob.addEventListener('click', (knob) => {
+        isOn()
+        actionOnKnobClick(knob)
+    })
 })
 
 function actionOnKnobClick(knob) {
     if(!powerOn) {
         alert('switch on the machine first')
         return 0
+    }
+    if(globalVariables.hold){
+        alert
     }
     let divNum = knobSelector(knob.currentTarget.parentElement.classList[0])
     knobSwitch(divNum)
@@ -120,3 +138,4 @@ function isTypeSelected() {
     return -1
 }
 
+processes.dispensing()
