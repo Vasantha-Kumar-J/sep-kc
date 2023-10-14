@@ -1,0 +1,17 @@
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\Employee_Task_Manager.exe
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\Employee_Task_Manager.deps.json
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\Employee_Task_Manager.runtimeconfig.json
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\Employee_Task_Manager.dll
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\Employee_Task_Manager.pdb
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\bin\Debug\net6.0\ConsoleTables.dll
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.csproj.AssemblyReference.cache
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.AssemblyInfoInputs.cache
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.AssemblyInfo.cs
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.csproj.CoreCompileInputs.cache
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.csproj.CopyComplete
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.dll
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\refint\Employee_Task_Manager.dll
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.pdb
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\Employee_Task_Manager.genruntimeconfig.cache
+C:\Users\Aanandhavarsini\Desktop\Employee_Task_Manager\Employee_Task_Manager\obj\Debug\net6.0\ref\Employee_Task_Manager.dll

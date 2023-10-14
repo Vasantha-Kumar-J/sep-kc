@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oQqoTXxJySF1QAv0ctPMrrrUzHHTEiPMjYUj3bcwXN5iVIgRsVL3LNWWn2ntErzaUVCMPichJNjPBlGFg+AQpg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aanandhavarsini\\Desktop\\Employee_Task_Manager\\Employee_Task_Manager\\Employee_Task_Manager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aanandhavarsini\\.nuget\\packages\\consoletables\\2.5.0\\consoletables.2.5.0.nupkg.sha512",
+    "C:\\Users\\Aanandhavarsini\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
+  "logs": []
+}
