@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Vending machine</title>
+    <link rel="stylesheet" href="./style.css" />
+    
+</head>
+<body>
+    <section id="section-one" class="section">
+        <div>
+            <div class="units-selection">1 Cup</div>
+            <div class="units-selection">1 Carafe</div>
+        </div>
+        <div id="ingredient-selection">
+            <div>
+                <div>Coffee</div>
+                <input type="radio" name="coffee" class="checkbox" />
+            </div>
+            <div>
+                <input type="radio" name="coffee"  class="checkbox"/>
+                <div>Hot Water</div>
+            </div>
+            <div>
+                <div>Latte</div>
+                <input type="radio" name="coffee" class="checkbox"/>
+            </div>
+        </div>
+    </section>
+    <section id="section-two" class="section">
+        <div>
+            <div>Water Level</div>
+            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="water-level" value="60" min="0" max="100"/>
+            <span class="ingredient-level-value"></span>
+        </div>
+        <div>
+            <div>Bean Level</div>
+            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="bean-level"  value="60" min="0" max="100"/>
+            <span class="ingredient-level-value"></span>
+        </div>
+        <div>
+            <div>Milk Level</div>
+            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="milk-level"  value="60" min="0" max="100"/>
+            <span class="ingredient-level-value"></span>
+        </div>
+    </section>
+    <section id="section-three" class="section">
+        <div id="low-indication-panel">
+            <div>
+                <div>Low Water</div>
+                <div class="indicator-leds"></div>
+            </div>
+            <div>
+                <div>Low bean</div>
+                <div class="indicator-leds"></div>
+            </div>
+            <div>
+                <div>Low Milk</div>
+                <div class="indicator-leds"></div>
+            </div>
+        </div>
+        <div id="chamber-dispenser-and-processes-container">
+            <div>
+                <div>Chamber</div>
+                <input onchange="showChamberAndDispenserLevels()" type="range" name="chamber" id="chamber" value="0"/>
+                <div class="chamber-and-dispenser"></div>
+            </div>
+            <div>
+                <div>Dispenser</div>
+                <input onchange="showChamberAndDispenserLevels()" type="range" name="dispenser" id="dispenser" value="0"/>
+                <div class="chamber-and-dispenser"></div>
+            </div>
+            <div>
+                <div>
+                    <div class="indicator-leds"></div>
+                    <div>Purging</div>
+                </div>
+                <div>
+                    <div class="indicator-leds"></div>
+                   <div> Heating</div>
+                </div>
+                <div>
+                    <div class="indicator-leds"></div>
+                    <div>Grinding</div>
+                </div>
+                <div>
+                    <div class="indicator-leds"></div>
+                    <div>Brewing</div>
+                </div>
+                <div>
+                    <div class="indicator-leds"></div>
+                    <div>Dispensing</div>
+                </div>
+            </div>
+        </div>
+        <div id="elasepd-time-total-cups">
+            <div>
+                Elasped Time
+                <div class="show-stats"></div>
+            </div>
+            <div>
+                Total Cups
+                <div class="show-stats"></div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <div id="power-button">OFF</div>
+        <div>Power</div>
+    </div>
+</body>
+<script src="./webjs.js"></script>
+</html>

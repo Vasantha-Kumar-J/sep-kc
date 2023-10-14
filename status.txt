@@ -1,0 +1,3 @@
+completed the UI
+Working on javascript dynamic changes
+Completed till the power ON operation

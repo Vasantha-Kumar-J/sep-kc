@@ -1,0 +1,130 @@
+body{
+    border: 2px solid blue;
+    background-color: #cfd1d4;
+    display: grid;
+    padding: 10px;
+    grid-template-areas: 
+    "section-1 section-3"
+    "section-2 section-3" ;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 10px;
+    height: 40rem;
+}
+
+section{
+    background-color: #C9D1DD;
+    border: 2px solid blue;
+    border-radius: 5px ;
+}
+
+#section-one {
+    grid-area: section-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.checkbox{
+    align-self: baseline;
+}
+
+#section-two{
+    grid-area: section-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px;
+    font-size: 20px;
+    gap: 40px;
+}
+
+#section-two input {
+    width: 400px;
+}
+
+.indicator-leds{
+    border: 2px solid blue;
+    width: 30px;
+    height: 20px;
+    background-color: rgb(194, 78, 78);
+}
+#chamber-dispenser-and-processes-container {
+    display: flex;
+}
+#chamber,#dispenser {
+    transform: rotate(270deg);
+    position: relative;
+    top: 70px;
+    right: 35px;
+}
+
+.chamber-and-dispenser{
+    position: relative;
+    top: 130px;
+    left: 25px;
+}
+
+#chamber-dispenser-and-processes-container > div > div {
+    display: flex;
+}
+#section-three{
+    grid-area: section-3;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+#section-three *{
+    padding: 10px;
+}
+.units-selection{
+    color: white;
+    background-color: #44546A;
+    padding: 10px;
+    margin: 10px;
+    width: 75px;
+}
+
+#ingredient-selection{
+    border: 2px solid blue;
+    background-color: #bac1cc;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+.indicator-leds {
+    border: 2px solid blue;
+    background-color: #8FAADC;
+}
+
+#low-indication-panel{
+    display: flex;
+}
+
+.chamber-dispenser-and-processes-container{
+    display: flex;
+}
+
+#elasepd-time-total-cups{
+    display: flex;
+}
+
+.show-status{
+    height: 20px;
+    width: 30px;
+    background-color: white;
+    border: 2px solid blue;
+}
+
+#power-button{
+    width: 40px;
+    height: 25px;
+    background-color: rgb(105, 105, 236);
+}
+body > div{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
