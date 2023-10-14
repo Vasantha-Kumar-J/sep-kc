@@ -14,7 +14,7 @@ namespace PracticalAssignment
                 {
                     Console.WriteLine("There are some Operations..");
                     Console.WriteLine("1.Add Employee\n2.Add List of Task\n3.Allocate a task to Employee\n4.Display All Employees\n5.Diaplay all Tasks\n6.Exit");
-                    choice = Utilities.GetValidInput<int>(@"^[1-4]$", "Enter you choice : ", "Invalid choice!!");
+                    choice = Utilities.GetValidInput<int>(@"^[1-6]$", "Enter you choice : ", "Invalid choice!!");
                     switch (choice)
                     {
                         case 1:
@@ -54,17 +54,17 @@ namespace PracticalAssignment
                                 operations.AssignEmployee(work, Operations.WorkingEmployees);
                                 break;
                             }
-                        case 4:
+                        case 6:
                             {
                                 Console.WriteLine("\n\n\t\tThank you !");
                                 break;
                             }
-                        case 5:
+                        case 4:
                             {
                                 PrintEmployeeDetails(Operations.WorkingEmployees);
                                 break;
                             }
-                        case 6:
+                        case 5:
                             {
                                 PrintTaskDetails(Operations.AvailableWorks);
                                 break;
@@ -88,7 +88,7 @@ namespace PracticalAssignment
                     {
                         Console.Write($"{skill}, ");
                     }
-                    Console.WriteLine("-----------------------------------------------------------------------------");
+                    Console.WriteLine("\n-----------------------------------------------------------------------------");
                 }
             }
 
@@ -107,6 +107,8 @@ namespace PracticalAssignment
                     {
                         Console.Write($"{skill}, ");
                     }
+                    Console.WriteLine("\n-----------------------------------------------------------------------------");
+
                 }
 
             }
@@ -114,7 +116,7 @@ namespace PracticalAssignment
             private static Work? GetWork()
             {
                 PrintTaskDetails(Operations.AvailableWorks);
-                int id = Utilities.GetValidInput<int>("@[1-9][0-9]{0,2}", "Enter Task ID : ", "Enter valid Task ID!");
+                int id = Utilities.GetValidInput<int>(@"^[0-9]{1,2}$", "Enter Task ID : ", "Enter valid Task ID!");
                 foreach (var work in Operations.AvailableWorks)
                 {
                     if (id == work.ID)

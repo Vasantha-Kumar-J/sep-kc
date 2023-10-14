@@ -30,7 +30,8 @@
                 isEmployeeAvaliable = false;
                 foreach (var employee in suitableEmployees)
                 {
-                    isEmployeeAvaliable = isEmployeeAvaliable | AllocateEmployeeToWork(employee.Value, employee.Key, work, workHours <= 2 ? workHours : 2);
+                    bool isAllocated = AllocateEmployeeToWork(employee.Value, employee.Key, work, workHours <= 2 ? workHours : 2);
+                    isEmployeeAvaliable = isEmployeeAvaliable || isAllocated;
                     workHours -= 2;
                 }
             }
