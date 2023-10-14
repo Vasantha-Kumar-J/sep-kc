@@ -1,0 +1,3 @@
+Completion Status:
+ The logic part for Initialization, Reading file and ingredient level are completed.
+I have to work with sequencing these events and power off part.
