@@ -1,0 +1,2 @@
+completed till Ingredient level and Front panel works 
+Pending Dispening, update the valuesin ini file and documentation
