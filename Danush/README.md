@@ -1,22 +1,16 @@
 **COMPLETED :**
 
-Basic UI
-
-Process that run after Power on.
-
-Check Ingridient level.
-
-Dispencing Water.
+Sequential Flow of Items
 
 **Known bugs :**
+UI designed by seeing a monitor, so it may overlap contents in smaller screens.
 
-value reset after turning off.
+Ingredient level is not monitored after the consumption but monitoored when we manually change it.
 
-disable new item creation while creating a item.
-
-and some change TO DEFAULT VALUE BUGS.
+Not handled force poweroff and unexpected events during other process.
 
 **TODO :**
-Coffee/ Latte Creation
 
 Modularize the code
+
+Use async/await to avoid nesting of settimeout() 
