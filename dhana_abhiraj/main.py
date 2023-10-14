@@ -48,3 +48,32 @@ if __name__ == "__main__":
     print_employees(employees)
     task_employees = task_employee_manager.get_task_employees()
     print_task_employees(task_employees)
+    while True:
+        print("Select your Choice")
+        choice = input(
+            "1.Export Tasks\n2.Import Tasks"
+            "\n3.Export Employees\n4.Import Employees"
+            "\n5.Schedule Tasks\6.Get Report\7.quit"
+            )
+        choice = int(choice)
+        if choice == 1:
+            file_path = input("Enter file path to export tasks: ")
+            task_manager.export_tasks(file_path)
+        elif choice == 2:
+            file_path = input("Enter the File to import tasks: ")
+            task_manager.import_tasks(file_path)
+        elif choice == 3:
+            file_path = input("Enter file path to export employees: ")
+            employee_manager.export_employees(file_path)
+        elif choice == 4:
+            file_path = input("Enter the File to import employees: ")
+            employee_manager.import_employees(file_path)
+        elif choice == 5:
+            print("Scheduling not Suppported for now.")
+        elif choice == 6:
+            print("Report Generation not suppported")
+        elif choice == 7:
+            print("Good Bye")
+            break
+        else:
+            print("invalid Choice")
