@@ -1,0 +1,6 @@
+Designed the queue driver and Config File.
+Read the data from Config file
+Finished Ingredient check
+Made Timer run
+
+Need to add sequencing functionalities.
