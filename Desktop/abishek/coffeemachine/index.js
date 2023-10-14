@@ -88,7 +88,7 @@ async function carafe()
 {  
        let selectedOption=''
         var ele = document.getElementsByTagName('input');
-        for ( let i = 0; i < ele.length; i++) {
+        for ( let i = 0; i < 3; i++) {
             if (ele[i].type = "radio") {
 
                 if (ele[i].checked)
