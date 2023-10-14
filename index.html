@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine!!</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="user_display">
+        <div class="user_selection">
+    <div class="beverage">
+        <div class="cup_type">
+            <button class="cup_selection">1 Cup</button>
+            <button class="carafe_selection">1 Carafe</button>
+        </div>
+        <div class="beverage_type">
+            <button  class="coffee_selection">Coffee</button>
+            <button  class="water_selection">Hot Water</button>
+            <button  class="latte_selection">Latte</button>
+        </div>
+    </div>
+    <div class="ingrediant">
+        <div class="water_level">
+            <p>Water level</p>
+            <input id="water_level_button" type="range" min="0" max="100" step="20"></input>
+            <p>Value: <output id="waterRequired"></output></p>
+        </div>
+        <div class="bean_level">
+                <p>Bean level</p>
+                <input id="bean_level_button" type="range" min="0" max="100" step="20"></input>
+                <p>Value: <output id="beanRequired"></output></p>
+            </div>
+        <div class="milk_level">
+            <p>Milk level</p>
+            <input id="milk_level_button" type="range" min="0" max="100" step="20"></input>
+            <p>Value: <output id="milkRequired"></output></p>
+        </div>   
+        </div>
+    </div>
+    <div class="beverage_preparation">
+        <div class="minimum_level_alert">
+            <div class="low_water">
+                <button>Low Water</button>
+            </div>
+            <div class="low_bean">
+                <button>Low Bean</button>
+            </div>
+            <div class="low_milk">
+                <button>Low Milk</button>
+            </div>
+        </div>
+        <div class="process">
+            <div class="chamber">
+                <p>Chamber</p>
+            <input id="chamber_indicator" type="range" min="0" max="100" step="20"></input>
+            <p>Value: <output id="chamber_value"></output></p>
+        </div>
+            <div class="dispencer">
+                <p>Dispencer</p>
+            <input id="dispencer_indicator" type="range" min="0" max="100" step="20"></input>
+            <p>Value: <output id="dispencer_value"></output></p>
+        </div>
+            <div class="current_process">
+                <div class="purging">
+                    <button class="process_button">
+                    <p class="process_type">Purging</p>
+                </div>
+                <div class="heating">
+                    <button  class="process_button">
+                    <p class="process_type">Heating</p>
+                </div>
+                <div class="grinding">
+                    <button  class="process_button">
+                    <p  class="process_type">Grinding</p>
+                </div>
+                <div class="brewing">
+                    <button  class="process_button">
+                    <p class="process_type">Brewing</p>
+                </div>
+                <div class="dispencing">
+                    <button  class="process_button">
+                    <p class="process_type">Dispencing</p>
+                </div>
+            </div>
+        </div>
+        <div class="time_cup_details">
+            <div class="elapsed_time">
+                <p>Elapsed Time</p>
+                <p id="time"></p>
+            </div>
+            <div class="cups">
+                <p>Total Cups</p>
+                <p id="cup_count"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="power_button">
+        <button id="power_state">On</button>
+        <p>Power</p>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>

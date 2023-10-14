@@ -1,0 +1,9 @@
+{
+    "isProperlyShutDown": "True",
+    "totalCupsConsumed" : 38,
+    "heating" :4,
+    "purging" :5,
+    "water" : 3,
+    "coffeeBeans": 30,
+    "milk": 30
+}
