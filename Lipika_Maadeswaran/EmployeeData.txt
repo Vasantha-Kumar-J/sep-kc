@@ -1,0 +1,6 @@
+Employee
+<attributes>Employee1 attributes</attributes>
+<name>Employee1 </name>
+<workinghours>8</workinghours>
+<availability>Available</availability>
+<skills>c#</skills>

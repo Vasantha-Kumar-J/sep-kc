@@ -1,0 +1,8 @@
+Task
+
+<attributes>Task1</attributes>
+<description>Task1 description</description>
+<requiredhours>24</requiredhours>
+<deadline>12</deadline>
+<skills>c#</skills>
+
