@@ -1,0 +1,5 @@
+Completed the dispensing part but still there is some bug.
+pending part: Checking the proper shutdown condition.
+              Updating the count of ingredients after usage and disabling 
+              those with insufficiant ingrediants.
+              Handling with power off case.
