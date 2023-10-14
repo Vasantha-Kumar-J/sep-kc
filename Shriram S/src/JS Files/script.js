@@ -1,7 +1,8 @@
 import * as scriptUtils from './importExports.js'
 
+
 (async function () {
-    scriptUtils.fetchUtils.variables.machineStatus = await scriptUtils.fetchUtils.fetchData('../../Assets/Coffee.json')
+    scriptUtils.fetchUtils.variables.machineStatus = await scriptUtils.fetchUtils.fetchData('../../../Shriram S/Assets/Coffee.json')
     addEventListeners()
 }) ()
 
