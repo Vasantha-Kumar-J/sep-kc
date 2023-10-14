@@ -1,4 +1,5 @@
-import { displayTimeElapsed, displayTotalCups, transferUnits, turnOffLed, turnOnLed } from "./uiManipulation.js"
+import { updateCoffeeJson } from "../script.js"
+import { disableElement, displayTimeElapsed, displayTotalCups, indicateLowLevel, transferUnits, turnOffLed, turnOnLed } from "./uiManipulation.js"
 
 //// hot water module
 const dispenserElement = document.getElementById('dispenser-level')
@@ -24,8 +25,8 @@ export function startBeverageMaking (selectedBeverage, selectedQuantity) {
   if (selectedBeverage && selectedQuantity){
     if(selectedBeverage === 'hotwater') makeHotWater(selectedQuantity)
     else if (selectedBeverage === 'coffee') makeCoffee(selectedQuantity)
-  else if (selectedBeverage === 'latte') makeLatte(selectedQuantity)
-  checkIngredientLevel()
+    else if (selectedBeverage === 'latte') makeLatte(selectedQuantity)
+    checkIngredientLevel()
   }
 }
 
@@ -65,7 +66,6 @@ function makeLatte(selectedQuantity) {
 }
 
 export function runProcess(process) {
-  console.log(process)
   let duration = time[process]
   turnOnLed(process + '-led')
   displayTimeElapsed(duration)
@@ -84,12 +84,25 @@ export function dispenseBeverage() {
   const units = parseInt(dispenserElement.value)
   dispenserElement.value = 0
   displayTotalCups(units / 5)
+  updateCoffeeJson()
 }
 
 export function checkIngredientLevel () {
-  if (waterLevel.value < 30) document.getElementById('hotwater-selector').disabled = true
-  if (waterLevel.value < 30 || beanLevel.value < 30)  document.getElementById('coffee-selector').disabled = true
-  if (milkLevel.value < 30 || waterLevel.value < 30 || beanLevel.value < 30) document.getElementById('latte-selector').disabled = true
+  if (waterLevel.value < 30) {
+    disableElement('hotwater-selector')
+    disableElement('coffee-selector')
+    disableElement('latte-selector')
+    indicateLowLevel('low-water')
+  }
+  if (beanLevel.value < 30){
+    disableElement('coffee-selector')
+    disableElement('latte-selector')
+    indicateLowLevel('low-bean')
+  }
+  if (milkLevel.value < 30) {
+    disableElement('latte-selector')
+    indicateLowLevel('low-milk')
+  }
   return true
 }
 

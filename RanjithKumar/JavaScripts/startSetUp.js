@@ -1,9 +1,11 @@
+import { start, updateCoffeeJson } from "../script.js"
 import { runProcess, sleep, startBeverageMaking, time } from "./makingProcess.js"
 
 let selectedBeverage, selectedQuantity
 
 const beverageSelectionButtons = document.querySelectorAll('.beverage-selection-buttons')
 const quantitySelectors = document.querySelectorAll('.quantity-selector')
+const powerButton = document.getElementById('power-button')
 
 export function startCoffeeMachine(properShutDown) {
   if (properShutDown) {
@@ -15,12 +17,25 @@ export function startCoffeeMachine(properShutDown) {
 }
 
 export function mapEventListenerToInput () {
+  powerButton.addEventListener('click', (e) => handlePowerButton(e))
   beverageSelectionButtons.forEach((button) => {
     button.addEventListener('click', (e) => handleSelectedBeverage(e))
   })
   quantitySelectors.forEach((button) => {
     button.addEventListener('click', (e) => handleSelectedQuantity(e))
   })
+}
+
+function handlePowerButton(element) {
+  console.log(element)
+  if (element.target.innerHTML === 'On'){
+    updateCoffeeJson(true)
+    element.target.innerHTML = 'Off'
+  } else {
+    updateCoffeeJson(false)
+    element.target.innerHTML = 'On'
+    start()
+  }
 }
 
 /**
@@ -42,3 +57,4 @@ function handleSelectedQuantity (e) {
   selectedQuantity = e.target.id.split('-')[0]
   startBeverageMaking(selectedQuantity, selectedQuantity)
 }
+

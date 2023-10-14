@@ -7,6 +7,7 @@ const cupsElement = document.getElementById('cups-display')
  */
 export function displayTotalCups (cups) {
   cupsElement.innerHTML = parseInt(cupsElement.innerHTML) + cups
+  return parseInt(cupsElement.innerHTML)
 }
 
 /**
@@ -23,6 +24,14 @@ export function turnOnLed(id) {
 
 export function turnOffLed(id) {
   document.getElementById(id).classList.remove('led-on')
+}
+
+export function indicateLowLevel(led) {
+  document.getElementById(led).style.backgroundColor = 'orange'
+}
+
+export function disableElement(elementId) {
+  document.getElementById(elementId).disabled = true
 }
 
 export function transferUnits(from, to, units){
