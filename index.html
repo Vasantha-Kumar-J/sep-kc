@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine</title>
+    <link rel="stylesheet" href="./machine.css">
+    <link rel="stylesheet" href="./left-panel.css">
+    <link rel="stylesheet" href="./selector.css">
+    <link rel="stylesheet" href="./level-indicator.css">
+    <link rel="stylesheet" href="right-panel.css">
+</head>
+<body>
+    <div class="controller-display">
+        <div class="left-panel">
+            <div class="selector">
+                <div class="cup-number-selector">
+                    <div class="cup-selector">
+                        1 cup
+                    </div>
+                    <div class="carafe-selector">
+                        1 carafe
+                    </div>
+                </div>
+                <div class="type-selector">
+                    <div class="coffee-text">Coffee</div>
+                    <div class="blank"></div>
+                    <div class="latte-text">Latte</div>
+                    
+                    <div class="coffee-knob">
+                        <div class="knob">
+                            <div class="led"></div>
+                        </div>
+                    </div>
+                    <div class="hot-water-knob">
+                        <div class="knob">
+                            <div class="led"></div>
+                        </div>
+                    </div>
+                    <div class="latte-knob">
+                        <div class="knob">
+                            <div class="led"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="blank"></div>
+                    <div class="hot-water-text">Hot Water</div>
+                    <div class="blank"></div>
+
+                </div>
+            </div>
+            <div class="ing-level-indicator">
+                <div class="water-level-container">
+                    <div class="water-level-text">Water level</div>
+                    <div class="water-slider-container">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <div class="level-value">level:<span class="level-number">50</span></div>
+                    </div>
+                </div>
+                <div class="bean-level-container">
+                    <div class="bean-level-text">Water level</div>
+                    <div class="bean-slider-container">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <div class="level-value">level: <span class="level-number">50</span></div>
+                    </div>
+                </div>
+                <div class="milk-level-container">
+                    <div class="milk-level-text">Water level</div>
+                    <div class="milk-slider-container">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <div class="level-value">level:<span class="level-number">50</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="low-level-section">
+                <div class="low-water">
+                    <div class="low text">low water</div>
+                    <div class="low-led"></div>
+                </div>
+                <div class="low-water">
+                    <div class="low-text">low water</div>
+                    <div class="low-led"></div>
+                </div>
+                <div class="low-water">
+                    <div class="low-text">low water</div>
+                    <div class="low-led on"></div>
+                </div>
+            </div>
+
+            <div class="level-process-indicators">
+                <div class="chamber-dispenser-indicators">
+                    <div class="indicator-display" id="chamber-indicator">
+                        <div>chamber</div>
+                        <div class="indicator-level">
+                            <div class="inner-level"></div>
+                        </div>
+                    </div>
+                    <div class="indicator-display" id="dispenser-indicator">
+                        <div>Dispenser</div>
+                        <div class="indicator-level">
+                            <div class="inner-level"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-indicators">
+                    <div class="process-led-item" id="">
+                        <div class="process-led"></div> 
+                        <div> purging</div>
+                    </div>
+                    <div class="process-led-item" id="">
+                        <div class="process-led"></div> 
+                        <div> heating</div>
+                    </div>
+                    <div class="process-led-item" id="">
+                        <div class="process-led"></div> 
+                        <div> grinding</div>
+                    </div>
+                    <div class="process-led-item" id="">
+                        <div class="process-led"></div> 
+                        <div> brewing</div>
+                    </div>
+                    <div class="process-led-item" id="">
+                        <div class="process-led"></div> 
+                        <div> dispensing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="time-cup-display">
+                <div class="time-display">
+                    <div>Elapsed tile</div>
+                    <div class="display-box">0</div>
+                </div>
+                <div class="cup-display">
+                    <div>Total Cups</div>
+                    <div class="display-box">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="power-box">
+        <button class="power-button">
+            off
+        </button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

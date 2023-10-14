@@ -1,0 +1,8 @@
+.ing-level-indicator {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.slider {
+    width: 75%;
+}

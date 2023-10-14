@@ -1,0 +1,50 @@
+body {
+    color: white;
+}
+
+.power-button {
+   height:25px;
+   width:40px;
+   background-color: rgb(99, 99, 204);
+   border-color: black; 
+   border: 2px solid black;
+}
+
+.controller-display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-panel {
+    height: 90vh;
+    width:48vw;
+    flex-direction: column;
+}
+
+.right-panel {
+    height: 90vh;
+    width:48vw;
+    border-radius: 20px;
+    background-color: rgb(7, 7, 234);
+}
+
+.power-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:8vh;
+}
+
+
+.led {
+    background-color: grey;
+}
+
+.on {
+    background-color: red !important;
+}
+
+
+.cup-number-selector div:active{
+    background-color: black;
+}

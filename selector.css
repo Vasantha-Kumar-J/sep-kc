@@ -1,0 +1,19 @@
+.type-selector div{ 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knob {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    padding: 7px;
+    background-color: rgb(76, 68, 68);
+}
+
+.led {
+    height:100%;
+    width:100%;
+    border-radius: 100%;
+}

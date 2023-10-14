@@ -1,16 +1,26 @@
 # September Month - Knowledge Check
-Mono Repo for the code submission.
 
-## Steps
-- DONT COMMIT DIRECTLY TO MAIN
-- Create a branch with the following sytax : `<stack>_<name>`
-  - Example: <frontend_ram>
-  - Example: <backend_sita>
-  - Example: <labview_brad>
-  - Example: <python_bob>
-- Create a directory in your name
-- Move the source code to the folder with your name
-  - Don't commit build and binaries file if any.
-- Push your change to your branch. 
+## completed
+    i have partially completed the HTML and CSS part of the Coffee machine UI
+
+    it is in a basic design but completed
+
+    changing of knob led when it is clicked is done
+
+    listener for 1cup and 1 carafe is done
+
+    power button basic functionality is done 
+
+    all led indicator turned off when machine is turned off
+---
+
+## overview
+    basically ive completed basic design UI and all elements 
+    and some basic functionalities
+
+    i Should have spent time on Adding functionalities rather than spending
+    it on UI 
+
+---
 
   

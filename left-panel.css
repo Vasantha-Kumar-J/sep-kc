@@ -1,0 +1,47 @@
+.selector {
+    height:37vh;
+    margin-bottom: 3vh;
+    border-radius: 20px;
+    background-color: rgb(100, 66, 175);
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ing-level-indicator{
+    height:50vh;
+    border-radius: 20px;
+    background-color: rgb(208, 65, 65);
+}
+
+
+.cup-number-selector{
+    height:15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.cup-number-selector div {
+    background-color: rgb(56, 48, 48);
+    padding-top: 10px;
+    height:35px;
+    width:10vw;
+    text-align: center;
+    
+}
+
+.type-selector {
+    height: 25vh;
+    width: 25vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 2em;
+    color: white;
+    background-color: rgb(8, 8, 8);
+    border:2px solid black;
+}
+
+
