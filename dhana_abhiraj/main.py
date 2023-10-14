@@ -10,32 +10,45 @@ from evaluation.models.task_employee import TaskEmployee
 
 
 def print_tasks(tasks: list[Task]):
+    """Print the Tasks."""
     print("-----------------------------------------------")
     print("Tasks")
     print("-----------------------------------------------")
-    print("Task Id | Description | Required Hours | Deadline | Required Skills |")
+    print("Task Id | Description | Required Hours "
+          "| Deadline | Required Skills |")
     for task in tasks:
-        print(f"{task.task_id} {task.description} {task.required_hours} {task.deadline} {task.required_skills}")
+        print(
+            f"{task.task_id} {task.description} {task.required_time}"
+            f"{task.deadline} {task.required_skills}"
+        )
 
 
 def print_employees(employees: list[Employee]):
+    """Print the employees."""
     print("-----------------------------------------------")
     print("Employees")
     print("-----------------------------------------------")
     print("|Emp id | name | workhours | skills | availablility |")
 
     for employee in employees:
-        print(f"{employee.emp_id} {employee.name} {employee.work_hours} {employee.skills} {employee.availabilty}")
+        print(
+            f"{employee.emp_id} {employee.name} {employee.work_hours}"
+            f"{employee.skills} {employee.availabilty}"
+        )
 
 
 def print_task_employees(task_employees: list[TaskEmployee]):
+    """Print the Tasks assigned to employees."""
     print("-----------------------------------------------")
     print("Task Employees")
     print("-----------------------------------------------")
-    print("| Task id | Employee ids")
+    print("| Task id | Employee ids | Duration |")
 
     for task_employee in task_employees:
-        print(f"{task_employee.task_id} {task_employee.emp_ids}")
+        print(
+            f"{task_employee.task_id} {task_employee.emp_ids}"
+            f"{task_employee.emp_alloted_timings}"
+        )
 
 
 if __name__ == "__main__":
@@ -55,8 +68,8 @@ if __name__ == "__main__":
             "\n3.Export Employees\n4.Import Employees"
             "\n5.Schedule Tasks\n6.Get Report\n7.quit\n"
             "Enter your Choice : "
-            )
-        
+        )
+
         choice = int(choice)
         if choice == 1:
             file_path = input("Enter file path to export tasks: ")

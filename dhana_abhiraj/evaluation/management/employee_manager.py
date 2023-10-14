@@ -64,4 +64,5 @@ class EmployeeManager:
         for employee_data in employees_data:
             employee = Employee.from_csv_list(employee_data)
             employees.append(employee)
-        return employees
+        return employees                
+ 

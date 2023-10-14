@@ -58,5 +58,8 @@ class Employee:
         ValueError : Invalid Employee Format string
         """
         if len(csv_format_list) == 5:
+            required_skills = csv_format_list[3].strip("'[]").split("', '")
+
+            csv_format_list[3] = required_skills
             return cls(*csv_format_list)
         raise ValueError(f"Invalid Employee Format list: {csv_format_list}")
