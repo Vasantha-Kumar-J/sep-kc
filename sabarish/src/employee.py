@@ -17,7 +17,7 @@ class Employee:
         name: str,
         working_hours: Union[str, int],
         skills: list,
-        availability: list[datetime],
+        availability: list,
     ) -> None:
         """Initialize the Employee class.
 
@@ -25,7 +25,7 @@ class Employee:
             name (str): name of the employee
             working_hours (Union[str, int]): employee's working hours
             skills (list): skills of the employee
-            availability (list[datetime]): available dates of the employee.
+            availability (list): available dates of the employee.
         """
         self.name = name
         self.working_hours = int(working_hours)
@@ -38,7 +38,7 @@ def add_employee(
     name: str,
     working_hours: Union[str, int],
     skills: list,
-    availability: list[datetime],
+    availability: list,
 ):
     """Add a single employee to employees.
 
@@ -46,7 +46,7 @@ def add_employee(
         name (str): name of the employee
         working_hours (Union[str, int]): employee's working hours
         skills (list): skills of the employee
-        availability (list[datetime]): available dates of the employee.
+        availability (list): available dates of the employee.
     """
     new_employee = Employee(name, working_hours, skills, availability)
     ALL_EMPLOYEES.append(new_employee)

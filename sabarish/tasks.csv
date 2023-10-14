@@ -1,4 +1,4 @@
 name,description,required_hours,deadline,necessary_skills
 argon,description_of_argon,10,2023-10-30,python
-krypton,description_of_krypton,10,2023-10-31,front_end
+krypton,description_of_krypton,50,2023-10-31,front_end
 xenon,description_of_krypton,10,2023-10-31,back_end
