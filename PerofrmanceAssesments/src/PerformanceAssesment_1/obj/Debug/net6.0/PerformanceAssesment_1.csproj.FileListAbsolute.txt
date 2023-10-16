@@ -1,0 +1,30 @@
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.exe
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.deps.json
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.runtimeconfig.json
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.pdb
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.csproj.AssemblyReference.cache
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.AssemblyInfoInputs.cache
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.AssemblyInfo.cs
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.csproj.CoreCompileInputs.cache
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\refint\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.pdb
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.genruntimeconfig.cache
+C:\Users\kavin.saravanan\Desktop\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\ref\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.exe
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.deps.json
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.runtimeconfig.json
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\bin\Debug\net6.0\PerformanceAssesment_1.pdb
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.csproj.AssemblyReference.cache
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.AssemblyInfoInputs.cache
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.AssemblyInfo.cs
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.csproj.CoreCompileInputs.cache
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\refint\PerformanceAssesment_1.dll
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.pdb
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\PerformanceAssesment_1.genruntimeconfig.cache
+C:\Users\kavin.saravanan\Desktop\New folder\sep-kc\PerofrmanceAssesments\src\PerformanceAssesment_1\obj\Debug\net6.0\ref\PerformanceAssesment_1.dll
