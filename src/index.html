@@ -12,7 +12,7 @@
 <body>
   <div class="coffee-container">
     <div class="coffee-container-column">
-      <div class="cup-count-container">
+      <div class="cup-count-container disable-click">
         <div class="coffee-unit-container">
           <button type="submit" id="coffee-cup-unit" class="coffee-unit" value="cup">1 Cup</button>
           <button type="submit" id="coffee-carafe-unit" class="coffee-unit" value="carafe">1 Carafe</button>
@@ -20,22 +20,31 @@
         <div class="ingredient-selection-container">
           <div>
             <label for="coffee-radio">Coffee</label>
-            <input type="radio" checked name="ingredient-radio" id="coffee-radio" class="input-ingredient-radio">
+            <div>
+              <input type="radio" checked name="ingredient-radio" id="coffee-radio" class="input-ingredient-radio">
+            </div>
+            <div></div>
           </div>
           <div id="hot-water-radio-container">
-            <input type="radio" name="ingredient-radio" id="hot-water-radio" class="input-ingredient-radio">
+            <div></div>
+            <div>
+              <input type="radio" name="ingredient-radio" id="hot-water-radio" class="input-ingredient-radio">
+            </div>
             <label for="hot-water-radio" class="label-for-ingredient-radio">Hot Water</label>
           </div>
           <div>
             <label for="latte-radio">Latte</label>
-            <input type="radio" name="ingredient-radio" id="latte-radio" class="input-ingredient-radio">
+            <div>
+              <input type="radio" name="ingredient-radio" id="latte-radio" class="input-ingredient-radio">
+            </div>
+            <div></div>
           </div>
         </div>
       </div>
       <div class="ingredient-level-container row-centered-container">
         <div class="self-ingredient-level-container">
           <p class="self-ingredient-level-text">Water Level</p>
-          <input type="range" name="level-indicator-slider" id="water-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <input type="range" name="level-indicator-slider" id="water-level-indicator-slider" min="0" max="100" step="5" value="60" class="level-indicator-slider">
           <div class="level-scale-strokes-container">
             <p class="scale-strokes scale-larger-strokes">|</p>
             <p class="scale-strokes">|</p>
@@ -70,7 +79,7 @@
         </div>
         <div class="self-ingredient-level-container">
           <p class="self-ingredient-level-text">Bean Level</p>
-          <input type="range" name="level-indicator-slider" id="bean-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <input type="range" name="level-indicator-slider" id="bean-level-indicator-slider" min="0" max="100" step="5" value="60" class="level-indicator-slider" disabled>
           <div class="level-scale-strokes-container">
             <p class="scale-strokes scale-larger-strokes">|</p>
             <p class="scale-strokes">|</p>
@@ -105,7 +114,7 @@
         </div>
         <div class="self-ingredient-level-container">
           <p class="self-ingredient-level-text">Milk Level</p>
-          <input type="range" name="level-indicator-slider" id="milk-level-indicator-slider" min="0" max="100" step="5" value="60">
+          <input type="range" name="level-indicator-slider" id="milk-level-indicator-slider" min="0" max="100" step="5" value="60" class="level-indicator-slider" disabled>
           <div class="level-scale-strokes-container">
             <p class="scale-strokes scale-larger-strokes">|</p>
             <p class="scale-strokes">|</p>
@@ -157,7 +166,7 @@
       </div>
       <div class="ongoing-process-indicator-container">
         <div class="process-level-indicator-container">
-          <p class="proess-level-indicator-text">Chamber</p>
+          <p class="process-level-indicator-text">Chamber</p>
           <div class="process-level-scale-container">
             <div class="process-level-scale-value-container">
               <p class="process-level-scale-values">60</p>
@@ -169,43 +178,37 @@
               <p class="process-level-scale-values">0</p>
             </div>
             <div class="process-level-scale-stroke-container">
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>                          
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>                                                        
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">       
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">                                              
             </div>
-            <input type="range" name="chamber-level-indicator-scale" id="chamber-level-indicator-scale" min="0" max="60" step="2" value="0">
+            <input type="range" name="chamber-level-indicator-scale" id="chamber-level-indicator-scale" min="0" max="60" step="2.5" value="0" disabled>
           </div>
         </div>
         <div class="process-level-indicator-container">
-          <p class="proess-level-indicator-text">Dispenser</p>
+          <p class="process-level-indicator-text">Dispenser</p>
           <div class="process-level-scale-container">
             <div class="process-level-scale-value-container">
               <p class="process-level-scale-values">60</p>
@@ -217,39 +220,33 @@
               <p class="process-level-scale-values">0</p>
             </div>
             <div class="process-level-scale-stroke-container">
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>                          
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>
-              <p class="process-level-scale-strokes">-</p>   
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-scale-strokes">       
+              <img src="../Assets/hyphen.png" alt="hyphen-Symbol" class="process-level-larger-scale-strokes"> 
             </div>
-            <input type="range" name="dispenser-level-indicator-scale" id="dispenser-level-indicator-scale" min="0" max="60" step="2" value="0">
+            <input type="range" name="dispenser-level-indicator-scale" id="dispenser-level-indicator-scale" min="0" max="60" step="2.5" value="0" disabled>
           </div>
         </div>
         <div class="coffee-process-container">
