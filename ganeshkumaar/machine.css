@@ -1,5 +1,5 @@
 body {
-    color: white;
+    color: black;
 }
 
 .power-button {
@@ -25,7 +25,7 @@ body {
     height: 90vh;
     width:48vw;
     border-radius: 20px;
-    background-color: rgb(7, 7, 234);
+    background-color: #C9D1DD;
 }
 
 .power-box{

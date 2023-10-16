@@ -74,8 +74,3 @@ function timerRunner(led) {
     globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
     globalVariables.timeRemaining--
 }
-
-
-function isOn() {
-    
-}

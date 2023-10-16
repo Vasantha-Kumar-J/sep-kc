@@ -2,7 +2,7 @@
     height:37vh;
     margin-bottom: 3vh;
     border-radius: 20px;
-    background-color: rgb(100, 66, 175);
+    background-color: #bdc4cf;
     display:flex;
     align-items: center;
     justify-content: space-around;
@@ -11,7 +11,7 @@
 .ing-level-indicator{
     height:50vh;
     border-radius: 20px;
-    background-color: rgb(208, 65, 65);
+    background-color: #C9D1DD;
 }
 
 
@@ -29,11 +29,12 @@
     height:35px;
     width:10vw;
     text-align: center;
+    margin-bottom: 10px;
     
 }
 
 .type-selector {
-    height: 25vh;
+    height: 27vh;
     width: 25vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -42,6 +43,11 @@
     color: white;
     background-color: rgb(8, 8, 8);
     border:2px solid black;
+}
+
+.hot-water-text {
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 

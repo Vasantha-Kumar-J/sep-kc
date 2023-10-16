@@ -1,4 +1,6 @@
 import * as processes from './processes.js'
+import { isOn,isHold } from './checkers.js'
+
 export const globalVariables = {
     hold : false,
     timerId: null,
@@ -28,6 +30,7 @@ function actionOnPowerClick() {
     } else if (power.innerText==='off') {
         globalVariables.powerOn= true
         power.innerText='on'
+        processes.heating()
     }
 }
 
@@ -37,19 +40,13 @@ let leds=document.querySelectorAll('.led')
 
 knobs.forEach((knob) => {
     knob.addEventListener('click', (knob) => {
-        isOn()
         actionOnKnobClick(knob)
     })
 })
 
 function actionOnKnobClick(knob) {
-    if(!powerOn) {
-        alert('switch on the machine first')
-        return 0
-    }
-    if(globalVariables.hold){
-        alert
-    }
+    if(!isOn()) return 0
+    if(isHold()) return 0
     let divNum = knobSelector(knob.currentTarget.parentElement.classList[0])
     knobSwitch(divNum)
 }
@@ -92,10 +89,8 @@ cupSelector.addEventListener('click', actionOnCupClick)
 carafeSelector.addEventListener('click', actionOnCarafeClick)
 
 function actionOnCupClick () {
-    if(!powerOn) {
-        alert('switch on the machine first')
-        return 0
-    }
+    if(!isOn()) return 0
+    if(isHold()) return 0
     let selectedTypeNum = isTypeSelected()
     if(selectedTypeNum===-1) {
         alert('select a type first')
@@ -111,10 +106,8 @@ function actionOnCupClick () {
 }
 
 function actionOnCarafeClick() {
-    if(!powerOn) {
-        alert('switch on the machine first')
-        return 0
-    }
+    if(!isOn()) return 0
+    if(isHold()) return 0
     let selectedTypeNum = isTypeSelected()
     if(selectedTypeNum===-1) {
         alert('select a type first')
@@ -138,4 +131,3 @@ function isTypeSelected() {
     return -1
 }
 
-processes.dispensing()
