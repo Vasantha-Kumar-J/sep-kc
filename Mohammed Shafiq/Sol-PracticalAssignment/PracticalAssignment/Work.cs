@@ -23,6 +23,7 @@
             this.DeadLine = deadLine;
             this.Employees = employees;
             this.IsScheduled = isScheduled;
+            this.IsPossibleToComplete = false;
         }
 
         public int ID { get; set; }
@@ -37,5 +38,7 @@
         public Dictionary<Employee, Double> Employees { get; set; }
 
         public bool IsScheduled { get; set; }
+
+        public bool IsPossibleToComplete { get; set; }
     }
 }

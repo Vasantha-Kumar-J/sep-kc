@@ -48,6 +48,7 @@ namespace PracticalAssignment
                 }
                 catch (Exception ex)
                 {
+                    Operations.LogErrors("Message/error.txt", ex.Message);
                     throw new InValidDateException(ex);
                 }
 

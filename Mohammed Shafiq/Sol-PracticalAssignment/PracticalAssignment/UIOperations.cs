@@ -9,12 +9,12 @@ namespace PracticalAssignment
             public static void Menu()
             {
                 Console.WriteLine("\t\tWelcome!!\n");
-                int choice = 0;
-                while (choice != 6)
+                int choice = 1;
+                while (choice != 0)
                 {
-                    Console.WriteLine("There are some Operations..");
-                    Console.WriteLine("1.Add Employee\n2.Add List of Task\n3.Allocate a task to Employee\n4.Display All Employees\n5.Diaplay all Tasks\n6.Exit");
-                    choice = Utilities.GetValidInput<int>(@"^[1-6]$", "Enter you choice : ", "Invalid choice!!");
+                    Console.WriteLine("\n\nThere are some Operations..");
+                    Console.WriteLine("1.Add Employee\n2.Add List of Task\n3.Allocate a task to Employee\n4.Display All Employees\n5.Diaplay all Tasks\n6.Allocate all Tasks\n7.serilize All\n0.Exit");
+                    choice = Utilities.GetValidInput<int>(@"^[0-7]$", "Enter you choice : ", "Invalid choice!!");
                     switch (choice)
                     {
                         case 1:
@@ -26,7 +26,15 @@ namespace PracticalAssignment
                                 }
 
                                 FileHandler handler = new FileHandler();
-                                Operations.WorkingEmployees.Add(handler.GetEmployeeDetails(path));
+                                try
+                                {
+                                    Operations.WorkingEmployees.Add(handler.GetEmployeeDetails(path));
+                                }
+                                catch (Exception ex)
+                                {
+                                    Operations.LogErrors("./Message/error.txt", ex.Message);
+                                }
+
                                 break;
                             }
                         case 2:
@@ -38,7 +46,15 @@ namespace PracticalAssignment
                                 }
 
                                 FileHandler handler = new FileHandler();
-                                Operations.AvailableWorks.AddRange(handler.GetWorks(path));
+                                try
+                                {
+                                    Operations.AvailableWorks.AddRange(handler.GetWorks(path));
+                                }
+                                catch (Exception ex)
+                                {
+                                    Operations.LogErrors("./Message/error.txt", ex.Message);
+                                }
+                                
                                 break;
                             }
                         case 3:
@@ -51,10 +67,18 @@ namespace PracticalAssignment
                                 }
 
                                 Operations operations = new Operations();
-                                operations.AssignEmployee(work, Operations.WorkingEmployees);
+                                try
+                                {
+                                    operations.AssignEmployee(work, Operations.WorkingEmployees);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Operations.LogErrors("./Message/error.txt", ex.Message);
+                                }
+
                                 break;
                             }
-                        case 6:
+                        case 0:
                             {
                                 Console.WriteLine("\n\n\t\tThank you !");
                                 break;
@@ -69,6 +93,19 @@ namespace PracticalAssignment
                                 PrintTaskDetails(Operations.AvailableWorks);
                                 break;
                             }
+                        case 6:
+                            {
+                                Operations operations = new Operations();
+                                operations.AssignEmployeeToAllTasks(Operations.AvailableWorks, Operations.WorkingEmployees);
+                                break;
+                            }
+                        case 7:
+                            {
+                                Operations operations = new();
+                                operations.SerilizeObject<Employee>(Operations.WorkingEmployees, "./Objects/Employees.txt");
+                                operations.SerilizeObject<Work>(Operations.AvailableWorks, "./Objects/Tasks.txt");
+                                break;
+                            }
                     }
                 }
             }
@@ -78,15 +115,15 @@ namespace PracticalAssignment
                 Console.WriteLine("\n\nAvailable Employees are : ");
                 foreach (var employee in employees)
                 {
-                    Console.Write($"{employee.ID,-5}{employee.Name,-15}{employee.IsAvaLiable,-10}\nTask : ");
+                    Console.Write($"ID : {employee.ID,-5} Name : {employee.Name,-15}Status : {employee.IsAvaLiable,-10}\nTask : \n");
                     foreach (var work in employee.Tasks)
                     {
-                        Console.Write($"{work.Key.ID} - {work.Value}, ");
+                        Console.Write($"\tTask ID : {work.Key.ID} -> Working Hours : {work.Value}\n");
                     }
                     Console.Write("\nSkills : ");
                     foreach (var skill in employee.Skills)
                     {
-                        Console.Write($"{skill}, ");
+                        Console.Write($"{skill},  ");
                     }
                     Console.WriteLine("\n-----------------------------------------------------------------------------");
                 }
@@ -97,17 +134,17 @@ namespace PracticalAssignment
                 Console.WriteLine("\n\nThe Available tasks are ");
                 foreach (var work in tasks)
                 {
-                    Console.Write($"{work.ID,-5}{work.Description,-40}{work.RequiredHours,-5}{work.DeadLine,-15}\n Task : ");
+                    Console.Write($"ID : {work.ID,-5}Description : {work.Description,-30}Required Hours : {work.RequiredHours,-5}\nDeadLine : {work.DeadLine,-15}Is Scheduled : {work.IsScheduled, -8}Possible to complete in Deadline : {work.IsPossibleToComplete}\nEmployees : \n");
                     foreach (var employee in work.Employees)
                     {
-                        Console.Write($"{employee.Key.ID} - {employee.Value}, ");
+                        Console.Write($"\tEmployee ID : {employee.Key.ID} - WorkingHours : {employee.Value}\n");
                     }
                     Console.Write("\nSkills : ");
                     foreach (var skill in work.RequiredSkills)
                     {
                         Console.Write($"{skill}, ");
                     }
-                    Console.WriteLine("\n-----------------------------------------------------------------------------");
+                    Console.WriteLine("\n-----------------------------------------------------------------------------\n\n");
 
                 }
 
