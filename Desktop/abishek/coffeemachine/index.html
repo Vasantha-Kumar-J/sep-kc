@@ -16,9 +16,9 @@
                 <button id="carafe"> 1 carafe</button>
             </div>
             <div class="select-type">
-                <input class="select-options" type="radio" value="coffee">Coffee</input>
-                <input  class="select-options"  type="radio" value="Hot water">Hot Water</input>
-                <input  class="select-options"  type="radio" value="Latte">Latte</input>
+                <input class="select-options" type="radio" value="coffee" name="options">Coffee</input>
+                <input  class="select-options"  type="radio" value="Hot water" name="options">Hot Water</input>
+                <input  class="select-options"  type="radio" value="Latte" name="options">Latte</input>
             </div>
         </div>
        </div>
@@ -30,25 +30,35 @@
            </div>
            <div>
             Low bean 
-            <div class="indicators"></div>
+            <div class="indicators b"></div>
            </div>
            <div>
             Low milk 
-            <div class="indicators"></div>
+            <div class="indicators c"></div>
            </div>
         </div>
         <div class="container-two-middle">
             <div class="container-two-middle-left">
                  chamber
                  <div class="level-indicator">
-        
+                  <div class="chamber-amount">
+
+                  </div>
+                 </div>
+                 <div class="box chamber-val">
+                    0
                  </div>
             </div>
             <div class="container-two-middle-middle">
                 dispenser
                 <div class="level-indicator">
+                    <div class="dispenser-amount">
 
+                    </div>
                 </div>
+                <div class="box dispenser-val">
+                    0
+                 </div>
 
             </div>
             <div class="container-two-middle-right">
@@ -67,7 +77,7 @@
                 <div class="indicator-light 5">
                     <div class="box dispensing"></div>dispensing
                 </div>
-    
+
             </div>
         </div>
         <div class="container-two-bottom">
@@ -86,13 +96,24 @@
        </div>
        <div class="container-three">
         water level
+        <div class="bar"> <h4>0</h4>
         <input class ="level" type="range" min="0" max="100" value="50" id="water-level">
+        <h4>100</h4>
+        </div>
+
+       </input>
         <div class="value water">50</div>
         bean level
+        <div class="bar"> <h4>0</h4>
         <input class ="level" type="range" min="0" max="100" value="50" id="bean-level">
+        <h4>100</h4>
+        </div>
         <div class="value bean">50</div>
         milk level
+        <div class="bar"> <h4>0</h4>
         <input class ="level" type="range" min="0" max="100" value="50" id="milk-level">
+        <h4>100</h4>
+        </div>
         <div class="value milk">50</div>
        </div>
 
@@ -101,7 +122,7 @@
     <button value="on"  id="power-on">on</button>
     <H3>POWER </H3>
      </div>
-    
-    
+
+
 </body>
 </html>
