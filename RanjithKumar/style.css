@@ -10,6 +10,7 @@ body {
   background-color: #C9D1DD;
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
+  transition: all ease-in-out .4s;
 }
 
 .vending-machine-wrapper {
@@ -19,7 +20,7 @@ body {
   grid-template-rows: 1fr 1.5fr;
   padding: 2rem;
   gap: 2rem;
-  height: 90vh;
+  min-height: max-content;
 }
 
 .modules {
@@ -57,7 +58,8 @@ body {
 .beverage-type-wrapper{
   display: flex;
   justify-content: space-around;
-  height: 50%;
+  height: min-content;
+  min-width: min-content;
   padding: 2rem;
   gap: 0.3rem;
   border: 2px solid #3e4c5f;
@@ -275,3 +277,15 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+@media screen and ( max-width: 1200px ) {
+  
+  .vending-machine-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+}
+

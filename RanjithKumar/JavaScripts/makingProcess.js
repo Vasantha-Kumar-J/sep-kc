@@ -1,5 +1,5 @@
 import { updateCoffeeJson } from "../script.js"
-import { disableElement, displayTimeElapsed, displayTotalCups, indicateLowLevel, transferUnits, turnOffLed, turnOnLed } from "./uiManipulation.js"
+import { controlAllInputs, disableElement, displayTimeElapsed, displayTotalCups, indicateLowLevel, resetAllInputs, transferUnits, turnOffLed, turnOnLed } from "./uiManipulation.js"
 
 //// hot water module
 const dispenserElement = document.getElementById('dispenser-level')
@@ -20,6 +20,8 @@ export const time = {
 
 /**
  * Function to start the beverage making process
+ * @param {string} selectedBeverage option selected
+ * @param {string} selectedQuantity quantity selected
  */
 export function startBeverageMaking (selectedBeverage, selectedQuantity) {
   if (selectedBeverage && selectedQuantity){
@@ -27,15 +29,24 @@ export function startBeverageMaking (selectedBeverage, selectedQuantity) {
     else if (selectedBeverage === 'coffee') makeCoffee(selectedQuantity)
     else if (selectedBeverage === 'latte') makeLatte(selectedQuantity)
     checkIngredientLevel()
-  }
+    controlAllInputs(true)
+}
 }
 
+/**
+ * Function to execute the hot water making process
+ * @param {string} selectedQuantity of beverage
+ */
 function makeHotWater(selectedQuantity) {
   const units = selectedQuantity === 'cup' ? 5 : 20
   transferUnits('water-level', 'dispenser-level', units)
   runProcess('dispensing')
 }
 
+/**
+ * Function to execute the coffee making process
+ * @param {string} selectedQuantity of beverage
+ */
 function makeCoffee(selectedQuantity) {
   const units = selectedQuantity === 'cup' ? 5 : 20
   transferUnits('bean-level', 'chamber-level', units)
@@ -50,6 +61,10 @@ function makeCoffee(selectedQuantity) {
   })
 }
 
+/**
+ * Function to execute the latte making process
+ * @param {string} selectedQuantity of beverage
+ */
 function makeLatte(selectedQuantity) {
   const units = selectedQuantity === 'cup' ? 5 : 20
   transferUnits('bean-level', 'chamber-level', units)
@@ -65,6 +80,10 @@ function makeLatte(selectedQuantity) {
   })
 }
 
+/**
+ * Function to run the individual process like grinding, heating
+ * @param {string} process which process need to be executed
+ */
 export function runProcess(process) {
   let duration = time[process]
   turnOnLed(process + '-led')
@@ -80,13 +99,21 @@ export function runProcess(process) {
   }, time[process] * 1000)
 }
 
+/**
+ * Function to dispense the beverage at the end of the making process
+ */
 export function dispenseBeverage() {
   const units = parseInt(dispenserElement.value)
   dispenserElement.value = 0
   displayTotalCups(units / 5)
   updateCoffeeJson()
+  resetAllInputs()
+  controlAllInputs(false)
 }
 
+/**
+ * Function to check the ingredients availability
+ */
 export function checkIngredientLevel () {
   if (waterLevel.value < 30) {
     disableElement('hotwater-selector')
@@ -103,9 +130,13 @@ export function checkIngredientLevel () {
     disableElement('latte-selector')
     indicateLowLevel('low-milk')
   }
-  return true
 }
 
+/**
+ * Function to sleep the process until its elapsing time
+ * @param {number} ms milliseconds to make the process sleep
+ * @returns {object}
+ */
 export function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

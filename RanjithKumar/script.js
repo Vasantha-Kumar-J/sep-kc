@@ -15,6 +15,10 @@ export async function start () {
   checkIngredientLevel()
 }
 
+/**
+ * Function to update the coffee json file
+ * @param {boolean} properShutDown machine properly shuted down or not
+ */
 export function updateCoffeeJson(properShutDown = false) {
   coffeeJson.isProperlyShutdown = properShutDown
   coffeeJson.totalCupsConsumed = displayTotalCups(0)
