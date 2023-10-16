@@ -16,10 +16,14 @@ export let inputSelected = { selectedBeverage, selectedQuantity }
  */
 export function startCoffeeMachine(properShutDown) {
   if (properShutDown) {
-      runProcess('heating')  
+    controlAllInputs(true)
+    runProcess('heating')
+    sleep(time.heating * 1000).then(() => controlAllInputs(false))
   } else {
+    controlAllInputs(true)
     runProcess('purging')
     sleep(time.purging * 1000).then(() => runProcess('heating'))
+    sleep((time.heating + time.purging) * 1000).then(() => controlAllInputs(false))
   }
 }
 
