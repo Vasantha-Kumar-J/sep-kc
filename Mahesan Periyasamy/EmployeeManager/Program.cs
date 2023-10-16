@@ -56,11 +56,11 @@
                         break;
 
                     case UserChoice.ImportEmployees:
-                        ImportEmployees();
+                        ImportEmployees(employeesObj);
                         break;
 
                     case UserChoice.ImportTasks:
-                        ImportTasks();
+                        ImportTasks(tasksObj);
                         break;
 
                     case UserChoice.Exit:
