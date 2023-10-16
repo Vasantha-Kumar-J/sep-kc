@@ -16,32 +16,32 @@
         <div id="ingredient-selection">
             <div>
                 <div>Coffee</div>
-                <input type="radio" name="coffee" class="checkbox" />
+                <input type="radio" name="beverage" class="checkbox" />
             </div>
             <div>
-                <input type="radio" name="coffee"  class="checkbox"/>
+                <input type="radio" name="beverage"  class="checkbox" />
                 <div>Hot Water</div>
             </div>
             <div>
                 <div>Latte</div>
-                <input type="radio" name="coffee" class="checkbox"/>
+                <input type="radio" name="beverage" class="checkbox" />
             </div>
         </div>
     </section>
     <section id="section-two" class="section">
         <div>
             <div>Water Level</div>
-            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="water-level" value="60" min="0" max="100"/>
+            <input type="range" class="ingredients-value" name="water-level" value="60" min="0" max="100"/>
             <span class="ingredient-level-value"></span>
         </div>
         <div>
             <div>Bean Level</div>
-            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="bean-level"  value="60" min="0" max="100"/>
+            <input type="range" class="ingredients-value" name="bean-level"  value="60" min="0" max="100"/>
             <span class="ingredient-level-value"></span>
         </div>
         <div>
             <div>Milk Level</div>
-            <input type="range" onchange="showIngredientsLevel()" class="ingredients-value" name="milk-level"  value="60" min="0" max="100"/>
+            <input type="range" class="ingredients-value" name="milk-level"  value="60" min="0" max="100"/>
             <span class="ingredient-level-value"></span>
         </div>
     </section>
@@ -63,12 +63,12 @@
         <div id="chamber-dispenser-and-processes-container">
             <div>
                 <div>Chamber</div>
-                <input onchange="showChamberAndDispenserLevels()" type="range" name="chamber" id="chamber" value="0"/>
+                <input type="range" name="chamber" id="chamber" value="0" min="0" max="100"/>
                 <div class="chamber-and-dispenser"></div>
             </div>
             <div>
                 <div>Dispenser</div>
-                <input onchange="showChamberAndDispenserLevels()" type="range" name="dispenser" id="dispenser" value="0"/>
+                <input type="range" name="dispenser" id="dispenser" value="0" min="0" max="100"/>
                 <div class="chamber-and-dispenser"></div>
             </div>
             <div>
@@ -97,11 +97,11 @@
         <div id="elasepd-time-total-cups">
             <div>
                 Elasped Time
-                <div class="show-stats"></div>
+                <div class="show-stats">0</div>
             </div>
             <div>
                 Total Cups
-                <div class="show-stats"></div>
+                <div class="show-stats">0</div>
             </div>
         </div>
     </section>
@@ -110,5 +110,5 @@
         <div>Power</div>
     </div>
 </body>
-<script src="./webjs.js"></script>
+<script src="./webjs.js" defer type="module"></script>
 </html>
