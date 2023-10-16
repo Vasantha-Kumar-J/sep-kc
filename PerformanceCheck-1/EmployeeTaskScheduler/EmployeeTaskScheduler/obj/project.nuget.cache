@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YIiI7Inz3xS/qhGSsrXjh0YFYOeAv+mELsFL02+Qy6qLfz4187Azv95wJ0q0jObAKtmeqEXQmfD2m+Ta3u0y5w==",
+  "success": true,
+  "projectFilePath": "D:\\Solin_Tasks\\PerformanceCheck-1\\EmployeeTaskScheduler\\EmployeeTaskScheduler\\EmployeeTaskScheduler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dharanash.moorthi\\.nuget\\packages\\consoletables\\2.5.0\\consoletables.2.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\EmployeeTaskScheduler.exe
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\EmployeeTaskScheduler.deps.json
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\EmployeeTaskScheduler.runtimeconfig.json
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\EmployeeTaskScheduler.dll
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\EmployeeTaskScheduler.pdb
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\bin\Debug\net6.0\ConsoleTables.dll
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.csproj.AssemblyReference.cache
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.GeneratedMSBuildEditorConfig.editorconfig
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.AssemblyInfoInputs.cache
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.AssemblyInfo.cs
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.csproj.CoreCompileInputs.cache
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.csproj.CopyComplete
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.dll
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\refint\EmployeeTaskScheduler.dll
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.pdb
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\EmployeeTaskScheduler.genruntimeconfig.cache
+D:\Solin_Tasks\PerformanceCheck\EmployeeTaskScheduler\EmployeeTaskScheduler\obj\Debug\net6.0\ref\EmployeeTaskScheduler.dll
