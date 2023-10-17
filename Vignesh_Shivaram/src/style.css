@@ -347,7 +347,7 @@ body {
 
 .self-ingredient-level-container [type=range]{
   -webkit-appearance: none;
-  /* pointer-events: none; */
+  pointer-events: none;
   width: 100%;
   height: 15px;
   background: #50627b;
