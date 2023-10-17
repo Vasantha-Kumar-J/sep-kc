@@ -1,0 +1,4 @@
+Completed UI Design, Switching ON the machine, Reading values, dispensing hot water,latte and coffee
+
+Need To be Completed:
+Not allowing user to change levels and restricting user to select 1 carafe of cofffee if below 50 units of ingredients
