@@ -1,0 +1,16 @@
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\EmployeeAndTaskScheduler.exe
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\EmployeeAndTaskScheduler.deps.json
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\EmployeeAndTaskScheduler.runtimeconfig.json
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\EmployeeAndTaskScheduler.dll
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\EmployeeAndTaskScheduler.pdb
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.GeneratedMSBuildEditorConfig.editorconfig
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.AssemblyInfoInputs.cache
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.AssemblyInfo.cs
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.csproj.CoreCompileInputs.cache
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.dll
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\refint\EmployeeAndTaskScheduler.dll
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.pdb
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\EmployeeAndTaskScheduler.genruntimeconfig.cache
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\obj\Debug\net6.0\ref\EmployeeAndTaskScheduler.dll
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\Employee.txt
+D:\PerformanceCheck\EmployeeAndTaskScheduler\EmployeeAndTaskScheduler\bin\Debug\net6.0\Task.txt

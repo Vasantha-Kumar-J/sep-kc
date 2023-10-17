@@ -1,0 +1,9 @@
+Tom, 4, [C#/ Python/ Ruby], True
+Jim, 7, [Matlab/ R/ Ruby], True
+Tim Hook, 3, [Sql/ MogoDb/ JDBC], False
+Joe Biden, 1, [C#/ C/ C++], True
+Tony Stark, 18, [C#/ Python/ Web/ C/ C++/ Sql], False
+Hulk, 4, [C#/ Python], False
+Natasha, 8, [C#], True
+Hawkeye, 9, [Python], True
+Camptain America, 11, [Ruby], True

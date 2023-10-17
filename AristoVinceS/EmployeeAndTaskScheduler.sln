@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAndTaskScheduler", "EmployeeAndTaskScheduler\EmployeeAndTaskScheduler.csproj", "{FC0EA0FF-6427-4475-8F05-AD5A8B867719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC0EA0FF-6427-4475-8F05-AD5A8B867719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0EA0FF-6427-4475-8F05-AD5A8B867719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0EA0FF-6427-4475-8F05-AD5A8B867719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0EA0FF-6427-4475-8F05-AD5A8B867719}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2280F533-5121-4616-AFE0-918C313B90F7}
+	EndGlobalSection
+EndGlobal
