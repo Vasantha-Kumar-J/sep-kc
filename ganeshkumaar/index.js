@@ -1,5 +1,6 @@
 import * as processes from './processes.js'
 import { isOn,isHold } from './checkers.js'
+import { createWater } from './createfunctions.js'
 
 export const globalVariables = {
     hold : false,
@@ -7,7 +8,10 @@ export const globalVariables = {
     timeRemaining:0,
     timeBox: document.querySelector('.time-display .display-box'),
     cupBox: document.querySelector('.cup-display .display-box'),
-    powerOn:false
+    powerOn:false,
+    waterLevel:100,
+    beanLevel:100,
+    milkLevel:100
 }
 
 let power = document.querySelector('.power-button')
@@ -130,4 +134,3 @@ function isTypeSelected() {
     }
     return -1
 }
-

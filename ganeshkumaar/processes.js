@@ -47,7 +47,7 @@ export function brewing() {
     globalVariables.timerId = setInterval(timerRunner,1000,led)
 }
 
-export function dispensing() {
+export async function dispensing() {
     globalVariables.hold = true
     let led = document.querySelector('#dispensing')
     led.classList.add('on')
@@ -55,8 +55,9 @@ export function dispensing() {
 
     globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
 
-    timerRunner()
+    await timerRunner()
     globalVariables.timerId = setInterval(timerRunner,1000,led)
+    console.log('hi')
 }
 
 
@@ -65,12 +66,19 @@ export function dispensing() {
 function timerRunner(led) {
     if(globalVariables.timeRemaining === 0) {
         clearInterval(globalVariables.timerId)
+        if (led.getAttribute('id') === 'dispensing') {
+            console.log('dispense')
+            emptyDispenser()
+        }
         led.classList.remove('on')
         globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
         globalVariables.hold = false
-
         return 0
     }
     globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
     globalVariables.timeRemaining--
+}
+
+function emptyDispenser() {
+    document.querySelector('#dispenser-indicator .inner-level').style.height = '0%';
 }
