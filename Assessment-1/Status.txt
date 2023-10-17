@@ -1,0 +1,6 @@
+The basic functionalites working fine 
+There is a issue in writing the file 
+Didn't made scalable hard coded stuffs inorder to achieve the given functionality and to make it scalabale then
+Minimum Level is not continously monitored
+Not satisfied with my corner case handling, have to handle more cases
+Documentation not yet completed
