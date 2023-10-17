@@ -20,7 +20,6 @@
                     <div class="input-knob-area" id="input-knob-area">
                         <div class="input-names">
                         <div class="knob-name">Coffee</div>
-                        <div class="knob-name">Hot Water</div>
                         <div class="knob-name">Latte</div>
                         </div>
                         <div class="input-btns">
@@ -28,11 +27,16 @@
                                 <div class="knob disable" id="coffee-knob"></div>
                             </div>
                             <div class="knob-item" id="hwater-knob-area">
-                                <div class="knob" id="hwater-knob"></div>
+                                <div class="knob disable" id="hwater-knob"></div>
                             </div>
                             <div class="knob-item" id="latte-knob-area">
                                 <div class="knob disable" id="latte-knob"></div>
                             </div>
+                        </div>
+                        <div class="input-names">
+                            <div class="knob-name"></div>
+                            <div class="knob-name">Hot Water</div>
+                            <div class="knob-name"></div>
                         </div>
                     </div>
                 </div>
@@ -43,7 +47,7 @@
                                 Water Level
                             </div>
                             <div class="level-meter">
-                                <input type="range" name="level-meter" id="water-level" min="0" max="100" value="60">
+                                <input type="range" name="level-meter" id="water-level" min="0" max="100" value="60" disabled>
                             </div>
                             <div class="level-scale-area">
                                 <div class="level-scale-sep">
@@ -70,7 +74,7 @@
                                     <div class="level-sep large-sep">|</div>
                                 </div> 
                                 <div class="level-scale-value-area">
-                                    <div class="scale-value">0</div>
+                                    <div class="scale-value"> 0</div>
                                     <div class="scale-value">20</div>
                                     <div class="scale-value">40</div>
                                     <div class="scale-value">60</div>
@@ -84,7 +88,7 @@
                                 Bean Level
                             </div>
                             <div class="level-meter">
-                                <input type="range" name="level-meter" id="bean-level" min="0" max="100" value="60">
+                                <input type="range" name="level-meter" id="bean-level" min="0" max="100" value="60" disabled>
                             </div>
                             <div class="level-scale-area">
                                 <div class="level-scale-sep">
@@ -125,7 +129,7 @@
                                 Milk Level
                             </div>
                             <div class="level-meter">
-                                <input type="range" name="level-meter" id="milk-level" min="0" max="100" value="60">
+                                <input type="range" name="level-meter" id="milk-level" min="0" max="100" value="60" disabled>
                             </div>
                             <div class="level-scale-area">
                                 <div class="level-scale-sep">
