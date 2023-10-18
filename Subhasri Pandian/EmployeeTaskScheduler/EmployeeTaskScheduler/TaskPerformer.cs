@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace EmployeeTaskScheduler
+﻿namespace EmployeeTaskScheduler
 {
     public class TaskPerformer
     {
@@ -10,8 +8,10 @@ namespace EmployeeTaskScheduler
         public static void PerformAllTasks()
         {
             bool exit = false;
+            PerformImportData();
             do
             {
+                MessageDisplayer.DisplayTitle("\nEMPLOYEE TASK SCHEDULER");
                 Utility.DisplayChoicesInEnum<TasksToPerform>();
                 Console.Write("Enter specific task to perform: ");
                 int userChoice = Enum.GetNames(typeof(TasksToPerform)).Length.GetValidUserChoice();
@@ -26,9 +26,6 @@ namespace EmployeeTaskScheduler
                     case (int)TasksToPerform.ScheduleTasks:
                         PerformSchedulingTasks();
                         break;
-                    case (int)TasksToPerform.ImportData:
-                        PerformImportData();
-                        break;
                     case (int)TasksToPerform.ViewLog:
                         PerformViewLog();
                         break;
@@ -40,7 +37,7 @@ namespace EmployeeTaskScheduler
                         break;
                     case (int)TasksToPerform.Exit:
                         exit = true;
-                        Console.WriteLine("\nExiting Console!!");
+                        MessageDisplayer.DisplayMessage("\nExiting Console!!");
                         break;
                 }
             } while (!exit);
@@ -54,8 +51,8 @@ namespace EmployeeTaskScheduler
             EmployeeServices accessServices = new EmployeeServices();
             Employee employee = accessServices.GetEmployeeDetails();
             Employee.Employees.Add(employee);
-            Console.WriteLine("EMPLOYEE DETAILS ADDED\n");
-            Utility.LogInFile($"Employee List Added\n{Employee.Employees}");
+            MessageDisplayer.DisplayMessage("Employee Details Added...\n");
+            Utility.LogInFile($"Employee List Added\n");
         }
 
         /// <summary>
@@ -66,8 +63,8 @@ namespace EmployeeTaskScheduler
             TaskServices accessServices = new TaskServices();
             Task task = accessServices.GetTaskDetails();
             Task.Tasks.Add(task);
-            Console.WriteLine("TASK DETAILS ADDED\n");
-            Utility.LogInFile($"Task Details Added\n{Task.Tasks}");
+            MessageDisplayer.DisplayMessage("Task Details Added...\n");
+            Utility.LogInFile($"Task Details Added\n");
         }
 
         /// <summary>
@@ -79,8 +76,7 @@ namespace EmployeeTaskScheduler
             accessServices.GetFileEmployeeDetails();
             TaskServices accessTaskService = new TaskServices();
             accessTaskService.GetFileTaskDetails();
-            Console.WriteLine("IMPORTED DATA\n");
-            Utility.LogInFile($"Employee and task imported from file\n{Employee.Employees} \n{Task.Tasks}");
+            Utility.LogInFile($"Employee and task imported from file\n");
         }
 
         /// <summary>
@@ -90,22 +86,22 @@ namespace EmployeeTaskScheduler
         {
             if (EmployeeServices.IsEmployeeAvailable())
             {
-                Console.WriteLine("\nNo employees are available!! Try adding new employees or import data!\n");
+                MessageDisplayer.DisplayWarningMessage("\nNo employees are available!! Try adding new employees or import data!\n");
                 return;
             }
             if (TaskServices.IsTasksAvailable())
             {
-                Console.WriteLine("\nNo tasks are available!! Try adding new tasks or import data!\n");
+                MessageDisplayer.DisplayWarningMessage("\nNo tasks are available!! Try adding new tasks or import data!\n");
                 return;
             }
             Task.Tasks.Sort(TaskServices.SortByDeadLine);
             Employee.Employees.Sort(EmployeeServices.SortByWorkingHours);
-            Console.WriteLine("\nPRIORITY UPDATED");
+            MessageDisplayer.DisplayMessage("\nPriority updated...");
             TaskScheduler scheduler = new TaskScheduler();
             scheduler.ScheduleTasks();
-            Console.WriteLine("\nTASKS SCHEDULED\n");
-            Utility.LogInFile($"Tasks Scheduled\n {TaskScheduler.ScheduledTasks}");
-            Utility.exportData();
+            MessageDisplayer.DisplayMessage("\nTasks Scheduled...\n");
+            Utility.LogInFile($"Tasks Scheduled\n");
+            Utility.ExportScheduledData();
         }
 
         /// <summary>
@@ -113,12 +109,12 @@ namespace EmployeeTaskScheduler
         /// </summary>
         public static void PerformViewLog()
         {
-            Console.WriteLine("LOG FILE\n");
+            MessageDisplayer.DisplayTitle("LOG FILE\n");
             using(StreamReader streamReader = new StreamReader("log.txt"))
             {
                 if (streamReader.BaseStream.Length == 0)
                 {
-                    Console.WriteLine("No Logs to read\n");
+                    MessageDisplayer.DisplayWarningMessage("No Logs to read\n");
                     return;
                 }
                 Console.WriteLine(streamReader.ReadToEnd());
@@ -130,12 +126,13 @@ namespace EmployeeTaskScheduler
         /// </summary>
         public static void PerformViewReport()
         {
-            Utility.DisplayCheckForEmployee();
-            Utility.DisplayCheckForTasks();
-            Utility.DisplayCheckForNotAvailableEmployees();
-            Utility.DisplayCheckForScheduledTasks();
-            Utility.DisplayCheckForUnscheduledTasks();
-            Utility.DisplayCheckForEmployeesWithNoTasksScheduled();
+            DisplayChecker.DisplayCheckForEmployee();
+            DisplayChecker.DisplayCheckForTasks();
+            DisplayChecker.DisplayCheckForNotAvailableEmployees();
+            DisplayChecker.DisplayCheckForScheduledTasks();
+            DisplayChecker.DisplayCheckForUnscheduledTasks();
+            DisplayChecker.DisplayCheckForEmployeesWithNoTasksScheduled();
+            DisplayChecker.DisplayCheckForDeadLineExceededTasks();
             Utility.LogInFile("Viewed Report");
         }
     }

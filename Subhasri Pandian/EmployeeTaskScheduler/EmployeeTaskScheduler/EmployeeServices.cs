@@ -1,6 +1,9 @@
 ﻿using ConsoleTables;
 namespace EmployeeTaskScheduler
 {
+    /// <summary>
+    /// EmployeeServices - Contains services to perform on employee class.
+    /// </summary>
     public class EmployeeServices
     {
         /// <summary>
@@ -11,7 +14,7 @@ namespace EmployeeTaskScheduler
         {
             Employee employee = new Employee();
             employee.EmployeeName = "name of the employee".GetValidName<string>("^[a-zA-Z]+($|( +([a-zA-Z])*)*$)");
-            employee.WorkingHours = "working hours".GetValidInput<double>();
+            employee.WorkingHours = Utility.GetValidWorkingHours();
             employee.Skills = "skills of the employee".GetValidInput<string>();
             Console.WriteLine("Availability of the employee");
             for (int i = 0; i < 2; i++)
@@ -70,6 +73,15 @@ namespace EmployeeTaskScheduler
             foreach (Employee employee in employees)
             {
                 table.AddRow(employee.EmployeeName, employee.WorkingHours, employee.Skills, employee.AvailabilityOfEmployee);
+            }
+            table.Write();
+        }
+        public void DisplayUnAssignedEmployees(List<Employee> employees)
+        {
+            ConsoleTable table = new ConsoleTable("Employee Name", "Remaining Hours", "Skills", "Availability");
+            foreach (Employee employee in employees)
+            {
+                table.AddRow(employee.EmployeeName, employee.RemainingHours, employee.Skills, employee.AvailabilityOfEmployee);
             }
             table.Write();
         }

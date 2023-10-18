@@ -30,6 +30,19 @@
         /// </summary>
         public string Skills { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Number of days from assigned date to deadline date.
+        /// </summary>
+        public int Days { get; set; }
+
+        /// <summary>
+        /// Hours left in the task.
+        /// </summary>
+        public double RemainingHours { get; set; }
+
+        /// <summary>
+        /// Assigned status of the task.
+        /// </summary>
         public bool Assigned { get; set; } = false;
     }
 }

@@ -8,10 +8,9 @@
         AddEmployee = 1,
         AddTasks = 2,
         ScheduleTasks = 3,
-        ImportData = 4,
-        ViewLog = 5,
-        ViewReport = 6,
-        ClearConsole = 7,
-        Exit = 8,
+        ViewLog = 4,
+        ViewReport = 5,
+        ClearConsole = 6,
+        Exit = 7,
     }
 }

@@ -12,10 +12,12 @@ namespace EmployeeTaskScheduler
         /// <typeparam name="T">Enum type parameter</typeparam>
         public static void DisplayChoicesInEnum<T>()
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
             foreach (T choices in Enum.GetValues(typeof(T)))
             {
                 Console.WriteLine($"{(int)(object)choices}. {choices}");
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         /// <summary>
@@ -29,7 +31,7 @@ namespace EmployeeTaskScheduler
             string? unparsedUserChoice = Console.ReadLine();
             while (!int.TryParse(unparsedUserChoice, out userChoice) || !(userChoice > 0 && userChoice <= numberOfChoices))
             {
-                Console.WriteLine("Enter valid input and Adhere to the options:");
+                Console.Write("Enter valid input and Adhere to the options:");
                 unparsedUserChoice = Console.ReadLine();
             }
 
@@ -57,6 +59,50 @@ namespace EmployeeTaskScheduler
         }
 
         /// <summary>
+        /// Checks the deadline date with the provided hours to complete work from now.
+        /// </summary>
+        /// <param name="requiredHours">Required hours to complete a task.</param>
+        /// <returns>Returns valid dead line date.</returns>
+        public static DateTime GetValidDeadlineDate(double requiredHours)
+        {
+            DateTime deadlineDate = "deadline date for the task in (mm-dd-yyyy)format".GetValidInput<DateTime>();
+            deadlineDate = deadlineDate.Add(new TimeSpan(23, 59, 59));
+            while (deadlineDate < DateTime.Now.AddHours(requiredHours))
+            {
+                MessageDisplayer.DisplayWarningMessage("The required hours to perform task exceeds the deadline!!!");
+                deadlineDate = "valid deadline date for the task in (mm-dd-yyyy)format".GetValidInput<DateTime>();
+                deadlineDate = deadlineDate.Add(new TimeSpan(23, 59, 59));
+            }
+            return deadlineDate;
+        }
+
+        /// <summary>
+        /// Allows Working Hours only if less than 12.
+        /// </summary>
+        /// <returns>Returns valid working hours.</returns>
+        public static double GetValidWorkingHours()
+        {
+            double workHours = "working hours".GetValidInput<double>();
+            while (workHours > 12)
+            {
+                MessageDisplayer.DisplayWarningMessage("Working Hours should be less than 12!!!");
+                workHours = "working hours".GetValidInput<double>();
+            }
+            return workHours;
+        }
+
+        public static double GetValidRequiredHours()
+        {
+            double requiredHours = "hours required to complete the task".GetValidInput<double>();
+            while (requiredHours < 0)
+            {
+                MessageDisplayer.DisplayWarningMessage("Required Hours should be greater than 0!!!");
+                requiredHours = "hours required to complete the task".GetValidInput<double>();
+            }
+            return requiredHours;
+        }
+
+        /// <summary>
         /// GetValidName - gets valid name checking the regex.
         /// </summary>
         /// <typeparam name="T">Generic type parameter.</typeparam>
@@ -76,97 +122,6 @@ namespace EmployeeTaskScheduler
             return validInput;
         }
 
-        public static void DisplayCheckForEmployee()
-        {
-            EmployeeServices accessServices = new EmployeeServices();
-            if (!EmployeeServices.IsEmployeeAvailable())
-            {
-                Console.WriteLine("\nEMPLOYEES\n");
-                accessServices.DisplayEmployees(Employee.Employees);
-            }
-            else
-            {
-                Console.WriteLine("No employees availbale\n");
-            }
-        }
-
-        public static void DisplayCheckForTasks()
-        {
-            TaskServices accessTaskService = new TaskServices();
-            if (!TaskServices.IsTasksAvailable())
-            {
-                Console.WriteLine("\nTASKS");
-                accessTaskService.DisplayTasks(Task.Tasks);
-            }
-            else
-            {
-                Console.WriteLine("No tasks availbale\n");
-            }
-        }
-
-        public static void DisplayCheckForNotAvailableEmployees()
-        {
-            EmployeeServices accessServices = new EmployeeServices();
-            if (TaskScheduler.NotAvailableEmployees.Count != 0)
-            {
-                Console.WriteLine("\nUNAVAILABLE EMPLOYEES\n");
-                accessServices.DisplayEmployees(TaskScheduler.NotAvailableEmployees);
-            }
-            else
-            {
-                Console.WriteLine("All the employees are available\n");
-            }
-        }
-
-        public static void DisplayCheckForScheduledTasks()
-        {
-            TaskScheduler scheduler = new TaskScheduler();
-            if (TaskScheduler.ScheduledTasks.Count != 0)
-            {
-                Console.WriteLine("\nSCHEDULED TASKS\n");
-                scheduler.DisplayScheduledTasks();
-            }
-            else
-            {
-                Console.WriteLine("No task has been scheduled! Try scheduling tasks.\n");
-            }
-        }
-
-        public static void DisplayCheckForUnscheduledTasks()
-        {
-            TaskServices accessTaskService = new TaskServices();
-            foreach (Task task in Task.Tasks)
-            {
-                if (task.Assigned == false)
-                {
-                    TaskScheduler.TasksUnscheduled.Add(task);
-                }
-            }
-            if (TaskScheduler.TasksUnscheduled.Count != 0)
-            {
-                Console.WriteLine("\nTASKS UNSCHEDULED");
-                accessTaskService.DisplayTasks(TaskScheduler.TasksUnscheduled);
-            }
-            else
-            {
-                Console.WriteLine("No tasks unscheduled\n");
-            }
-        }
-
-        public static void DisplayCheckForEmployeesWithNoTasksScheduled()
-        {
-            EmployeeServices accessServices = new EmployeeServices();
-            if (TaskScheduler.EmployeesWithNoTasksScheduled.Count != 0)
-            {
-                Console.WriteLine("\nEMPLOYEES WITH NO TASKS SCHEDULED\n");
-                accessServices.DisplayEmployees(TaskScheduler.EmployeesWithNoTasksScheduled);
-            }
-            else
-            {
-                Console.WriteLine("All the employees have tasks scheduled\n");
-            }
-        }
-
         /// <summary>
         /// Logs in the text file.
         /// </summary>
@@ -182,12 +137,12 @@ namespace EmployeeTaskScheduler
         /// <summary>
         /// Exports the scheduled data to text file.
         /// </summary>
-        public static void exportData()
+        public static void ExportScheduledData()
         {
             using(StreamWriter streamWriter = new StreamWriter("ScheduledDetails.txt"))
             {
-                ConsoleTable table = new ConsoleTable("Employee Name", "Working Hours", "Skills", " Skills Required", "Description", "DeadLine", "Required Hours");
-                foreach ((Employee, Task) tasksScheduled in TaskScheduler.ScheduledTasks)
+                ConsoleTable table = new ConsoleTable("Employee Name", "Working Hours", "Skills", " Skills Required", "Description", "DeadLine","Assigned For", "Required Hours");
+                foreach ((Employee, Task, DateTime) tasksScheduled in TaskScheduler.ScheduledTasks)
                 {
                     table.AddRow(
                         tasksScheduled.Item1.EmployeeName,
@@ -195,7 +150,8 @@ namespace EmployeeTaskScheduler
                         tasksScheduled.Item1.Skills,
                         tasksScheduled.Item2.Skills,
                         tasksScheduled.Item2.Description,
-                        tasksScheduled.Item2.DeadlineDate,
+                        tasksScheduled.Item2.DeadlineDate.ToShortDateString(),
+                        tasksScheduled.Item3.ToShortDateString(),
                         tasksScheduled.Item2.RequiredHours
                    );
                 }

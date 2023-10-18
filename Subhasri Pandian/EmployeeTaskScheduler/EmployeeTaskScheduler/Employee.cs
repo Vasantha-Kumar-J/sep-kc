@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace EmployeeTaskScheduler
+﻿namespace EmployeeTaskScheduler
 {
     /// <summary>
     /// Employee class to store attributes of the employee.
@@ -36,5 +34,15 @@ namespace EmployeeTaskScheduler
         /// Availability status of current employee.
         /// </summary>
         public string AvailabilityOfEmployee { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Remaining hours per day for an employee.
+        /// </summary>
+        public double RemainingHours { get; set; }
+
+        /// <summary>
+        /// Assigned status of the employee.
+        /// </summary>
+        public bool Assigned { get; set; } = false;
     }
 }

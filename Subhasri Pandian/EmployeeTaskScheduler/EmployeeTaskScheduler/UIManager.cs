@@ -7,7 +7,6 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("\nEMPLOYEE TASK SCHEDULER\n");
             TaskPerformer.PerformAllTasks();
             Console.ReadKey();
         }
