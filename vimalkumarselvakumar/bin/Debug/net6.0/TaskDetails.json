@@ -1,0 +1,57 @@
+[
+  {
+    "Name": "Task 1",
+    "Description": "Description for Task 1",
+    "RequiredHours": 18.0,
+    "DueDate": "2023-10-18",
+    "Skills": [
+      "Design",
+      "Coding",
+      "Testing"
+    ],
+    "IsScheduled": false
+  },
+  {
+    "Name": "Task 2",
+    "Description": "Description for Task 2",
+    "RequiredHours": 12.0,
+    "DueDate": "2023-10-18",
+    "Skills": [
+      "Coding"
+    ],
+    "IsScheduled": false
+  },
+  {
+    "Name": "Task 3",
+    "Description": "Description for Task 3",
+    "RequiredHours": 6.0,
+    "DueDate": "2023-10-18",
+    "Skills": [
+      "Testing"
+    ],
+    "IsScheduled": false
+  },
+  {
+    "Name": "Task 4",
+    "Description": "Description for Task 4",
+    "RequiredHours": 10.0,
+    "DueDate": "2023-10-20",
+    "Skills": [
+      "Design",
+      "Coding",
+      "Testing"
+    ],
+    "IsScheduled": false
+  },
+  {
+    "Name": "Task 5",
+    "Description": "Description for Task 5",
+    "RequiredHours": 20.0,
+    "DueDate": "2023-10-25",
+    "Skills": [
+      "Coding",
+      "Testing"
+    ],
+    "IsScheduled": false
+  }
+]

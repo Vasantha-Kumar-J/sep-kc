@@ -1,4 +1,4 @@
-﻿namespace SRAF
+﻿namespace EmployeeManagerAndTaskScheduler
 {
     /// <summary>
     /// Interface for all classes that ends with manager in their names.

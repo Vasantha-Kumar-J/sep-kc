@@ -1,4 +1,4 @@
-﻿namespace SRAF
+﻿namespace EmployeeManagerAndTaskScheduler
 {
     public interface ILogger
     {

@@ -1,37 +1,104 @@
-﻿namespace SRAF
+﻿namespace EmployeeManagerAndTaskScheduler
 {
-    internal class Scheduler 
+    public class Scheduler : IScheduler
     {
-        Dictionary<Task,HashSet<Employee>> scheduledTasks = new Dictionary<Task,HashSet<Employee>>();
-        public void Schedule(List<Task>taskList,HashSet<Employee>employeeList)
+        public void Schedule(List<Task>taskList,List<Employee>employeeList)
         {
+            UnSchedule(taskList,employeeList);
+
             foreach(var task in taskList)
             {
+                int availableDays = task.DueDate.DayOfYear -  DateTime.Now.Date.DayOfYear;
+                double requiredHoursPerDay = (double)task.RequiredHours/(double)availableDays;
+                requiredHoursPerDay = Math.Round(requiredHoursPerDay,2);
 
-                List<Employee> validEmployees = FilterEmployeesByRequiredSkills(task, employeeList);
+                List<Employee> validEmployees = FilterEmployeesByRequiredSkillsAndAvailability(task, employeeList);
 
-                List<Employee> addedEmployee = new();
-                var currentTotalHours = 0;
-                foreach(var employee in validEmployees)
+                if(IsSchedulable(requiredHoursPerDay,validEmployees))
                 {
-                    currentTotalHours += employee.workingHours;
+                    List<Employee> addedEmployees = new List<Employee>();
+                    int employeeCount = 0;
+                    foreach(Employee emp in validEmployees)
+                    {
+                        var allocatedHours = emp.SetAvailability(requiredHoursPerDay);
+                        employeeCount++;
+                        addedEmployees.Add(emp);
+                        requiredHoursPerDay -= allocatedHours;
+                        emp.AssignedTasks.Add((task,allocatedHours));
+                        task.AssignedEmployees.Add(emp);
+                        if(requiredHoursPerDay <=0)
+                        {
+                            break;
+                        }
+                    }
+                    task.IsScheduled =true;
                 }
-
             }
         }
 
-        private List<Employee> FilterEmployeesByRequiredSkills(Task task, HashSet<Employee> employeeList)
+
+        private List<Employee> FilterEmployeesByRequiredSkillsAndAvailability(Task task, List<Employee> employeeList)
         {
-            var result = (from employee in employeeList
-                         where employee.availability.Equals(1)
-                         from skill in employee.skills
-                         from requiredSkill in task.skills
-                         where skill.Equals(requiredSkill)
-                         select employee).ToList();
-            result.Sort((x, y) => x.skills.Count - y.skills.Count);
-            return result;
+            var availableEmployee = new List<Employee>();
+
+            foreach(var employee in employeeList)
+            {
+                if(employee.IsAvailable)
+                {
+                    int count = task.Skills.Count;
+                    foreach(var skill in task.Skills)
+                    {
+                        if(employee.Skills.Contains(skill))
+                        {
+                            count--;
+                        }
+                    }
+                    if(count<=0)
+                    {
+                        availableEmployee.Add(employee);
+                    }
+                }
+            }
+
+            availableEmployee.Sort((x, y) => x.Skills.Count - y.Skills.Count);
+            availableEmployee.Sort((x, y) => (int)(y.GetAvailability() - x.GetAvailability()));
+            return availableEmployee;
         }
 
+        private bool IsSchedulable(double requiredHoursPerDay,List<Employee> employeeList)
+        {
+            double availableHours = 0;
+            foreach(var employee in employeeList)
+            {
+                availableHours += employee.GetAvailability();
+            }
+            return availableHours > requiredHoursPerDay;
+        }
+        public void UnSchedule(List<Task> tasks,List<Employee> employeeList)
+        {
+            foreach(var task in tasks)
+            {
+                task.IsScheduled = false;
+                task.AssignedEmployees.Clear();
+            }
 
+            foreach(var employee in employeeList)
+            {
+                employee.AssignedTasks.Clear();
+                employee.RemainingHoursPerDay = employee.WorkingHours;
+                employee.IsAvailable = true;
+            }
+        }
+
+        public void GenerateReport(List<Employee> employees, List<Task> tasks)
+        {
+            Utility.PrintInColorLn("Scheduled Tasks", ConsoleColor.Red);
+            Utility.PrintScheduledTasks(tasks);
+            Utility.PrintInColorLn("UnScheduled Tasks", ConsoleColor.Red);
+            Utility.PrintUnScheduledTasks(tasks);
+
+            employees.Sort((x, y) => (int)(x.GetAvailability() - y.GetAvailability()));
+            Utility.PrintEmployee(employees);
+        }
     }
 }

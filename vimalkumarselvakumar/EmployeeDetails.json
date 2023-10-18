@@ -1,0 +1,67 @@
+[
+  {
+    "RemainingHoursPerDay": 8.0,
+    "Id": 1,
+    "Name": "Employee 1",
+    "WorkingHours": 8,
+    "Skills": [
+      "Coding",
+      "Design",
+      "Testing"
+    ],
+    "AssignedTasks": [],
+    "IsAvailable": true
+  },
+  {
+    "RemainingHoursPerDay": 8.0,
+    "Id": 2,
+    "Name": "Employee 2",
+    "WorkingHours": 8,
+    "Skills": [
+      "Coding",
+      "Design",
+      "Testing"
+    ],
+    "AssignedTasks": [],
+    "IsAvailable": true
+  },
+  {
+    "RemainingHoursPerDay": 8.0,
+    "Id": 3,
+    "Name": "Employee 3",
+    "WorkingHours": 8,
+    "Skills": [
+      "Coding",
+      "Design",
+      "Testing"
+    ],
+    "AssignedTasks": [],
+    "IsAvailable": true
+  },
+  {
+    "RemainingHoursPerDay": 8.0,
+    "Id": 4,
+    "Name": "Employee 4",
+    "WorkingHours": 8,
+    "Skills": [
+      "Coding",
+      "Design",
+      "Testing"
+    ],
+    "AssignedTasks": [],
+    "IsAvailable": true
+  },
+  {
+    "RemainingHoursPerDay": 8.0,
+    "Id": 5,
+    "Name": "Employee 5",
+    "WorkingHours": 8,
+    "Skills": [
+      "Coding",
+      "Design",
+      "Testing"
+    ],
+    "AssignedTasks": [],
+    "IsAvailable": true
+  }
+]

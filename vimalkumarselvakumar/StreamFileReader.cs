@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRAF
+namespace EmployeeManagerAndTaskScheduler
 {
     public class StreamFileReader
     {
@@ -17,7 +17,7 @@ namespace SRAF
             }
             catch(Exception ex)
             {
-
+                Utility.PrintInColorLn(ex.Message);
             }
             return contents;
         }
