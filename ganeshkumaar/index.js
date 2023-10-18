@@ -1,6 +1,6 @@
 import * as processes from './processes.js'
 import { isOn,isHold } from './checkers.js'
-import { createWater } from './createfunctions.js'
+import { createWater,createCoffee,createLatte, updateBeanLevel, updateMilkLevel, updateWaterLevel } from './createfunctions.js'
 
 export const globalVariables = {
     hold : false,
@@ -11,7 +11,10 @@ export const globalVariables = {
     powerOn:false,
     waterLevel:100,
     beanLevel:100,
-    milkLevel:100
+    milkLevel:100,
+    cupsUsed:0,
+    chamberLevel:0,
+    dispenserLevel:0
 }
 
 let power = document.querySelector('.power-button')
@@ -107,6 +110,7 @@ function actionOnCupClick () {
     } else if (selectedTypeNum===2) {
         createLatte(1)
     }
+    checkMinimumLevels()
 }
 
 function actionOnCarafeClick() {
@@ -124,6 +128,7 @@ function actionOnCarafeClick() {
     } else if (selectedTypeNum===2) {
         createLatte(4)
     }
+    checkMinimumLevels()
 }
 
 function isTypeSelected() {
@@ -134,3 +139,15 @@ function isTypeSelected() {
     }
     return -1
 }
+
+let levelInputs = document.querySelector('input')
+
+levelInputs.addEventListener('input',()=> {
+    updateBeanLevel(0)
+    updateMilkLevel(0)
+    updateWaterLevel(0)
+})
+
+function checkMinimumLevels() {
+    console.log('yes')
+} 

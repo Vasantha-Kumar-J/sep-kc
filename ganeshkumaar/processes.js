@@ -66,10 +66,6 @@ export async function dispensing() {
 function timerRunner(led) {
     if(globalVariables.timeRemaining === 0) {
         clearInterval(globalVariables.timerId)
-        if (led.getAttribute('id') === 'dispensing') {
-            console.log('dispense')
-            emptyDispenser()
-        }
         led.classList.remove('on')
         globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
         globalVariables.hold = false
@@ -77,8 +73,4 @@ function timerRunner(led) {
     }
     globalVariables.timeBox.innerHTML = globalVariables.timeRemaining
     globalVariables.timeRemaining--
-}
-
-function emptyDispenser() {
-    document.querySelector('#dispenser-indicator .inner-level').style.height = '0%';
 }

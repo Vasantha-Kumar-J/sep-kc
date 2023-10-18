@@ -8,10 +8,14 @@
     justify-content: space-around;
 }
 
-.ing-level-indicator{
+.level-indicators{
     height:50vh;
     border-radius: 20px;
     background-color: #C9D1DD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
 }
 
 
