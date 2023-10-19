@@ -6,7 +6,7 @@ body{
     grid-template-areas: 
     "section-1 section-3"
     "section-2 section-3" ;
-    grid-template-columns: 0.75fr 1.25fr;
+    grid-template-columns: 1fr 1.25fr;
     gap: 10px;
     height: 40rem;
 }
@@ -34,8 +34,9 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 0px 30px;
-    font-size: 20px;
+    font-size: 17px;
     gap: 40px;
 }
 
@@ -43,12 +44,6 @@ section{
     width: 400px;
 }
 
-.indicator-leds{
-    border: 2px solid blue;
-    width: 30px;
-    height: 20px;
-    background-color: rgb(194, 78, 78);
-}
 #chamber-dispenser-and-processes-container {
     display: flex;
 }
@@ -83,6 +78,7 @@ section{
     padding: 10px;
     margin: 10px;
     width: 75px;
+    border: 5px solid #44546A;
 }
 
 #ingredient-selection{
@@ -92,14 +88,39 @@ section{
     gap: 10px;
     padding: 20px;
 }
+#ingredient-selection input[name="beverage"]{
+    /* color: blue;
+    border: 0px; */
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    align-self: center;
+}
+#ingredient-selection > div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.empty-space{
+    white-space: pre;
+}
 
 .indicator-leds {
     border: 2px solid blue;
     background-color: #8FAADC;
+    width: 30px;
+    height: 20px;
 }
 
-#low-indication-panel{
+#low-indication-panel {
     display: flex;
+    justify-content: center;
+    /* flex-direction: column;
+    align-items: center; */
+}
+#low-indication-panel > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .chamber-dispenser-and-processes-container{
@@ -108,6 +129,7 @@ section{
 
 #elasepd-time-total-cups{
     display: flex;
+    justify-content: center;
 }
 
 .show-status{
@@ -118,9 +140,16 @@ section{
 }
 
 #power-button{
+    display: flex;
     width: 40px;
     height: 25px;
     background-color: rgb(105, 105, 236);
+    justify-content: center;
+    
+}
+#power-button > p{
+    align-self: center;
+    
 }
 body > div{
     grid-column: span 2;
