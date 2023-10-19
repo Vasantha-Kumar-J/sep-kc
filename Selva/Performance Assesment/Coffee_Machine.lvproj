@@ -11,7 +11,9 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="source" Type="Folder">
-			<Item Name="Data" Type="Folder"/>
+			<Item Name="Data" Type="Folder">
+				<Item Name="Dataa.ini" Type="Document" URL="../Data/Dataa.ini"/>
+			</Item>
 			<Item Name="SubVI&apos;s" Type="Folder">
 				<Item Name="Q_Driver.vi" Type="VI" URL="../SubVI&apos;s/Q_Driver.vi"/>
 				<Item Name="Write_Power_Off_Status.vi" Type="VI" URL="../SubVI&apos;s/Write_Power_Off_Status.vi"/>
