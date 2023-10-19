@@ -57,7 +57,6 @@ export async function dispensing() {
 
     await timerRunner()
     globalVariables.timerId = setInterval(timerRunner,1000,led)
-    console.log('hi')
 }
 
 

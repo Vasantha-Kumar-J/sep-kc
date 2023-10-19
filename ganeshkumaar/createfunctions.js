@@ -19,6 +19,7 @@ export async function createWater(cups) {
 
     emptyDispenser()
     updateCups(cups)
+    checkMinimumLevels()
 }
 
 export async function createCoffee(cups) {
@@ -50,6 +51,7 @@ export async function createCoffee(cups) {
 
     emptyDispenser()
     updateCups(cups)
+    checkMinimumLevels()
 }
 
 export async function createLatte(cups) {
@@ -85,6 +87,7 @@ export async function createLatte(cups) {
 
     emptyDispenser()
     updateCups(cups)
+    checkMinimumLevels()
 }
 
 export function updateWaterLevel(usedWater) {
@@ -130,4 +133,20 @@ function updateCups(cups) {
     globalVariables.cupsUsed += cups
     globalVariables.cupBox.innerHTML = globalVariables.cupsUsed
 }
+
+export function checkMinimumLevels() {
+    if(globalVariables.waterLevel < 30)
+    {
+        document.querySelector('.low-water .low-led').classList.add('on')
+    }
+    if(globalVariables.beanLevel < 30)
+    {
+        document.querySelector('.low-bean .low-led').classList.add('on')
+    }
+    if(globalVariables.milkLevel < 30)
+    {
+        document.querySelector('.low-milk .low-led').classList.add('on')
+    }
+} 
+
 
