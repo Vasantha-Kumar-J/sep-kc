@@ -26,13 +26,25 @@ let process = 0
 let wateravail = 1
 let coffeeavail = 1
 let latteavail = 1
-// let item = 'hwater'
 let dispenserheight = parseInt(dispenervalue.style.height)
 
 async function bootfn() {
   const res = await fetch('./coffee.json')
   jsondata = await res.json()
   powerhandlder(jsondata)
+}
+
+async function postdata (jsondata) {
+  const requestBody = jsondata
+  const res = await fetch('/coffeejson', {
+    method: 'post',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(requestBody)
+  })
+  return res
 }
 
 function powerhandlder(jsondata) {
@@ -44,11 +56,18 @@ function powerhandlder(jsondata) {
       loadvalues(jsondata)
       initprocess(jsondata)
       fetchitem()
-      
       cuploader()
       caraffeloader()
     } else {
+      if(process) {
+        jsondata.isProperlyShutdown = false
+        clearintervals()
+        turnoffleds()
+      } else {
+        jsondata.isProperlyShutdown = true
+      }
       powerstatus.innerHTML = 'Off'
+      postdata(jsondata)
       loadvalues(jsondata)
       timeelapsed.innerHTML = 0
     }
@@ -88,6 +107,8 @@ function heatprocess(jsondata) {
 
 function purgingprocess(jsondata) {
   purgingstate.classList.add('process')
+  dispenervalue.style.height = 0
+  chambervalue.style.height = 0
   b = setInterval(() => {
     timeelapsed.innerHTML = time
     time += 1
@@ -156,7 +177,7 @@ function onecuploader(item) {
       setTimeout(() => {
         clearInterval(c)
         dispensingstate.classList.remove('process')
-        jsondata.totalCupsConsumed += 1
+        jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 1
         totalCups.innerHTML = jsondata.totalCupsConsumed
         dispenervalue.style.height = 0
         process = 0
@@ -193,7 +214,7 @@ function onecuploader(item) {
           setTimeout(() => {
             clearInterval(coffeecpl)
             dispensingstate.classList.remove('process')
-            jsondata.totalCupsConsumed += 1
+            jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 1
             totalCups.innerHTML = jsondata.totalCupsConsumed
             dispenervalue.style.height = 0
             process = 0
@@ -234,7 +255,7 @@ function onecuploader(item) {
           setTimeout(() => {
             clearInterval(coffeecpl)
             dispensingstate.classList.remove('process')
-            jsondata.totalCupsConsumed += 1
+            jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 1
             totalCups.innerHTML = jsondata.totalCupsConsumed
             dispenervalue.style.height = 0
             process = 0 
@@ -245,7 +266,6 @@ function onecuploader(item) {
   }
 }
 
-fetchitem() 
 function fetchitem () {
   hwaterknob.addEventListener('click', () => {
     if(wateravail && !process) {
@@ -303,7 +323,7 @@ function onecaraffeloader(item) {
       setTimeout(() => {
         clearInterval(c)
         dispensingstate.classList.remove('process')
-        jsondata.totalCupsConsumed += 1
+        jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 4
         totalCups.innerHTML = jsondata.totalCupsConsumed
         dispenervalue.style.height = 0
         process = 0
@@ -338,7 +358,7 @@ function onecaraffeloader(item) {
           setTimeout(() => {
             clearInterval(coffeecpl)
             dispensingstate.classList.remove('process')
-            jsondata.totalCupsConsumed += 1
+            jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 4
             totalCups.innerHTML = jsondata.totalCupsConsumed
             dispenervalue.style.height = 0
             process = 0
@@ -378,7 +398,8 @@ function onecaraffeloader(item) {
           setTimeout(() => {
             clearInterval(coffeecpl)
             dispensingstate.classList.remove('process')
-            jsondata.totalCupsConsumed += 1
+            posdata(jsondata,true)
+            jsondata.totalCupsConsumed = jsondata.totalCupsConsumed + 4
             totalCups.innerHTML = jsondata.totalCupsConsumed
             dispenervalue.style.height = 0
             process = 0 
@@ -389,11 +410,28 @@ function onecaraffeloader(item) {
   }
 }
 
+function clearintervals (){
+  for (let index = 0; index < 10; index++) {
+    window.clearInterval(index)
+    window.clearTimeout(index)
+  }
+}
+
+function turnoffleds() {
+  brewingstate.classList.remove('process')
+  heatingstate.classList.remove('process')
+  purgingstate.classList.remove('process')
+  grindingstate.classList.remove('process')
+  dispensingstate.classList.remove('process')
+  lowmilk.classList.remove('alert')
+  lowbean.classList.remove('alert')
+  lowwater.classList.remove('alert')
+}
+
 function monitor () {
   monitorIngredients()
   setInterval(() => {
     monitorIngredients()
-    console.log(process)
   }, 100)
 }
 

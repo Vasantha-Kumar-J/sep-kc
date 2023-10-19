@@ -1,9 +1,6 @@
-**COMPLETED :**
+**Completed:**
 
-Overall Functionality and Basic UI
-
-**TODO :**
-
-Clean code Practice
-
-UI Responsiveness
+* Near Responsive UI
+* Overall Functionality
+* Express Server
+* Read & Write Json via Server.
