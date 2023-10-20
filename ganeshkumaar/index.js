@@ -11,18 +11,17 @@ export const globalVariables = {
     powerOn:false,
     waterLevel:100,
     beanLevel:100,
-    milkLevel:25,
+    milkLevel:100,
     cupsUsed:0,
     chamberLevel:0,
     dispenserLevel:0
 }
 
-updateAllLevels()
-checkMinimumLevels()
 
 let power = document.querySelector('.power-button')
 
-
+updateAllLevels()
+checkMinimumLevels()
 
 power.addEventListener('click',actionOnPowerClick )
 
@@ -38,6 +37,8 @@ function actionOnPowerClick() {
             }
         }
     } else if (power.innerText==='off') {
+        updateAllLevels()
+        checkMinimumLevels()
         globalVariables.powerOn= true
         power.innerText='on'
         processes.heating()
