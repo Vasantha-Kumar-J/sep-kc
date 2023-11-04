@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" type="module" defer></script>
+
+    <title>Coffee Vending Machine</title>
+  </head>
+  <body>
+    <div class="vending-machine-wrapper">
+      <div class="modules input-area-wrapper">
+        <div class="quantity-input-wrapper">
+          <button class="quantity-selector" id="cup-selector">1 Cup</button>
+          <button class="quantity-selector" id="carafe-selector">
+            1 Carafe
+          </button>
+        </div>
+
+        <div class="beverage-type-wrapper">
+          <div class="beverage-button-wrapper">
+            <p class="beverage-title">Coffee</p>
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
+              id="coffee-selector"
+            >
+          </div>
+          <div class="beverage-button-wrapper">
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
+            id="hotwater-selector"
+            >
+            <p class="beverage-title">Hot Water</p>
+          </div>
+          <div class="beverage-button-wrapper">
+            <p class="beverage-title">Latte</p>
+            <input type="radio" name="beverage-selection-buttons" class="beverage-selection-buttons"
+            id="latte-selector">
+          </div>
+        </div>
+      </div>
+
+      <div class="modules ingredient-quantity-level-monitor">
+        <div class="quantity-level-wrapper">
+          <label class="quantity-title">Water Level</label>
+          <div class="meter-level">
+            <input
+              type="range"
+              name="water-level"
+              id="water-level"
+              min="0"
+              max="100"
+              value="60"
+            />
+          </div>
+          <div class="level-meter-scales">
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>0</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>20</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>40</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>60</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>80</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>100</p>
+            </div>
+          </div>
+        </div>
+        <div class="quantity-level-wrapper">
+          <label class="quantity-title">Bean Level</label>
+          <div class="meter-level">
+            <input
+              type="range"
+              name="bean-level"
+              id="bean-level"
+              min="0"
+              max="100"
+              value="60"
+            />
+          </div>
+
+          <div class="level-meter-scales">
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>0</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>20</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>40</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>60</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>80</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>100</p>
+            </div>
+          </div>
+        </div>
+        <div class="quantity-level-wrapper">
+          <label class="quantity-title">Milk Level</label>
+          <div class="meter-level">
+            <input
+              type="range"
+              name="milk-level"
+              id="milk-level"
+              min="0"
+              max="100"
+              value="60"
+            />
+          </div>
+
+          <div class="level-meter-scales">
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>0</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>20</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>40</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>60</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>80</p>
+            </div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line">|</div>
+            <div class="scale-line scale-value">
+              <label for="">|</label>
+              <p>100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modules beverage-processing-monitor">
+        <div class="low-level-indicators">
+          <div class="indicator-wrapper low-water-indicator">
+            <p class="indicator-title">Low Water</p>
+            <div class="indicator-led" id="low-water"></div>
+          </div>
+          <div class="indicator-wrapper low-bean-indicator">
+            <p class="indicator-title">Low Bean</p>
+            <div class="indicator-led" id="low-bean"></div>
+          </div>
+          <div class="indicator-wrapper low-milk-indicator">
+            <p class="indicator-title">Low Milk</p>
+            <div class="indicator-led" id="low-milk"></div>
+          </div>
+        </div>
+        <div class="processing-area-wrapper">
+          <div class="chamber-dispenser-unit">
+            <div class="champer process-meter-wrapper">
+              <div><p class="processing-title">Chamber</p></div>
+              <div class="process-meter-scale"></div>
+              <div class="processing-meter-level">
+                <input
+                  type="range"
+                  name="chamber-level"
+                  id="chamber-level"
+                  min="0"
+                  max="60"
+                  value="0"
+                  list="values"
+                />
+
+                <datalist id="values">
+                  <option value="0"></option>
+                  <option value="10"></option>
+                  <option value="20"></option>
+                  <option value="30"></option>
+                  <option value="40"></option>
+                  <option value="50"></option>
+                  <option value="60"></option>
+                </datalist>
+              </div>
+            </div>
+            <div class="dispenser process-meter-wrapper">
+              <div><p class="processing-title">Dispenser</p></div>
+              <div class="process-meter-scale"></div>
+              <div class="processing-meter-level">
+                <input
+                  type="range"
+                  name="dispenser-level"
+                  id="dispenser-level"
+                  min="0"
+                  max="60"
+                  value="0"
+                  list="values"
+                />
+
+                <datalist id="values">
+                  <option value="0"></option>
+                  <option value="10"></option>
+                  <option value="20"></option>
+                  <option value="30"></option>
+                  <option value="40"></option>
+                  <option value="50"></option>
+                  <option value="60"></option>
+                </datalist>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-stage-indicator">
+            <div class="process-indicator-wrapper">
+              <div
+                class="process-led-indicator indicator-led"
+                id="purging-led"
+              ></div>
+              <div class="process-title">Purging</div>
+            </div>
+            <div class="process-indicator-wrapper">
+              <div
+                class="process-led-indicator indicator-led"
+                id="heating-led"
+              ></div>
+              <div class="process-title">Heating</div>
+            </div>
+            <div class="process-indicator-wrapper">
+              <div
+                class="process-led-indicator indicator-led"
+                id="grinding-led"
+              ></div>
+              <div class="process-title">Grinding</div>
+            </div>
+            <div class="process-indicator-wrapper">
+              <div
+                class="process-led-indicator indicator-led"
+                id="brewing-led"
+              ></div>
+              <div class="process-title">Brewing</div>
+            </div>
+            <div class="process-indicator-wrapper">
+              <div
+                class="process-led-indicator indicator-led"
+                id="dispensing-led"
+              ></div>
+              <div class="process-title">Dispensing</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-cup-display-wrapper">
+          <div class="display-wrapper">
+            <p class="display-title">Elapsed Time</p>
+            <div class="display-screen" id="time-display">0</div>
+          </div>
+          <div class="display-wrapper">
+            <p class="display-title">Total Cups</p>
+            <div class="display-screen" id="cups-display">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="power-switch-container">
+      <button id="power-button">On</button>
+      <p class="power-button-title">Power</p>
+    </div>
+  </body>
+</html>
