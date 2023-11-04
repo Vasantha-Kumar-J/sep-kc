@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.coffee-machine{
+    height: max-content;
+    width: 100vw;
+    background-color: rgb(205, 205, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+.machine-working-area{
+    display: flex;
+    height: max-content;
+    width: 100vw;
+}
+
+.non-processing-area{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+}
+
+.user-input-area{
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid black;
+    border-radius: 20px;
+    height: max-content;
+    width: 100%;
+    margin: 1%;
+}
+
+.quantity-required-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    padding: 5% 10%;
+    border-radius: 10px;
+}
+
+.user-input-label{
+    background-color: rgb(0, 0, 77);
+    color: white;
+    margin: 10%;
+    width: 10vw;
+    padding: 10%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input-knob-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:space-between;
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 8%;
+    background: rgba(202, 176, 255, 0.955);
+}
+
+.input-names{
+    display: flex;
+    padding: 5%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-btns{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    width: 100%;
+}
+
+/* .knob-item{
+    width: 2.5vw;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.knob{
+    background-color: navy;
+    border-radius: 50%;
+    border: 10px solid white;
+    width: 10%;
+    height: 10%;
+    padding: 10px;
+}
+
+.level-storage-monitor{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin: 1%;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 3%;
+}
+
+.level-monitor-area{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.indv-level-area{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 1%;
+}
+
+.level-scale-area{
+    display: flex;
+    flex-direction: column;
+}
+
+.level-meter input{
+    width: 100%;
+}
+.level-scale-sep{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.level-name{
+    font-weight: bold;
+}
+.level-sep{
+    font-size: smaller;
+}
+
+.large-sep{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.scale-value{
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.level-scale-value-area{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1%;
+}
+
+
+.processing-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+}
+
+.process-details{
+    display: flex;
+    height: max-content;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid black;
+    border-radius: 25px;
+}
+
+.top-area{
+    padding:5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.low-level-alert-area{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.low-level-alert-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.low-level-alert-name{
+    font-weight: bold;
+}
+
+.low-level-alert-display{
+    width: 5vw;
+    height: 5vh;
+    margin-right: 10%;
+    border: 3px solid black;
+    background: rgba(202, 176, 255, 0.955);
+    /* background-color: red; */
+}
+
+.middle-area{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.current-intake-areas{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0 5%;
+}
+
+.current-intake-item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.current-intake-level-area{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: end;
+}
+
+.current-intake-name{
+    font-weight: bold;
+}
+
+.current-intake-scale{
+    display: flex;
+    justify-content: space-between;
+}
+
+.intake-scale-sep{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.current-intake-meter{
+    background-color: white;
+    height: 300px;
+    width: 35px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.current-intake-value{
+    margin: 10%;
+    height: 0;
+    background-color: navy;
+}
+
+.process-state-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30%;
+}
+
+.process-state-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.process-state{
+    width: 5vw;
+    height: 5vh;
+    border: 3px solid black;
+    background: rgba(202, 176, 255, 0.955);
+}
+
+.state-name{
+    font-weight: bold;
+}
+
+.bottom-area{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1% 5%;
+}
+
+.end-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-field{
+    text-align: center;
+    border: 3px solid black;
+    background: rgba(202, 176, 255, 0.955);
+    width: 5vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.machine-power{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: max-content;
+    margin-bottom:1%;
+}
+
+.power-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    width: 5vw;
+    border: 3px solid  black;
+}
+
+
+.process{
+    background-color: yellow;
+}
+
+.disable{
+    background-color: rgb(255, 255, 255);
+}
+
+.alert{
+    background-color: red;
+}
+
+.on{
+    background-color: green;
+}
+
+@media (width < 1000px) {
+
+    .machine-working-area{
+        flex-direction: row;
+        width: 100vw;
+        height: max-content;
+    }
+
+    .non-processing-area{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 1%;
+    }
+
+    .user-input-area{
+        flex-direction: row;
+        height: max-content;
+        margin: 1%;
+        width: 100%;
+    }
+
+    .user-input-label{
+        font-size: .9rem;
+    }
+
+    .knob{
+        background-color: navy;
+        border-radius: 50%;
+        border: 5px solid white;
+        padding: 10px;
+    }
+
+    .level-storage-monitor{
+        margin: 1%;
+        height: max-content;
+        width: 100%;
+    }
+
+    .level-monitor-area{
+       height: max-content; 
+    }
+
+    .indv-level-area{
+        margin:3% 0;
+    }
+
+    .processing-area{
+        margin: 1.5%;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .top-area{
+        height: 20%;
+    }
+
+    .low-level-alert-display{
+        width: 10vw;
+        height: 4vh;
+    }
+    
+    .middle-area{
+        width: 100%;
+        height: 80%;
+        padding: 0;
+        margin-bottom: 3%;
+    }
+
+    .process-state-area{
+        display: flex;
+        width:50%;
+        margin-right: 5%;
+        padding: 2%;
+    }
+
+    .process-state-item{
+        font-size: .9rem;
+    }
+    
+    .process-state{
+        width: 10vw;
+        height: 4vh;
+    }
+
+    .bottom-area{
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .end-area{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .end-field{
+        width: 10vw;
+        height: 4vh;
+    }
+    
+    .power-status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4vh;
+        width: 10vw;
+    }
+
+}

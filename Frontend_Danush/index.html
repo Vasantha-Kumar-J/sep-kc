@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="coffee-machine" id="main-area-machine">
+        <div class="machine-working-area">
+            <div class="non-processing-area" id="non-processing-area">
+                <div class="user-input-area" id="userinput-area">
+                    <div class="quantity-required-input">
+                        <div class="user-input-label" id="one-cup">1 Cup</div> 
+                        <div class="user-input-label" id="one-caraffe">1 Caraffe</div>
+                    </div>
+                    <div class="input-knob-area" id="input-knob-area">
+                        <div class="input-names">
+                        <div class="knob-name">Coffee</div>
+                        <div class="knob-name">Latte</div>
+                        </div>
+                        <div class="input-btns">
+                            <div class="knob-item" id="coffee-knob-area">
+                                <div class="knob disable" id="coffee-knob"></div>
+                            </div>
+                            <div class="knob-item" id="hwater-knob-area">
+                                <div class="knob disable" id="hwater-knob"></div>
+                            </div>
+                            <div class="knob-item" id="latte-knob-area">
+                                <div class="knob disable" id="latte-knob"></div>
+                            </div>
+                        </div>
+                        <div class="input-names">
+                            <div class="knob-name"></div>
+                            <div class="knob-name">Hot Water</div>
+                            <div class="knob-name"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="level-storage-monitor" id="level-storage-monitor">
+                    <div class="level-monitor-area">
+                        <div class="indv-level-area">
+                            <div class="level-name">
+                                Water Level
+                            </div>
+                            <div class="level-meter">
+                                <input type="range" name="level-meter" id="water-level" min="0" max="100" value="60" disabled>
+                            </div>
+                            <div class="level-scale-area">
+                                <div class="level-scale-sep">
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                </div> 
+                                <div class="level-scale-value-area">
+                                    <div class="scale-value"> 0</div>
+                                    <div class="scale-value">20</div>
+                                    <div class="scale-value">40</div>
+                                    <div class="scale-value">60</div>
+                                    <div class="scale-value">80</div>
+                                    <div class="scale-value">100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="indv-level-area">
+                            <div class="level-name">
+                                Bean Level
+                            </div>
+                            <div class="level-meter">
+                                <input type="range" name="level-meter" id="bean-level" min="0" max="100" value="60" disabled>
+                            </div>
+                            <div class="level-scale-area">
+                                <div class="level-scale-sep">
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                </div>
+                                <div class="level-scale-value-area">
+                                    <div class="scale-value">0</div>
+                                    <div class="scale-value">20</div>
+                                    <div class="scale-value">40</div>
+                                    <div class="scale-value">60</div>
+                                    <div class="scale-value">80</div>
+                                    <div class="scale-value">100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="indv-level-area">
+                            <div class="level-name">
+                                Milk Level
+                            </div>
+                            <div class="level-meter">
+                                <input type="range" name="level-meter" id="milk-level" min="0" max="100" value="60" disabled>
+                            </div>
+                            <div class="level-scale-area">
+                                <div class="level-scale-sep">
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep ">|</div>
+                                    <div class="level-sep large-sep">|</div>
+                                </div>
+                                <div class="level-scale-value-area">
+                                    <div class="scale-value">0</div>
+                                    <div class="scale-value">20</div>
+                                    <div class="scale-value">40</div>
+                                    <div class="scale-value">60</div>
+                                    <div class="scale-value">80</div>
+                                    <div class="scale-value">100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="processing-area">
+                <div class="process-details" id="process-details">
+                    <div class="top-area">
+                        <div class="low-level-alert-area">
+                            <div class="low-level-alert-item">
+                                <div class="low-level-alert-name">
+                                    Low Water
+                                </div>
+                                <div class="low-level-alert-display" id="low-water-alert"></div>
+                            </div>
+                            <div class="low-level-alert-item">
+                                <div class="low-level-alert-name">
+                                    Low Bean
+                                </div>
+                                <div class="low-level-alert-display" id="low-bean-alert"></div>
+                            </div>
+                            <div class="low-level-alert-item">
+                                <div class="low-level-alert-name">
+                                    Low Milk
+                                </div>
+                                <div class="low-level-alert-display" id="low-milk-alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="middle-area">
+                        <div class="current-intake-areas">
+                            <div class="current-intake-item">
+                                <div class="current-intake-name">
+                                    Chamber
+                                </div>
+                                <div class="current-intake-level-area">
+                                    <div class="current-intake-scale">
+                                        <div class="intake-scale-sep">
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                        </div>
+                                        <div class="current-intake-meter">
+                                            <div class="current-intake-value" id="chamber-value">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="current-intake-item">
+                                <div class="current-intake-name">
+                                    Dispenser
+                                </div>
+                                <div class="current-intake-level-area">
+                                    <div class="current-intake-scale">
+                                        <div class="intake-scale-sep">
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                            <div class="level-sep large-sep">_</div>
+                                        </div>
+                                        <div class="current-intake-meter">
+                                            <div class="current-intake-value" id="dispenser-value">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-state-area">
+                            <div class="process-state-item">
+                                <div class="process-state" id="purging-state">
+    
+                                </div>
+                                <div class="state-name">
+                                    Purging
+                                </div>
+                            </div>
+                            <div class="process-state-item">
+                                <div class="process-state" id="heating-state">
+    
+                                </div>
+                                <div class="state-name">
+                                    Heating
+                                </div>
+                            </div>
+                            <div class="process-state-item">
+                                <div class="process-state" id="grinding-state">
+    
+                                </div>
+                                <div class="state-name">
+                                    Grinding
+                                </div>
+                            </div>
+                            <div class="process-state-item">
+                                <div class="process-state" id="brewing-state">
+    
+                                </div>
+                                <div class="state-name">
+                                    Brewing
+                                </div>
+                            </div>
+                            <div class="process-state-item">
+                                <div class="process-state" id="dispensing-state">
+    
+                                </div>
+                                <div class="state-name">
+                                    Dispensing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-area">
+                        <div class="end-area">
+                            <div class="end-name">Elapsed Time</div>
+                            <div class="end-field" id="elapsed-time">0</div>
+                        </div>
+                        <div class="end-area">
+                            <div class="end-name">Total Cups</div>
+                            <div class="end-field" id="total-cups-used">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="machine-power">
+            <div class="power-status">Off</div>
+            <div class="power-label">Power</div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+</html>
