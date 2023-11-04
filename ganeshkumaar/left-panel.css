@@ -1,0 +1,57 @@
+.selector {
+    height:37vh;
+    margin-bottom: 3vh;
+    border-radius: 20px;
+    background-color: #bdc4cf;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.level-indicators{
+    height:50vh;
+    border-radius: 20px;
+    background-color: #C9D1DD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+}
+
+
+.cup-number-selector{
+    height:15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.cup-number-selector div {
+    background-color: rgb(56, 48, 48);
+    padding-top: 10px;
+    height:35px;
+    width:10vw;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.type-selector {
+    height: 27vh;
+    width: 25vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 2em;
+    color: white;
+    background-color: rgb(8, 8, 8);
+    border:2px solid black;
+}
+
+.hot-water-text {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
