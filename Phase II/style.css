@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-functional-area{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 235, 235);
+}
+
+.top-section{
+    width: 100%;
+    height: 40%;
+    padding: 3%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.selector-panel{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.section-title{
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.panel-input-area{
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+}
+
+.run-mode{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel-input-item{
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    width: 50px;
+    height: 50px;
+}
+
+.setup-mode{
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+}
+
+.subsection-item .panel-input-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    background-color: antiquewhite;
+}
+
+.option{
+    cursor: pointer;
+    padding: 10%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(213, 213, 255);
+}
+
+.enable{
+    background-color: blue;
+}
+
+
+.zone-config-area{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.order-config-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+}
+
+.config-input-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-config-item{
+    width: 45%;
+}
+
+
+.save-config{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:max-content;
+    padding: 1% 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.subsection-title{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-section{
+    width: 100%;
+    height: 60%;
+    padding: 3%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.zone-indicator-area{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.zone-indicator-items{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.zone-indicator-item{
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2% 3%;
+}
+
+.timer-area{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.timer-display{
+    font-size: 2.5rem;
+    padding: 2% 5%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.system-status-area{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(235, 235, 235);
+}
+
+.system-status-area div{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    padding: 1% 2%;
+    height: max-content;
+    border: 1px solid black;
+}
