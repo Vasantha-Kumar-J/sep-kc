@@ -6,36 +6,42 @@ const zoneorder = document.getElementById('zone-order')
 const zonetime = document.getElementById('zone-time')
 const ordervaluedisp = document.querySelector('.order-value')
 const saveconfig = document.querySelector('.save-config')
+const runmodeinput = document.getElementById('run-mode-input')
+let state =true;
 let jsonData;
 
 
 (async () => {
     const res = await fetch('/data.json')
     jsonData = await res.json()
-    setupEventListeners(jsonData)
+    setupEventListeners(jsonData,state)
+    runmode(jsonData)
 })()
 
-function setupEventListeners(jsonData) {
+function setupEventListeners(jsonData,state) {
+    if(state) return 
     frontsetup.addEventListener('click',()=>{
         clearconfig()
         frontsetup.classList.add('enable')
         loadconfig(jsonData,'front')
+        savezoneconfig(jsonData,'front')
     })
     backsetup.addEventListener('click',()=>{
         clearconfig()
         backsetup.classList.add('enable')
         loadconfig(jsonData,'back')
+        savezoneconfig(jsonData,'back')
     })
     rightsetup.addEventListener('click',()=>{
         clearconfig()
         rightsetup.classList.add('enable')
-        loadconfig(jsonData,'right')
+        savezoneconfig(jsonData,'right')
     })
     leftsetup.addEventListener('click',()=>{
         clearconfig()
         leftsetup.classList.add('enable')
         loadconfig(jsonData,'left')
-        savezoneconfig(jsonData)
+        savezoneconfig(jsonData,'left')
     })
 }
 
@@ -53,6 +59,8 @@ function clearconfig() {
 }
 
 function loadconfig(jsonData,name) {
+    
+    if(!state) return
     const foundzone = jsonData.zones.find((fzone) => fzone.zone === name)
     
     //display order
@@ -62,4 +70,28 @@ function loadconfig(jsonData,name) {
 
     //display time
     zonetime.value = foundzone.time
+}
+
+
+function savezoneconfig(jsonData,name) {
+
+    if(!state) return
+    saveconfig.addEventListener('click',()=> {
+        const foundRecordindex = jsonData.zones.findIndex(record => record.zone == name);
+        jsonData.zones[foundRecordindex].time = zonetime.value
+        jsonData.zones[foundRecordindex].order = Number(zoneorder.value)
+
+        loadconfig(jsonData,name)
+    })
+
+    loadconfig(jsonData,name)
+}
+
+function runmode(jsonData) {
+    runmodeinput.addEventListener('click',()=>{
+        if(runmodeinput.checked) {
+            clearconfig()
+            state = false
+        }
+    } )
 }
