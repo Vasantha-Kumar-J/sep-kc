@@ -63,5 +63,3 @@ function loadconfig(jsonData,name) {
     //display time
     zonetime.value = foundzone.time
 }
-
-function 
