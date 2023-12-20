@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprinkler System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-functional-area">
+        <div class="top-section">
+            <div class="selector-panel">
+                <div class="section-title">
+                    Selector
+                </div>
+                <div class="panel-input-area">
+                    <div class="run-mode">
+                        <div class="subsection-title">
+                            Run Mode ?
+                        </div>
+                        <div class="panel-input-item">
+                            <input type="checkbox" name="run-mode-input" id="run-mode-input" >
+                        </div>
+                    </div>
+                    <div class="setup-mode">
+                        <div class="subsection-item">
+                            <div class="subsection-title">
+                                Front
+                            </div>
+                            <div class="panel-input-item">
+                                <div class="option" id="front">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subsection-item">
+                            <div class="subsection-title">
+                                Back
+                            </div>
+                            <div class="panel-input-item">
+                                <div class="option" id="back">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subsection-item">
+                            <div class="subsection-title">
+                                Right
+                            </div>
+                            <div class="panel-input-item">
+                                <div class="option" id="right">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subsection-item">
+                            <div class="subsection-title">
+                                Left
+                            </div>
+                            <div class="panel-input-item">
+                                <div class="option" id="left">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zone-config-area">
+                <div class="section-title">
+                    Zone Configuration
+                </div>
+                    <div class="order-config-area">
+                        <div class="order-config-item">
+                            <div class="subsection-title">
+                                Zone Order
+                            </div>
+                            <div class="config-input-item">
+                                <input type="range" name="zone-order" id="zone-order" min="1" max="4" steps="4" value="1"> <span class="order-value">1</span>
+                            </div>
+                        </div>
+                        <div class="order-config-item">
+                            <div class="subsection-title">
+                                Zone Time (sec)
+                            </div>
+                            <div class="config-input-item">
+                                <input type="number" name="zone-time" id="zone-time" min="1" max="15">
+                            </div>
+                        </div>
+                        <div class="save-config">
+                            Save
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <div class="zone-indicator-area">
+                <div class="section-title">
+                    Zone Indicators
+                </div>
+                <div class="zone-indicator-items">
+                    <div class="zone-indicator-item">Right</div>
+                    <div class="zone-indicator-item">Left</div>
+                    <div class="zone-indicator-item">Front</div>
+                    <div class="zone-indicator-item">Back</div>
+                </div>
+            </div>
+            <div class="timer-area">
+                <div class="section-title">
+                    Timer
+                </div>
+                <div class="timer-display">
+                    <span class="min">01 :</span> <span class="sec">00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="system-status-area">
+        <div class="power-status-area">
+            Off
+        </div>
+        <div class="system-reset-area">
+            Reset
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
