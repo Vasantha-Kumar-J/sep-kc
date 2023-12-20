@@ -3,22 +3,22 @@
         {
             "order" : 1,
             "zone" : "front",
-            "time": 5
+            "time": 1
         },
         {
             "order" : 2,
             "zone" : "back",
-            "time": 5
+            "time": 1
         },
         {
             "order" : 3,
             "zone" : "right",
-            "time": 5
+            "time": 1
         },
         {
             "order" : 4,
             "zone" : "left",
-            "time": 5
+            "time": 1
         }
     ]
 }
