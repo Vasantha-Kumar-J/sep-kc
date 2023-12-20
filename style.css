@@ -211,3 +211,7 @@
     height: max-content;
     border: 1px solid black;
 }
+
+.indicator{
+    background-color: green;
+}
