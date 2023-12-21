@@ -15,12 +15,14 @@ const seconds = document.getElementById('sec')
 const setuppanel = document.getElementsByClassName('setup-mode')[0]
 const power = document.getElementsByClassName('power-status-area')[0]
 const mainarea =document.getElementsByClassName('main-functional-area')[0]
+const resetbtn = document.getElementsByClassName('system-reset-area')[0]
 let foundRecordindex = 4
 let one,two,third,fourth
 let state =true;
 let zonename
 let currentorder
 let jsonData;
+let runtime
 
 
 (async () => {
@@ -102,9 +104,14 @@ function runmode(jsonData) {
             sprinkler(jsonData)
         } else {
             setuppanel.style.pointerEvents = "all"
-            clearAllIntervals()
+            // clearAllIntervals()
+            stoprunmode()
         }
     } )
+}
+
+if(sec>60) {
+    sprinkler(jsonData)
 }
 
 function sprinkler(jsonData) {
@@ -113,17 +120,23 @@ function sprinkler(jsonData) {
             seconds.innerHTML = sec 
 
             one = setInterval(() => {
+                if(!runmodeinput.checked) {
+                    sec = 0
+                    seconds.innerHTML = '00'
+                    return
+                }
                 seconds.innerHTML = sec
                 sec += 1
             }, 1000)
 
             indicator(sortedzones[0].zone,sortedzones[0].time)
 
-            setTimeout(() => {
-
+            runtime = setTimeout(() => {
+                if(!runmodeinput.checked) return
                 clearInterval(one)
                 
                 two = setInterval(()=>{
+                    if(!runmodeinput.checked) return
                     seconds.innerHTML = sec
                     sec += 1
                 }, 1000)
@@ -131,10 +144,11 @@ function sprinkler(jsonData) {
                 indicator(sortedzones[1].zone,sortedzones[1].time)
 
                 setTimeout(()=>{
-
+                    if(!runmodeinput.checked) return
                 clearInterval(two)
 
                 third = setInterval(()=>{
+                    if(!runmodeinput.checked) return
                     seconds.innerHTML = sec
                     sec += 1
                 }, 1000)
@@ -142,9 +156,10 @@ function sprinkler(jsonData) {
                 indicator(sortedzones[2].zone,sortedzones[2].time)
 
                 setTimeout(() => {
-
+                    if(!runmodeinput.checked) return
                 clearInterval(third)
                 fourth = setInterval(()=>{
+                    if(!runmodeinput.checked) return
                     seconds.innerHTML = sec
                     sec += 1
                 }, 1000)
@@ -152,12 +167,20 @@ function sprinkler(jsonData) {
                 indicator(sortedzones[3].zone,sortedzones[3].time)
 
                 setTimeout(()=>{
+                    if(!runmodeinput.checked) return
                     clearInterval(fourth)
+                    if(sec>=60) {
+                        sprinkler(jsonData)
+                    }
                 },sortedzones[3].time*1000)
 
                 }, sortedzones[2].time*1000);
                 },sortedzones[1].time*1000)
             },sortedzones[0].time*1000);
+
+            if(sec==60) {
+                sprinkler(jsonData)
+            }
 
 }
 
@@ -208,3 +231,15 @@ zoneorder.addEventListener('click',()=>{
     ordervaluedisp.innerText = zoneorder.value
 })
 
+function stoprunmode(){
+    frontindicator.classList.remove('indicator')
+    backindicator.classList.remove('indicator')
+    rightindicator.classList.remove('indicator')
+    leftindicator.classList.remove('indicator')
+    seconds.innerHTML = '00'
+}
+
+
+resetbtn.addEventListener('click',()=>{
+    window.location.reload()
+})
