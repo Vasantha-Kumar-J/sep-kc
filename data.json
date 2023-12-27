@@ -1,0 +1,24 @@
+{
+    "zones": [
+        {
+            "order" : 1,
+            "zone" : "front",
+            "time": 1
+        },
+        {
+            "order" : 2,
+            "zone" : "back",
+            "time": 1
+        },
+        {
+            "order" : 3,
+            "zone" : "right",
+            "time": 1
+        },
+        {
+            "order" : 4,
+            "zone" : "left",
+            "time": 1
+        }
+    ]
+}
